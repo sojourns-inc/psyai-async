@@ -120,6 +120,9 @@ class PromptResource:
         try:
             response = self.openai_client.chat.completions.create(
                 model="gpt-4-turbo-preview",
+                temperature=0.2,
+                max_tokens=3000,
+                top_p=1,
                 messages=[
                     {"role": "system", "content": AppConfig.LLM_SYSTEM},
                     {"role": "user", "content": f"Here is the chat context:\n\n{context}"},
