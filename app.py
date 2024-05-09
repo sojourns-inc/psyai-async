@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class AppConfig:
     SUPABASE_URL = os.environ.get("SUPABASE_URL")
     SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
@@ -16,6 +17,7 @@ class AppConfig:
     USER_ID = os.environ.get("USER_ID")
     LLM_SYSTEM = os.environ.get("LLM_SYSTEM")
     LLM_SUFFIX = os.environ.get("LLM_SUFFIX")
+
 
 def initialize_genai_model():
     genai.configure(api_key=AppConfig.GOOGLE_API_KEY)
@@ -26,36 +28,24 @@ def initialize_genai_model():
         "max_output_tokens": 8192,
     }
     safety_settings = [
-        {
-            "category": "HARM_CATEGORY_HARASSMENT",
-            "threshold": "BLOCK_NONE"
-        },
-        {
-            "category": "HARM_CATEGORY_HATE_SPEECH",
-            "threshold": "BLOCK_NONE"
-        },
-        {
-            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-            "threshold": "BLOCK_NONE"
-        },
-        {
-            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
-            "threshold": "BLOCK_NONE"
-        },
+        {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+        {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
     ]
 
     return genai.GenerativeModel(
         model_name="gemini-1.5-pro-latest",
         generation_config=generation_config,
         system_instruction=AppConfig.LLM_SYSTEM,
-        safety_settings=safety_settings
+        safety_settings=safety_settings,
     )
+
 
 class PromptResource:
     def __init__(self):
         self.supabase_client = create_client(
-            AppConfig.SUPABASE_URL,
-            AppConfig.SUPABASE_KEY
+            AppConfig.SUPABASE_URL, AppConfig.SUPABASE_KEY
         )
         self.openai_client = OpenAI(api_key=AppConfig.OPENAI_API_KEY)
         self.gemini_model = initialize_genai_model()
@@ -64,17 +54,19 @@ class PromptResource:
         try:
             payload = await req.media
             query = payload["question"]
-            model = req.params.get("model", "gemini")  # Default to Gemini if not provided
-            
+            model = req.params.get(
+                "model", "gemini"
+            )  # Default to Gemini if not provided
+
             query_embedding = self._get_embedding(query)
             similar_documents = self._fetch_similar_documents(query_embedding)
             context = self._format_context(similar_documents)
-            
+
             if model == "openai":
                 response = self._generate_openai_response(query, context)
             else:
                 response = self._generate_gemini_response(query, context)
-            
+
             resp.media = {"assistant": response}
             resp.status = falcon.HTTP_200
         except Exception as e:
@@ -125,9 +117,15 @@ class PromptResource:
                 top_p=1,
                 messages=[
                     {"role": "system", "content": AppConfig.LLM_SYSTEM},
-                    {"role": "user", "content": f"Here is the chat context:\n\n{context}"},
-                    {"role": "user", "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"}
-                ]
+                    {
+                        "role": "user",
+                        "content": f"Here is the chat context:\n\n{context}",
+                    },
+                    {
+                        "role": "user",
+                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}",
+                    },
+                ],
             )
             return response.choices[0].message.content
         except Exception as e:
@@ -137,18 +135,23 @@ class PromptResource:
 
     def _generate_gemini_response(self, query, context):
         try:
-            convo = self.gemini_model.start_chat(history=[
-                {
-                    "role": "user",
-                    "parts": [f"""Here is the chat context:\n\n{context}"""]
-                },
-            ])
-            convo.send_message(f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}")
+            convo = self.gemini_model.start_chat(
+                history=[
+                    {
+                        "role": "user",
+                        "parts": [f"""Here is the chat context:\n\n{context}"""],
+                    },
+                ]
+            )
+            convo.send_message(
+                f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
+            )
             return convo.last.text
         except Exception as e:
             # Log the error and re-raise the exception
             print(f"Error generating Gemini response: {str(e)}")
             raise
+
 
 app = asgi.App()
 app.add_route("/prompt", PromptResource())
