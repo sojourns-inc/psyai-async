@@ -17,12 +17,13 @@ class AppConfig:
     USER_ID = os.environ.get("USER_ID")
     LLM_SYSTEM = os.environ.get("LLM_SYSTEM")
     LLM_SUFFIX = os.environ.get("LLM_SUFFIX")
+    LLM_SUFFIX_BETA = os.environ.get("LLM_SUFFIX_BETA")
 
 
 def initialize_genai_model():
     genai.configure(api_key=AppConfig.GOOGLE_API_KEY)
     generation_config = {
-        "temperature": 0,
+        "temperature": 0.3,
         "top_p": 1,
         "top_k": 0,
         "max_output_tokens": 8192,
@@ -53,7 +54,9 @@ class PromptResource:
     async def on_post(self, req, resp):
         try:
             payload = await req.media
-            query = payload["question"]
+            query = payload.get("question", "")
+            temperature = payload.get("temperature", 0)
+            tokens = payload.get("tokens", 0)
             model = req.params.get(
                 "model", "gemini"
             )  # Default to Gemini if not provided
@@ -63,14 +66,13 @@ class PromptResource:
             context = self._format_context(similar_documents)
 
             if model == "openai":
-                response = self._generate_openai_response(query, context)
+                response = self._generate_openai_response(query, context, temperature=temperature, tokens=tokens)
             else:
                 response = self._generate_gemini_response(query, context)
 
             resp.media = {"assistant": response}
             resp.status = falcon.HTTP_200
         except Exception as e:
-            # Log the error and return an appropriate error response
             print(f"Error: {str(e)}")
             resp.media = {"error": "An internal server error occurred"}
             resp.status = falcon.HTTP_500
@@ -82,7 +84,6 @@ class PromptResource:
             )
             return embedding_response.data[0].embedding
         except Exception as e:
-            # Log the error and re-raise the exception
             print(f"Error getting embedding: {str(e)}")
             raise
 
@@ -98,7 +99,6 @@ class PromptResource:
             )
             return response.execute()
         except Exception as e:
-            # Log the error and re-raise the exception
             print(f"Error fetching similar documents: {str(e)}")
             raise
 
@@ -108,12 +108,12 @@ class PromptResource:
             context += f"Content: {doc['content']}\n\n##########\n{doc['metadata']['file_name']}\n##########\n\n\n\n"
         return context
 
-    def _generate_openai_response(self, query, context):
+    def _generate_openai_response(self, query, context, temperature=0.2, tokens=3000):
         try:
             response = self.openai_client.chat.completions.create(
-                model="gpt-4-turbo-preview",
-                temperature=0.2,
-                max_tokens=3000,
+                model="gpt-4o",
+                temperature=temperature,
+                max_tokens=tokens,
                 top_p=1,
                 messages=[
                     {"role": "system", "content": AppConfig.LLM_SYSTEM},
@@ -123,13 +123,12 @@ class PromptResource:
                     },
                     {
                         "role": "user",
-                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}",
+                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX_BETA}",
                     },
                 ],
             )
             return response.choices[0].message.content
         except Exception as e:
-            # Log the error and re-raise the exception
             print(f"Error generating OpenAI response: {str(e)}")
             raise
 
@@ -148,7 +147,6 @@ class PromptResource:
             )
             return convo.last.text
         except Exception as e:
-            # Log the error and re-raise the exception
             print(f"Error generating Gemini response: {str(e)}")
             raise
 
