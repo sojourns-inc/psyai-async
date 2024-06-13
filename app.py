@@ -18,6 +18,9 @@ class AppConfig:
     LLM_SYSTEM = os.environ.get("LLM_SYSTEM")
     LLM_SUFFIX = os.environ.get("LLM_SUFFIX")
     LLM_SUFFIX_BETA = os.environ.get("LLM_SUFFIX_BETA")
+    EXPERIMENTAL_BASE_URL = os.environ.get("EXPERIMENTAL_BASE_URL")
+    EXPERIMENTAL_API_KEY = os.environ.get("EXPERIMENTAL_API_KEY")
+    EXPERIMENTAL_MODEL_NAME = os.environ.get("EXPERIMENTAL_MODEL_NAME")
 
 
 def initialize_genai_model():
@@ -49,6 +52,7 @@ class PromptResource:
             AppConfig.SUPABASE_URL, AppConfig.SUPABASE_KEY
         )
         self.openai_client = OpenAI(api_key=AppConfig.OPENAI_API_KEY)
+        self.experimental_client = OpenAI(base_url=AppConfig.EXPERIMENTAL_BASE_URL, api_key=AppConfig.EXPERIMENTAL_API_KEY)
         self.gemini_model = initialize_genai_model()
 
     async def on_post(self, req, resp):
@@ -67,6 +71,8 @@ class PromptResource:
 
             if model == "openai":
                 response = self._generate_openai_response(query, context, temperature=temperature, tokens=tokens)
+            elif model == "experimental":
+                response = self._generate_experimental_response(query, context, temperature=temperature, tokens=tokens)
             else:
                 response = self._generate_gemini_response(query, context)
 
@@ -123,7 +129,7 @@ class PromptResource:
                     },
                     {
                         "role": "user",
-                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX_BETA}",
+                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}",
                     },
                 ],
             )
@@ -143,13 +149,35 @@ class PromptResource:
                 ]
             )
             convo.send_message(
-                f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
+                f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX_BETA}"
             )
             return convo.last.text
         except Exception as e:
             print(f"Error generating Gemini response: {str(e)}")
             raise
 
+    def _generate_experimental_response(self, query, context, temperature=0.2, tokens=3000):
+        try:
+            completion = self.experimental_client.chat.completions.create(
+                model=AppConfig.EXPERIMENTAL_MODEL_NAME,
+                messages=[
+                    {"role": "system", "content": AppConfig.LLM_SYSTEM},
+                    {
+                        "role": "user",
+                        "content": f"Here is the chat context:\n\n{context}",
+                    },
+                    {
+                        "role": "user",
+                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}",
+                    },
+                ],
+                temperature=temperature,
+                max_tokens=tokens,
+            )
+            return completion.choices[0].message.content
+        except Exception as e:
+            print(f"Error generating experimental response: {str(e)}")
+            raise
 
 app = asgi.App()
 app.add_route("/prompt", PromptResource())
