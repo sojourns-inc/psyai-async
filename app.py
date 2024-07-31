@@ -144,7 +144,7 @@ class PromptResource:
                 else f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
             )
             response = self.openai_client.chat.completions.create(
-                model=("gpt-4o" if fun else "gpt-4o"),
+                model=("gpt-4o" if fun else "gpt-4o-mini"),
                 temperature=1.1 if fun else temperature,
                 frequency_penalty=0.9 if fun else 0.3,
                 presence_penalty=1.0 if fun else 0.0,
