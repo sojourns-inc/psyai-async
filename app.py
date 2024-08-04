@@ -222,11 +222,5 @@ class PromptResource:
             raise
 
 
-def create():
-    app = asgi.App(middleware=[StartupMiddleware()])
-    app.add_route("/prompt", PromptResource())
-    return app
-
-
-if __name__ == "__main__":
-    create()
+app = asgi.App(middleware=[StartupMiddleware()])
+app.add_route("/prompt", PromptResource())
