@@ -1,8 +1,9 @@
 import os
 import falcon
 from falcon import asgi
-from supabase import create_client
-from openai import OpenAI
+from supabase_py_async import create_client
+from supabase_py_async.lib.client_options import ClientOptions
+from openai import AsyncOpenAI
 import base64
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -47,14 +48,23 @@ def initialize_genai_model():
         safety_settings=safety_settings,
     )
 
+supabase_client = None
+
+
+class StartupMiddleware:
+    async def process_startup(self, scope, event):
+        global supabase_client
+        supabase_client = await create_client(
+            AppConfig.SUPABASE_URL, AppConfig.SUPABASE_KEY,
+            options=ClientOptions(
+            postgrest_client_timeout=15, storage_client_timeout=15)
+        )
+
 
 class PromptResource:
     def __init__(self):
-        self.supabase_client = create_client(
-            AppConfig.SUPABASE_URL, AppConfig.SUPABASE_KEY
-        )
-        self.openai_client = OpenAI(api_key=AppConfig.OPENAI_API_KEY)
-        self.experimental_client = OpenAI(
+        self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
+        self.experimental_client = AsyncOpenAI(
             base_url=AppConfig.EXPERIMENTAL_BASE_URL,
             api_key=AppConfig.EXPERIMENTAL_API_KEY,
         )
@@ -69,11 +79,11 @@ class PromptResource:
             tokens = payload.get("tokens", 0)
             model = req.params.get("model", "gemini")
 
-            query_embedding = self._get_embedding(query)
-            similar_documents = self._fetch_similar_documents(query_embedding)
+            query_embedding = await self._get_embedding(query)
+            similar_documents = await self._fetch_similar_documents(query_embedding)
             context = self._format_context(similar_documents)
 
-            response = self._generate_response(
+            response = await self._generate_response(
                 query, context, temperature, tokens, model, addl_context
             )
 
@@ -84,9 +94,9 @@ class PromptResource:
             resp.media = {"error": "An internal server error occurred"}
             resp.status = falcon.HTTP_500
 
-    def _get_embedding(self, query):
+    async def _get_embedding(self, query):
         try:
-            embedding_response = self.openai_client.embeddings.create(
+            embedding_response = await self.openai_client.embeddings.create(
                 model="text-embedding-ada-002", input=query, encoding_format="float"
             )
             return embedding_response.data[0].embedding
@@ -94,17 +104,17 @@ class PromptResource:
             print(f"Error getting embedding: {str(e)}")
             raise
 
-    def _fetch_similar_documents(self, query_embedding):
+    async def _fetch_similar_documents(self, query_embedding):
         try:
-            response = self.supabase_client.rpc(
+            response = await supabase_client.rpc(
                 "match_vectors",
                 {
                     "match_count": 5,
                     "p_user_id": AppConfig.USER_ID,
                     "query_embedding": query_embedding,
                 },
-            )
-            return response.execute()
+            ).execute()
+            return response
         except Exception as e:
             print(f"Error fetching similar documents: {str(e)}")
             raise
@@ -115,23 +125,23 @@ class PromptResource:
             context += f"Content: {doc['content']}\n\n##########\n{doc['metadata']['file_name']}\n##########\n\n\n\n"
         return context
 
-    def _generate_response(
+    async def _generate_response(
         self, query, context, temperature, tokens, model, addl_context
     ):
         if model == "openai":
-            return self._generate_openai_response(query, context, temperature, tokens)
+            return await self._generate_openai_response(query, context, temperature, tokens)
         elif model == "experimental":
-            return self._generate_experimental_response(
+            return await self._generate_experimental_response(
                 query, context, temperature, tokens
             )
         elif model == "fun":
-            return self._generate_openai_response(
+            return await self._generate_openai_response(
                 query, context, temperature, tokens, fun=True, add_context=addl_context
             )
         else:
-            return self._generate_gemini_response(query, context)
+            return await self._generate_gemini_response(query, context)
 
-    def _generate_openai_response(
+    async def _generate_openai_response(
         self, query, context, temperature=0.2, tokens=3000, fun=None, add_context=None
     ):
         try:
@@ -143,7 +153,7 @@ class PromptResource:
                 if fun
                 else f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
             )
-            response = self.openai_client.chat.completions.create(
+            response = await self.openai_client.chat.completions.create(
                 model=("gpt-4o" if fun else "gpt-4o"),
                 temperature=1.1 if fun else temperature,
                 frequency_penalty=0.9 if fun else 0.3,
@@ -168,7 +178,7 @@ class PromptResource:
             print(f"Error generating OpenAI response: {str(e)}")
             raise
 
-    def _generate_gemini_response(self, query, context):
+    async def _generate_gemini_response(self, query, context):
         try:
             convo = self.gemini_model.start_chat(
                 history=[
@@ -178,7 +188,7 @@ class PromptResource:
                     }
                 ]
             )
-            convo.send_message(
+            await convo.send_message_async(
                 f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX_BETA}"
             )
             return convo.last.text
@@ -186,11 +196,11 @@ class PromptResource:
             print(f"Error generating Gemini response: {str(e)}")
             raise
 
-    def _generate_experimental_response(
+    async def _generate_experimental_response(
         self, query, context, temperature=0.2, tokens=3000
     ):
         try:
-            completion = self.experimental_client.chat.completions.create(
+            completion = await self.experimental_client.chat.completions.create(
                 model=AppConfig.EXPERIMENTAL_MODEL_NAME,
                 messages=[
                     {"role": "system", "content": AppConfig.LLM_SYSTEM},
@@ -212,5 +222,5 @@ class PromptResource:
             raise
 
 
-app = asgi.App()
+app = asgi.App(middleware=[StartupMiddleware()])
 app.add_route("/prompt", PromptResource())
