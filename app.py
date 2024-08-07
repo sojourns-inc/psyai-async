@@ -135,7 +135,7 @@ class PromptResource:
                 query, context, temperature, tokens
             )
         elif model == "fun":
-            return self._generate_openai_response(
+            return await self._generate_openai_response(
                 query, context, temperature, tokens, fun=True, add_context=addl_context
             )
         else:
