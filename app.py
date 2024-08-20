@@ -117,6 +117,7 @@ class PromptResource:
                     "query_embedding": query_embedding,
                 },
             ).execute()
+            logger.debug(f"Similar documents: {response}")
             return response
         except Exception as e:
             print(f"Error fetching similar documents: {str(e)}")
