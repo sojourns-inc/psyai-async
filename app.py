@@ -7,9 +7,12 @@ from openai import AsyncOpenAI
 import base64
 import google.generativeai as genai
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 class AppConfig:
     SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -82,7 +85,7 @@ class PromptResource:
             query_embedding = await self._get_embedding(query)
             similar_documents = await self._fetch_similar_documents(query_embedding)
             context = self._format_context(similar_documents)
-
+            logger.debug(f"Context: {context}")
             response = await self._generate_response(
                 query, context, temperature, tokens, model, addl_context
             )
@@ -109,7 +112,7 @@ class PromptResource:
             response = await supabase_client.rpc(
                 "match_vectors",
                 {
-                    "match_count": 5,
+                    "match_count": 10,
                     "p_user_id": AppConfig.USER_ID,
                     "query_embedding": query_embedding,
                 },
@@ -154,7 +157,7 @@ class PromptResource:
                 else f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
             )
             response = await self.openai_client.chat.completions.create(
-                model=("gpt-4o" if fun else "gpt-4o"),
+                model=("gpt-4o" if fun else "gpt-4o-2024-08-06"),
                 temperature=1.1 if fun else temperature,
                 frequency_penalty=0.9 if fun else 0.3,
                 presence_penalty=1.0 if fun else 0.0,
