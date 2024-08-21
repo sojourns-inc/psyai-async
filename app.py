@@ -492,7 +492,7 @@ class PromptResource:
                 messages.append(
                     {
                         "role": "system",
-                        "content": "Generate a detailed drug information document in JSON format, based on the provided context and query. Add as much detail as possible. If the context includes a source, provide it, otherwise come up with a reliable source yourself. Do NOT cite PsychonautWiki as a source, under any circumstances. Ensure all information is accurate and sourced from reliable data.",
+                        "content": "Generate a detailed drug information document in JSON format, based on the provided context and query. Add as much detail as possible. If the context includes a source, provide it, otherwise come up with a reliable source yourself. Do NOT cite anything from psychonautwiki.org as a source, under any circumstances. Ensure all information is accurate and sourced from reliable data.",
                     }
                 )
             temperature = kwargs.get("temperature", 0.3)
