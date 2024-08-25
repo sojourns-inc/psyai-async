@@ -9,6 +9,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import logging
 import json
+import requests
 
 load_dotenv()
 
@@ -200,6 +201,7 @@ class AppConfig:
     LLM_HUMOROUS_PERSONA = base64.b64decode(os.getenv("LLM_HUMOROUS_PERSONA")).decode(
         "utf-8"
     )
+    V2_URL = os.getenv("V2_URL")
 
 
 def initialize_genai_model():
@@ -257,16 +259,21 @@ class PromptResource:
             temperature = payload.get("temperature", 0)
             tokens = payload.get("tokens", 0)
             model = req.params.get("model", "gemini")
+            version = req.params.get("version", "v1")
 
             # Extract additional parameters
             is_drug = payload.get("drug", False)
             output_format = payload.get("format", "html").lower()
 
             # Get embeddings and context
-            query_embedding = await self._get_embedding(query)
-            similar_documents = await self._fetch_similar_documents(query_embedding)
-            context = self._format_context(similar_documents)
-            logger.debug(f"Context: {context}")
+            if version == "v2":
+                context = await self._fetch_context_v2(query)
+                logger.debug(f"Context: {context[:500]}")
+            else:
+                query_embedding = await self._get_embedding(query)
+                similar_documents = await self._fetch_similar_documents(query_embedding)
+                context = self._format_context(similar_documents)
+                logger.debug(f"Context: {context}")
 
             # Generate response using a dictionary for parameters
             response_params = {
@@ -319,6 +326,14 @@ class PromptResource:
         for doc in similar_documents.data:
             context += f"Content: {doc['content']}\n\n##########\n{doc['metadata']['file_name']}\n##########\n\n\n\n"
         return context
+
+    async def _fetch_context_v2(self, query):
+        payload = json.dumps({"query": query})
+        headers = {"Content-Type": "application/json"}
+
+        response = requests.post(AppConfig.V2_URL, headers=headers, data=payload)
+        response_data = json.dumps(response.json()["results"]["matches"])
+        return response_data
 
     def _format_drug_info_html(self, drug_json=None):
         # Extracting values from JSON
@@ -468,24 +483,24 @@ class PromptResource:
             is_drug = kwargs.get("is_drug")
             output_format = kwargs.get("output_format")
             fun = kwargs.get("fun", False)
-            actual_context = f'Here is the chat context:\n\n{kwargs.get("addl_content", "") if kwargs.get("fun") else context}'
-            actual_query = (
-                query
-                if kwargs.get("fun")
-                else f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}"
-            )
-
-            messages = [
+            messages=[
                 {
                     "role": "system",
-                    "content": (
-                        AppConfig.LLM_HUMOROUS_PERSONA
-                        if kwargs.get("fun")
-                        else AppConfig.LLM_SYSTEM
-                    ),
+                    "content": (AppConfig.LLM_SYSTEM if not kwargs.get("fun") else AppConfig.LLM_HUMOROUS_PERSONA)
+                    + f"""
+                    -- CONTEXT --
+                    {context if not kwargs.get("fun") else kwargs.get("addl_content", "")}
+                    -- END CONTEXT --
+                    """,
                 },
-                {"role": "user", "content": actual_context},
-                {"role": "user", "content": actual_query},
+                {
+                    "role": "user",
+                    "content": f"""
+                    -- USER QUESTION --
+                    {query}
+                    -- END QUESTION --
+                    """,
+                },
             ]
 
             if is_drug:
@@ -542,20 +557,29 @@ class PromptResource:
             raise
 
     async def _generate_experimental_response(
-        self, query, context, temperature=0.2, tokens=3000
+        self, query, context, temperature=0.1, tokens=3000
     ):
         try:
+
             completion = await self.experimental_client.chat.completions.create(
                 model=AppConfig.EXPERIMENTAL_MODEL_NAME,
                 messages=[
-                    {"role": "system", "content": AppConfig.LLM_SYSTEM},
                     {
-                        "role": "user",
-                        "content": f"Here is the chat context:\n\n{context}",
+                        "role": "system",
+                        "content": AppConfig.LLM_SYSTEM
+                        + f"""
+                        -- CONTEXT --
+                        {context}
+                        -- END CONTEXT --
+                        """,
                     },
                     {
                         "role": "user",
-                        "content": f"Check your context and find out: {query}\n\n{AppConfig.LLM_SUFFIX}",
+                        "content": f"""
+                        -- USER QUESTION --
+                        {query}
+                        -- END QUESTION --
+                        """,
                     },
                 ],
                 temperature=temperature,
