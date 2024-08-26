@@ -3,18 +3,62 @@ import falcon
 from falcon import asgi
 from supabase_py_async import create_client
 from supabase_py_async.lib.client_options import ClientOptions
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI, OpenAI
 import base64
 import google.generativeai as genai
 from dotenv import load_dotenv
 import logging
 import json
 import requests
+import re
+from bs4 import BeautifulSoup
+import requests
+import cloudscraper
 
 load_dotenv()
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
+
+def parse_bluelight_search(html_content):
+    soup = BeautifulSoup(html_content, "html.parser")
+
+    results = []
+
+    for item in soup.find_all(
+        "li", class_="block-row block-row--separated js-inlineModContainer"
+    ):
+        title_elem = item.find("h3", class_="contentRow-title")
+        title = title_elem.text.strip()
+        link = title_elem.find("a")["href"]
+
+        author = item.find("a", class_="username").text.strip()
+
+        date = item.find("time")["title"]
+        date = re.sub(r" at .*", "", date)  # Remove time from date
+
+        forum = item.find_all("li")[-1].text.strip()
+
+        results.append(
+            {
+                "title": title,
+                "link": link,
+                "author": author,
+                "date": date,
+                "forum": forum,
+            }
+        )
+
+    return results
+
+
+def create_markdown_list(results):
+    markdown = ""
+    for i, result in enumerate(results, 1):
+        markdown += f"{i}. [{result['title']}](https://www.bluelight.org{result['link']}) - {result['author']}, {result['date']}\n"
+        markdown += f"   Forum: {result['forum']}\n\n"
+    return markdown
 
 
 drug_json_schema = {
@@ -245,7 +289,7 @@ class StartupMiddleware:
 class PromptResource:
     def __init__(self):
         self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
-        self.experimental_client = AsyncOpenAI(
+        self.experimental_client = OpenAI(
             base_url=AppConfig.EXPERIMENTAL_BASE_URL,
             api_key=AppConfig.EXPERIMENTAL_API_KEY,
         )
@@ -334,6 +378,16 @@ class PromptResource:
         response = requests.post(AppConfig.V2_URL, headers=headers, data=payload)
         response_data = json.dumps(response.json()["results"]["matches"])
         return response_data
+
+    def _format_bluelium_search_results(self, query):
+        scraper = cloudscraper.create_scraper()  # returns a CloudScraper instance
+        # Or: scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
+        html_content = scraper.get(
+            f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance"
+        ).text
+        parsed_results = parse_bluelight_search(html_content)
+        markdown_list = create_markdown_list(parsed_results)
+        return markdown_list
 
     def _format_drug_info_html(self, drug_json=None):
         # Extracting values from JSON
@@ -468,7 +522,7 @@ class PromptResource:
         if model == "openai":
             return await self._generate_openai_response(**kwargs)
         elif model == "experimental":
-            return await self._generate_experimental_response(**kwargs)
+            return self._generate_experimental_response(**kwargs)
         elif model == "fun":
             return await self._generate_openai_response(fun=True, **kwargs)
         else:  # Default to Gemini
@@ -479,14 +533,23 @@ class PromptResource:
     async def _generate_openai_response(self, **kwargs):
         try:
             query = kwargs.get("query")
+            if "!bluelight" in query:
+                results = self._format_bluelium_search_results(
+                    query=query.split("!bluelight ")[1]
+                )
+                return results
             context = kwargs.get("context")
             is_drug = kwargs.get("is_drug")
             output_format = kwargs.get("output_format")
             fun = kwargs.get("fun", False)
-            messages=[
+            messages = [
                 {
                     "role": "system",
-                    "content": (AppConfig.LLM_SYSTEM if not kwargs.get("fun") else AppConfig.LLM_HUMOROUS_PERSONA)
+                    "content": (
+                        AppConfig.LLM_SYSTEM
+                        if not kwargs.get("fun")
+                        else AppConfig.LLM_HUMOROUS_PERSONA
+                    )
                     + f"""
                     -- CONTEXT --
                     {context if not kwargs.get("fun") else kwargs.get("addl_content", "")}
@@ -556,12 +619,10 @@ class PromptResource:
             print(f"Error generating Gemini response: {str(e)}")
             raise
 
-    async def _generate_experimental_response(
-        self, query, context, temperature=0.1, tokens=3000
-    ):
+    def _generate_experimental_response(self, **kwargs):
         try:
 
-            completion = await self.experimental_client.chat.completions.create(
+            completion = self.experimental_client.chat.completions.create(
                 model=AppConfig.EXPERIMENTAL_MODEL_NAME,
                 messages=[
                     {
@@ -569,7 +630,7 @@ class PromptResource:
                         "content": AppConfig.LLM_SYSTEM
                         + f"""
                         -- CONTEXT --
-                        {context}
+                        {kwargs.get("context")}
                         -- END CONTEXT --
                         """,
                     },
@@ -577,13 +638,14 @@ class PromptResource:
                         "role": "user",
                         "content": f"""
                         -- USER QUESTION --
-                        {query}
+                        {kwargs.get("query")}
                         -- END QUESTION --
                         """,
                     },
                 ],
-                temperature=temperature,
-                max_tokens=tokens,
+                temperature=kwargs.get("temperature", 0.8),
+                top_p=1,
+                max_tokens=kwargs.get("tokens", 3000),
             )
             return completion.choices[0].message.content
         except Exception as e:
