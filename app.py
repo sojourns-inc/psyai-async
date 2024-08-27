@@ -365,6 +365,31 @@ class PromptResource:
             print(f"Error fetching similar documents: {str(e)}")
             raise
 
+    def _format_context_for_llm(self, json_data):
+        context = "## Entities\n\n"
+        context += "| Name | Type | Description |\n"
+        context += "|------|------|-------------|\n"
+        
+        # Format entities
+        for entity in json_data['results']["matches"]:
+            name = entity['metadata']['name'].replace('|', '\|')
+            type_ = entity['metadata']['type'].replace('|', '\|')
+            description = entity['metadata']['description'][:100].replace('|', '\|') + "..."
+            context += f"| {name} | {type_} | {description} |\n"
+        
+        context += "\n## Relationships\n\n"
+        context += "| Source | Target | Description |\n"
+        context += "|--------|--------|-------------|\n"
+        
+        # Format relationships
+        for relationship in json_data['relationships']["matches"]:
+            source = relationship['metadata']['source'].replace('|', '\|')
+            target = relationship['metadata']['target'].replace('|', '\|')
+            description = relationship['metadata']['description'][:100].replace('|', '\|') + "..."
+            context += f"| {source} | {target} | {description} |\n"
+        
+        return context
+    
     def _format_context(self, similar_documents):
         context = ""
         for doc in similar_documents.data:
@@ -376,14 +401,15 @@ class PromptResource:
         headers = {"Content-Type": "application/json"}
 
         response = requests.post(AppConfig.V2_URL, headers=headers, data=payload)
-        response_data = json.dumps(response.json()["results"]["matches"])
+        response_data = self._format_context_for_llm(json_data=response.json())
         return response_data
 
-    def _format_bluelium_search_results(self, query):
+    def _format_bluelium_search_results(self, query, drug=None):
         scraper = cloudscraper.create_scraper()  # returns a CloudScraper instance
         # Or: scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
         html_content = scraper.get(
-            f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance"
+            f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance" if not drug else
+            f"https://www.bluelight.org/community/search/44/?q=substancecode_{drug}&o=relevance"
         ).text
         parsed_results = parse_bluelight_search(html_content)
         markdown_list = create_markdown_list(parsed_results)
@@ -539,9 +565,15 @@ class PromptResource:
                 )
                 return results
             context = kwargs.get("context")
+            print(context)
             is_drug = kwargs.get("is_drug")
             output_format = kwargs.get("output_format")
             fun = kwargs.get("fun", False)
+            dic = """
+            ---Drug Information---
+                    
+                    You have been asked to generate a detailed drug information document in JSON format, summarizing all information in the input data tables appropriate for the response length and format, and incorporating any relevant general knowledge. Add as much detail as possible. If the tables include a source, make it the source url, otherwise come up with a reliable source yourself. Do NOT cite anything from psychonautwiki.org as the source url, under any circumstances. Ensure all information is accurate and sourced from reliable data.
+            """
             messages = [
                 {
                     "role": "system",
@@ -551,10 +583,12 @@ class PromptResource:
                         else AppConfig.LLM_HUMOROUS_PERSONA
                     )
                     + f"""
-                    -- CONTEXT --
+                    -- Data Tables --
                     {context if not kwargs.get("fun") else kwargs.get("addl_content", "")}
-                    -- END CONTEXT --
-                    """,
+                    --             --
+                    
+                    {dic if is_drug else ""}
+                    """
                 },
                 {
                     "role": "user",
@@ -565,14 +599,6 @@ class PromptResource:
                     """,
                 },
             ]
-
-            if is_drug:
-                messages.append(
-                    {
-                        "role": "system",
-                        "content": "Generate a detailed drug information document in JSON format, based on the provided context and query. Add as much detail as possible. If the context includes a source, provide it, otherwise come up with a reliable source yourself. Do NOT cite anything from psychonautwiki.org as a source, under any circumstances. Ensure all information is accurate and sourced from reliable data.",
-                    }
-                )
             temperature = kwargs.get("temperature", 0.3)
             tokens = kwargs.get("tokens", 3000)
             response = await self.openai_client.chat.completions.create(
@@ -590,7 +616,13 @@ class PromptResource:
 
             if is_drug:
                 drug_info = json.loads(content)
+                search = self._format_bluelium_search_results("", drug=query)
+                if "1." not in search:
+                    drug_info["trip_reports"] = ""
+                    return drug_info
+                trs = "\n".join(search.split("\n\n")[:3])
                 if output_format == "json":
+                    drug_info["trip_reports"] = trs
                     return drug_info
                 else:  # HTML format
                     return self._format_drug_info_html(drug_json=drug_info)
