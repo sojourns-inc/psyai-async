@@ -1,8 +1,6 @@
 import os
 import falcon
 from falcon import asgi
-from supabase_py_async import create_client
-from supabase_py_async.lib.client_options import ClientOptions
 from openai import AsyncOpenAI, OpenAI
 import base64
 import google.generativeai as genai
@@ -271,21 +269,6 @@ def initialize_genai_model():
     )
 
 
-supabase_client = None
-
-
-class StartupMiddleware:
-    async def process_startup(self, scope, event):
-        global supabase_client
-        supabase_client = await create_client(
-            AppConfig.SUPABASE_URL,
-            AppConfig.SUPABASE_KEY,
-            options=ClientOptions(
-                postgrest_client_timeout=15, storage_client_timeout=15
-            ),
-        )
-
-
 class PromptResource:
     def __init__(self):
         self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
@@ -314,10 +297,11 @@ class PromptResource:
                 context = await self._fetch_context_v2(query)
                 logger.debug(f"Context: {context[:500]}")
             else:
-                query_embedding = await self._get_embedding(query)
-                similar_documents = await self._fetch_similar_documents(query_embedding)
-                context = self._format_context(similar_documents)
-                logger.debug(f"Context: {context}")
+                pass
+                # query_embedding = await self._get_embedding(query)
+                # similar_documents = await self._fetch_similar_documents(query_embedding)
+                # context = self._format_context(similar_documents)
+                # logger.debug(f"Context: {context}")
 
             # Generate response using a dictionary for parameters
             response_params = {
@@ -338,32 +322,6 @@ class PromptResource:
             print(f"Error: {str(e)}")
             resp.media = {"error": "An internal server error occurred"}
             resp.status = falcon.HTTP_500
-
-    async def _get_embedding(self, query):
-        try:
-            embedding_response = await self.openai_client.embeddings.create(
-                model="text-embedding-ada-002", input=query, encoding_format="float"
-            )
-            return embedding_response.data[0].embedding
-        except Exception as e:
-            print(f"Error getting embedding: {str(e)}")
-            raise
-
-    async def _fetch_similar_documents(self, query_embedding):
-        try:
-            response = await supabase_client.rpc(
-                "match_vectors",
-                {
-                    "match_count": 10,
-                    "p_user_id": AppConfig.USER_ID,
-                    "query_embedding": query_embedding,
-                },
-            ).execute()
-            logger.debug(f"Similar documents: {response}")
-            return response
-        except Exception as e:
-            print(f"Error fetching similar documents: {str(e)}")
-            raise
 
     def _format_context_for_llm(self, json_data):
         context = "## Entities\n\n"
@@ -406,11 +364,24 @@ class PromptResource:
 
     def _format_bluelium_search_results(self, query, drug=None):
         scraper = cloudscraper.create_scraper()  # returns a CloudScraper instance
-        # Or: scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
-        html_content = scraper.get(
-            f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance" if not drug else
-            f"https://www.bluelight.org/community/search/44/?q=substancecode_{drug}&o=relevance"
-        ).text
+        # scraper.headers.update("Cookie", "xf_csrf=47bDmi_gmA6CIifI; xf_session=lUqHLe0sh1dACAVqa3vzLxPfxWQzGPlY; ")
+        # scraper.headers.update("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0")
+        # scraper.headers.update("Accept", "application/json, text/javascript, */*; q=0.01")
+        #scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
+        if drug:
+            html_content = scraper.get(
+                f"https://www.bluelight.org/community/search/44/?q=substancecode_{drug.lower()}&o=relevance"
+            )
+            if html_content is None:
+                html_content = scraper.get(
+                    f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance"
+                )
+        else:
+            html_content = scraper.get(
+                f"https://www.bluelight.org/community/search/44/?q={query}&c[title_only]=1&o=relevance"
+            )
+        if html_content is not None:
+            html_content = html_content.text
         parsed_results = parse_bluelight_search(html_content)
         markdown_list = create_markdown_list(parsed_results)
         return markdown_list
@@ -537,10 +508,6 @@ class PromptResource:
     {half_life_info}
     """
         return info_card.strip()
-
-    # Example usage:
-    # json_data = { ... }  # Insert your JSON data here
-    # print(_format_drug_info_html(json_data))
 
     async def _generate_response(self, **kwargs):
         model = kwargs.get("model")
@@ -685,5 +652,5 @@ class PromptResource:
             raise
 
 
-app = asgi.App(middleware=[StartupMiddleware()])
+app = asgi.App()
 app.add_route("/q", PromptResource())
