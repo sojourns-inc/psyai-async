@@ -302,8 +302,8 @@ class PromptResource:
             addl_context = payload.get("context", "")
             temperature = payload.get("temperature", 0)
             tokens = payload.get("tokens", 0)
-            model = req.params.get("model", "gemini")
-            version = req.params.get("version", "v1")
+            model = payload.get("model", "gemini")
+            version = payload.get("version", "v1")
 
             # Extract additional parameters
             is_drug = payload.get("drug", False)
@@ -686,4 +686,4 @@ class PromptResource:
 
 
 app = asgi.App(middleware=[StartupMiddleware()])
-app.add_route("/prompt", PromptResource())
+app.add_route("/q", PromptResource())
