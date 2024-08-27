@@ -1,0 +1,6311 @@
+[
+    [
+        "Classic/Standard Drugs",
+        [
+            [
+                "Absinthe",
+                "absinthe,alcohol,alcohols"
+            ],
+            [
+                "Alcohol",
+                "ethanol,alcohols,gabaergics"
+            ],
+            [
+                "Amanitas",
+                "amanitas,gabaergics"
+            ],
+            [
+                "Ayahuasca",
+                "ayahuasca,dmt,maois,tryptamines"
+            ],
+            [
+                "Amphetamine",
+                "amphetamine,amphetamines"
+            ],
+            [
+                "Caffeine",
+                "caffeine,stimulants"
+            ],
+            [
+                "Cocaine",
+                "cocaine,stimulants"
+            ],
+            [
+                "Crack",
+                "crack,stimulants"
+            ],
+            [
+                "Datura",
+                "datura,deliriants"
+            ],
+            [
+                "Diphenhydramine (Benadryl)",
+                "diphenhydramine,deliriants"
+            ],
+            [
+                "DMT",
+                "dmt,tryptamines"
+            ],
+            [
+                "DXM",
+                "dxm,dissociatives"
+            ],
+            [
+                "Hash/Hashish",
+                "hashish,cannabis"
+            ],
+            [
+                "Heroin",
+                "heroin,opiates"
+            ],
+            [
+                "Ecstasy (pill)",
+                "ecstasy,mdma,empathogens"
+            ],
+            [
+                "Ibogaine",
+                "ibogaine"
+            ],
+            [
+                "Ketamine",
+                "ketamine,dissociatives"
+            ],
+            [
+                "LSD",
+                "lsd,lysergamides"
+            ],
+            [
+                "Marijuana (not Hash)",
+                "marijuana,cannabis"
+            ],
+            [
+                "MDMA (pure, 'Molly')",
+                "mdma,empathogens"
+            ],
+            [
+                "Methamphetamine",
+                "methamphetamine,meth,amphetamines"
+            ],
+            [
+                "Mushrooms",
+                "mushrooms,tryptamines"
+            ],
+            [
+                "Nicotine",
+                "nicotine,stimulants"
+            ],
+            [
+                "Nitrous",
+                "nitrous,dissociatives"
+            ],
+            [
+                "Nutmeg",
+                "myristicafragrans,nutmeg,ethnobotanicals"
+            ],
+            [
+                "PCP",
+                "pcp,achs,dissociatives"
+            ],
+            [
+                "Salvia",
+                "salvia,dissociatives"
+            ],
+            [
+                "Unknown",
+                "unknown"
+            ]
+        ]
+    ],
+    [
+        "Non-Drug",
+        [
+            [
+                "Dreaming",
+                "dreaming,nondrug"
+            ],
+            [
+                "Meditation",
+                "meditation,nondrug"
+            ],
+            [
+                "Sleep Deprivation (non-drug)",
+                "sleepdeprivation,nondrug"
+            ],
+            [
+                "Sleep Paralysis",
+                "sleepparalysis,nondrug"
+            ],
+            [
+                "Yoga",
+                "yoga,nondrug"
+            ]
+        ]
+    ],
+    [
+        "Tryptamines",
+        [
+            [
+                "Mushrooms",
+                "mushrooms,tryptamines"
+            ],
+            [
+                "Ayahuasca",
+                "ayahuasca,dmt,maois,tryptamines"
+            ],
+            [
+                "Changa",
+                "changa,dmt,maois,tryptamines"
+            ],
+            [
+                "AMT",
+                "amt,empathogens,tryptamines"
+            ],
+            [
+                "DALT",
+                "dalt,tryptamines"
+            ],
+            [
+                "DET",
+                "det,tryptamines"
+            ],
+            [
+                "DiPT",
+                "dipt,tryptamines"
+            ],
+            [
+                "DMT",
+                "dmt,tryptamines"
+            ],
+            [
+                "DPT",
+                "dpt,tryptamines"
+            ],
+            [
+                "EiPT",
+                "eipt,tryptamines"
+            ],
+            [
+                "EPT",
+                "ept,tryptamines"
+            ],
+            [
+                "MALT",
+                "malt,tryptamines"
+            ],
+            [
+                "MET",
+                "met,tryptamines"
+            ],
+            [
+                "MiPT",
+                "mipt,tryptamines"
+            ],
+            [
+                "MPT",
+                "mpt,tryptamines"
+            ],
+            [
+                "NMT",
+                "nmt,tryptamines"
+            ],
+            [
+                "PiPT",
+                "pipt,tryptamines"
+            ],
+            [
+                "4-AcO-DALT",
+                "4acodalt,tryptamines"
+            ],
+            [
+                "4-AcO-DET",
+                "4acodet,tryptamines"
+            ],
+            [
+                "4-AcO-DiPT",
+                "4acodipt,tryptamines"
+            ],
+            [
+                "4-AcO-DMT",
+                "4acodmt,tryptamines"
+            ],
+            [
+                "4-AcO-DPT",
+                "4acodpt,tryptamines"
+            ],
+            [
+                "4-AcO-EiPT",
+                "4acoeipt,tryptamines"
+            ],
+            [
+                "4-AcO-EPT",
+                "4acoept,tryptamines"
+            ],
+            [
+                "4-AcO-MALT",
+                "4acomalt,tryptamines"
+            ],
+            [
+                "4-AcO-McPT",
+                "4acomcpt,tryptamines"
+            ],
+            [
+                "4-AcO-MET",
+                "4acomet,tryptamines"
+            ],
+            [
+                "4-AcO-MiPT",
+                "4acomipt,tryptamines"
+            ],
+            [
+                "4-AcO-MPT",
+                "4acompt,tryptamines"
+            ],
+            [
+                "4-AcO-PiPT",
+                "4acopipt,tryptamines"
+            ],
+            [
+                "4-PrO-DMT",
+                "4prodmt,tryptamines"
+            ],
+            [
+                "4-HO-DALT",
+                "4hodalt,tryptamines"
+            ],
+            [
+                "4-HO-DET",
+                "4hodet,tryptamines"
+            ],
+            [
+                "4-HO-DiPT",
+                "4hodipt,tryptamines"
+            ],
+            [
+                "4-HO-DMT",
+                "4hodmt,tryptamines"
+            ],
+            [
+                "4-HO-DPT",
+                "4hodpt,tryptamines"
+            ],
+            [
+                "4-HO-EiPT",
+                "4hoeipt,tryptamines"
+            ],
+            [
+                "4-HO-EPT",
+                "4hoept,tryptamines"
+            ],
+            [
+                "4-HO-MALT",
+                "4homalt,tryptamines"
+            ],
+            [
+                "4-HO-McPT",
+                "4homcpt,tryptamines"
+            ],
+            [
+                "4-HO-MET",
+                "4homet,tryptamines"
+            ],
+            [
+                "4-HO-MiPT",
+                "4homipt,tryptamines"
+            ],
+            [
+                "4-HO-MPT",
+                "4hompt,tryptamines"
+            ],
+            [
+                "4-HO-PiPT",
+                "4hopipt,tryptamines"
+            ],
+            [
+                "4-MeO-MiPT",
+                "4meomipt,tryptamines"
+            ],
+            [
+                "5-MeO-AMT",
+                "5meoamt,tryptamines"
+            ],
+            [
+                "5-MeO-DALT",
+                "5meodalt,tryptamines"
+            ],
+            [
+                "5-MeO-DET",
+                "5meodet,tryptamines"
+            ],
+            [
+                "5-MeO-DiPT",
+                "5meodipt,tryptamines"
+            ],
+            [
+                "5-MeO-DMT",
+                "5meodmt,tryptamines"
+            ],
+            [
+                "5-MeO-DPT",
+                "5meodpt,tryptamines"
+            ],
+            [
+                "5-MeO-EiPT",
+                "5meoeipt,tryptamines"
+            ],
+            [
+                "5-MeO-EPT",
+                "5meoept,tryptamines"
+            ],
+            [
+                "5-MeO-MALT",
+                "5meomalt,tryptamines"
+            ],
+            [
+                "5-MeO-MET",
+                "5meomet,tryptamines"
+            ],
+            [
+                "5-MeO-MiPT",
+                "5meomipt,tryptamines"
+            ],
+            [
+                "5-MeO-MPT",
+                "5meompt,tryptamines"
+            ],
+            [
+                "5-MeO-PiPT",
+                "5meopipt,tryptamines"
+            ]
+        ]
+    ],
+    [
+        "Psychedelic Phenethylamines",
+        [
+            [
+                "2C-B",
+                "2cb,phenethylamines"
+            ],
+            [
+                "2C-B-fly",
+                "2cbfly,phenethylamines"
+            ],
+            [
+                "2C-E-fly",
+                "2cefly,phenethylamines"
+            ],
+            [
+                "bk-2C-B",
+                "bk2cb,phenethylamines"
+            ],
+            [
+                "2C-C",
+                "2cc,phenethylamines"
+            ],
+            [
+                "2C-D",
+                "2cd,phenethylamines"
+            ],
+            [
+                "2C-E",
+                "2ce,phenethylamines"
+            ],
+            [
+                "2C-EF",
+                "2cef,phenethylamines"
+            ],
+            [
+                "2C-G",
+                "2cg,phenethylamines"
+            ],
+            [
+                "2C-H",
+                "2ch,phenethylamines"
+            ],
+            [
+                "2C-I",
+                "2ci,phenethylamines"
+            ],
+            [
+                "2C-iP",
+                "2cip,phenethylamines"
+            ],
+            [
+                "2C-N",
+                "2cn,phenethylamines"
+            ],
+            [
+                "2C-P",
+                "2cp,phenethylamines"
+            ],
+            [
+                "2C-T",
+                "2ct,phenethylamines"
+            ],
+            [
+                "2C-T-2",
+                "2ct2,phenethylamines"
+            ],
+            [
+                "2C-T-4",
+                "2ct4,phenethylamines"
+            ],
+            [
+                "2C-T-7",
+                "2ct7,phenethylamines"
+            ],
+            [
+                "HOT-7",
+                "hot7,phenethylamines"
+            ],
+            [
+                "2C-T-21",
+                "2ct21,phenethylamines"
+            ],
+            [
+                "2C-TFM",
+                "2ctfm,phenethylamines"
+            ],
+            [
+                "2C-YN",
+                "2cyn,phenethylamines"
+            ],
+            [
+                "3C-E",
+                "3ce,amphetamines,phenethylamines"
+            ],
+            [
+                "3C-P",
+                "3cp,amphetamines,phenethylamines"
+            ],
+            [
+                "4C-D/ARIADNE",
+                "4cd,ariadne,phenethylamines"
+            ],
+            [
+                "DOB",
+                "dob,amphetamines,phenethylamines"
+            ],
+            [
+                "DOB/bromo-dragonfly",
+                "dobdragonfly,bromodragonfly,amphetamines,phenethylamines"
+            ],
+            [
+                "DOC",
+                "doc,amphetamines,phenethylamines"
+            ],
+            [
+                "DOEF",
+                "doef,amphetamines,phenethylamines"
+            ],
+            [
+                "DOET",
+                "doet,amphetamines,phenethylamines"
+            ],
+            [
+                "DOF",
+                "dof,amphetamines,phenethylamines"
+            ],
+            [
+                "DOI",
+                "doi,amphetamines,phenethylamines"
+            ],
+            [
+                "DOiP",
+                "doip,amphetamines,phenethylamines"
+            ],
+            [
+                "DOM",
+                "dom,amphetamines,phenethylamines"
+            ],
+            [
+                "DON",
+                "don,amphetamines,phenethylamines"
+            ],
+            [
+                "DOPr",
+                "dopr,amphetamines,phenethylamines"
+            ],
+            [
+                "DOT/Aleph",
+                "dot,aleph,amphetamines,phenethylamines"
+            ],
+            [
+                "DOT-2/Aleph-2",
+                "dot2,aleph2,amphetamines,phenethylamines"
+            ],
+            [
+                "DOT-6/Aleph-6",
+                "dot6,aleph6,amphetamines,phenethylamines"
+            ],
+            [
+                "DOTFM",
+                "dotfm,aleph,amphetamines,phenethylamines"
+            ],
+            [
+                "BOB",
+                "bob,phenethylamines"
+            ],
+            [
+                "BOD",
+                "bod,phenethylamines"
+            ],
+            [
+                "BOHB",
+                "bohb,phenethylamines"
+            ],
+            [
+                "BOHD",
+                "bohd,phenethylamines"
+            ],
+            [
+                "TMA/TMA-1",
+                "tma,amphetamines,phenethylamines"
+            ],
+            [
+                "TMA-2",
+                "tma2,amphetamines,phenethylamines"
+            ],
+            [
+                "TMA-6",
+                "tma6,amphetamines,phenethylamines"
+            ],
+            [
+                "Peruvian Torch Cactus",
+                "peruviantorch,trichocereusperuvianus,mescaline,phenethylamines"
+            ],
+            [
+                "Peyote Cactus",
+                "lophophorawilliamsii,peyote,mescaline,phenethylamines"
+            ],
+            [
+                "San Pedro Cactus",
+                "sanpedro,trichocereuspachanoi,mescaline,phenethylamines"
+            ],
+            [
+                "Peruvian Torch Cactus",
+                "sanpedro,trichocereusperuvianus,mescaline,phenethylamines"
+            ],
+            [
+                "Bridgesii Cactus",
+                "sanpedro,trichocereusbridgesii,mescaline,phenethylamines"
+            ],
+            [
+                "Allylescaline/AL",
+                "allylescaline,phenethylamines"
+            ],
+            [
+                "Cyclopropylmescaline/CPM",
+                "cyclopropylmescaline,cpm,phenethylamines"
+            ],
+            [
+                "Escaline",
+                "escaline,phenethylamines"
+            ],
+            [
+                "Isoproscaline",
+                "isoproscaline,phenethylamines"
+            ],
+            [
+                "Mescaline (pure)",
+                "mescaline,phenethylamines"
+            ],
+            [
+                "Methallylescaline/MAL",
+                "methallylescaline,mal,phenethylamines"
+            ],
+            [
+                "Proscaline",
+                "proscaline,phenethylamines"
+            ],
+            [
+                "Phenethylamine (PEA)",
+                "pea,phenethylamines"
+            ]
+        ]
+    ],
+    [
+        "Lysergamides",
+        [
+            [
+                "LSA",
+                "lsa,lysergamides"
+            ],
+            [
+                "LSB",
+                "lsb,lysergamides"
+            ],
+            [
+                "LSD",
+                "lsd,lysergamides"
+            ],
+            [
+                "LSM",
+                "lsm,lysergamides"
+            ],
+            [
+                "LSP",
+                "lsp,lysergamides"
+            ],
+            [
+                "LSZ",
+                "lsz,lysergamides"
+            ],
+            [
+                "AL-LAD",
+                "allad,lysergamides"
+            ],
+            [
+                "ETH-LAD",
+                "ethlad,lysergamides"
+            ],
+            [
+                "EIPLA",
+                "eipla,lysergamides"
+            ],
+            [
+                "MIPLA",
+                "mipla,lysergamides"
+            ],
+            [
+                "PRO-LAD",
+                "prolad,lysergamides"
+            ],
+            [
+                "ALD-52/1a-LSD",
+                "ald52,lysergamides"
+            ],
+            [
+                "1b-LSD (NOT 1p)",
+                "1blsd,lysergamides"
+            ],
+            [
+                "1cp-AL-LAD",
+                "1cpallad,lysergamides"
+            ],
+            [
+                "1cp-LSD",
+                "1cplsd,lysergamides"
+            ],
+            [
+                "1p-LSD",
+                "1plsd,lysergamides"
+            ],
+            [
+                "1p-ETH-LAD",
+                "1pethlad,lysergamides"
+            ],
+            [
+                "1v-LSD",
+                "1vlsd,lysergamides"
+            ],
+            [
+                "Hawaiian Baby Woodrose",
+                "hbwr,lsa,lysergamides"
+            ],
+            [
+                "Morning Glory Seeds",
+                "morninggloryseeds,lsa,lysergamides"
+            ],
+            [
+                "Ololiúqui/Rivea Corymbosa",
+                "riveacorymbosa,ethnobotanicals,lsa,lysergamides"
+            ]
+        ]
+    ],
+    [
+        "NBOMes/NBOHs/etc",
+        [
+            [
+                "25B-NBOMe",
+                "25bnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25C-NBOMe",
+                "25cnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25CN-NBOMe",
+                "25cnnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25D-NBOMe",
+                "25dnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25E-NBOMe",
+                "25enbome,nbomes,phenethylamines"
+            ],
+            [
+                "25F-NBOMe",
+                "25fnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25G-NBOMe",
+                "25gnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25I-NBOMe",
+                "25inbome,nbomes,phenethylamines"
+            ],
+            [
+                "25N-NBOMe",
+                "25nnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25P-NBOMe",
+                "25pnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25iP-NBOMe",
+                "25ipnbome,nbomes,phenethylamines"
+            ],
+            [
+                "25T4-NBOMe",
+                "25t4nbome,nbomes,phenethylamines"
+            ],
+            [
+                "NBOMe-Mescaline",
+                "nbomemescaline,nbomes,phenethylamines"
+            ],
+            [
+                "DOC-NBOMe",
+                "docnbome,nbomes,phenethylamines"
+            ],
+            [
+                "2C-B-fly-NBOMe",
+                "2cbflynbome,nbomes,phenethylamines"
+            ],
+            [
+                "25C-NBF",
+                "25cnbf,nbomes,phenethylamines"
+            ],
+            [
+                "25I-NB2F",
+                "25inb2f,nbomes,phenethylamines"
+            ],
+            [
+                "25I-NB4F",
+                "25inb4f,nbomes,phenethylamines"
+            ],
+            [
+                "25I-NBMD",
+                "25inbmd,nbomes,phenethylamines"
+            ],
+            [
+                "25B-NB",
+                "25bnb,nbomes,phenethylamines"
+            ],
+            [
+                "25B-NBOH",
+                "25bnboh,nbomes,phenethylamines"
+            ],
+            [
+                "25C-NBOH",
+                "25cnboh,nbomes,phenethylamines"
+            ],
+            [
+                "25I-NBOH",
+                "25inboh,nbomes,phenethylamines"
+            ],
+            [
+                "NBOMEs (Unspecified)",
+                "nbomes,phenethylamines"
+            ]
+        ]
+    ],
+    [
+        "Dissociatives",
+        [
+            [
+                "Coricidin",
+                "coricidin,chlorpheniramine,dxm,deliriants"
+            ],
+            [
+                "DXM",
+                "dxm,dissociatives"
+            ],
+            [
+                "DXO",
+                "dxo,dissociatives"
+            ],
+            [
+                "PCE",
+                "pce,achs,dissociatives"
+            ],
+            [
+                "PCM",
+                "pcm,achs,dissociatives"
+            ],
+            [
+                "PCP",
+                "pcp,achs,dissociatives"
+            ],
+            [
+                "2-OXO-PCE/O-PCE/Eticyclodone",
+                "2oxopce,achs,dissociatives"
+            ],
+            [
+                "2-OXO-PCM/O-PCM/DCK",
+                "2oxopcm,achs,dissociatives"
+            ],
+            [
+                "2B-DCK",
+                "2bdck,achs,dissociatives"
+            ],
+            [
+                "2F-DCK",
+                "2fdck,achs,dissociatives"
+            ],
+            [
+                "3-HO-PCE",
+                "3hopce,achs,dissociatives"
+            ],
+            [
+                "3-HO-PCP",
+                "3hopcp,achs,dissociatives"
+            ],
+            [
+                "3-MeO-PCE",
+                "3meopce,achs,dissociatives"
+            ],
+            [
+                "3-MeO-PCMo",
+                "3meopcmo,achs,dissociatives"
+            ],
+            [
+                "3-MeO-PCP",
+                "3meopcp,achs,dissociatives"
+            ],
+            [
+                "3-MeO-PCPy",
+                "3meopcpy,achs,dissociatives"
+            ],
+            [
+                "3-HO-2-OXO-PCE/HXE",
+                "hxe,achs,dissociatives"
+            ],
+            [
+                "3-MeO-2-OXO-PCE/MXE",
+                "mxe,achs,dissociatives"
+            ],
+            [
+                "3-MeO-2-OXO-PCM/MXM",
+                "mxm,achs,dissociatives"
+            ],
+            [
+                "3-MeO-2-OXO-PCPr/MXPr",
+                "mxpr,achs,dissociatives"
+            ],
+            [
+                "3-Me-PCP",
+                "3mepcp,achs,dissociatives"
+            ],
+            [
+                "3-F-PCP",
+                "3fpcp,achs,dissociatives"
+            ],
+            [
+                "3-Cl-PCP",
+                "3clpcp,achs,dissociatives"
+            ],
+            [
+                "4-MeO-PCP",
+                "4meopcp,achs,dissociatives"
+            ],
+            [
+                "Diphenidine",
+                "diphenidine,phenidines,dissociatives"
+            ],
+            [
+                "Ephenidine",
+                "ephenidine,phenidines,dissociatives"
+            ],
+            [
+                "Isophenidine",
+                "isophenidine,phenidines,dissociatives"
+            ],
+            [
+                "Methoxphenidine/MXP",
+                "methoxphenidine,phenidines,dissociatives"
+            ],
+            [
+                "Ketamine",
+                "ketamine,achs,dissociatives"
+            ],
+            [
+                "2-Flouroketamine/2f-DCK",
+                "2fluoroketamine,achs,dissociatives"
+            ],
+            [
+                "Tiletamine",
+                "tiletamine,achs,dissociatives"
+            ],
+            [
+                "Nitrous",
+                "nitrous,dissociatives"
+            ],
+            [
+                "Salvia",
+                "salvia,dissociatives"
+            ],
+            [
+                "Memantine",
+                "memantine,dissociatives"
+            ],
+            [
+                "Dizocilpine/MK-801",
+                "dizocilpine,mk801,dissociatives"
+            ],
+            [
+                "N-Ethyl-Lanicemine",
+                "nethyllanicemine,dissociatives"
+            ]
+        ]
+    ],
+    [
+        "Amphetamines",
+        [
+            [
+                "Adderall",
+                "adderall,dextroamphetamine,pharms,amphetamines,stimulants"
+            ],
+            [
+                "Amphetamine",
+                "amphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Benzphetamine",
+                "benzphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Desoxyn",
+                "desoxyn,methamphetamine,amphetamines,pharms,stimulants"
+            ],
+            [
+                "Dexedrine",
+                "dexedrine,dextroamphetamine,amphetamines,pharms,stimulants"
+            ],
+            [
+                "Dextroamphetamine",
+                "dextroamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Ethamphetamine",
+                "ethamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Fenfluramine",
+                "fenfluramine,amphetamines,stimulants"
+            ],
+            [
+                "Isopropylamphetamine",
+                "isopropylamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Lisdexamfetamine",
+                "lisdexamfetamine,amphetamines,stimulants"
+            ],
+            [
+                "Methamphetamine",
+                "methamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Propylamphetamine",
+                "propylamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "Vyvanse",
+                "vyvanse,lisdexamfetamine,amphetamines,pharms,stimulants"
+            ],
+            [
+                "2-FA",
+                "2fa,amphetamines,stimulants"
+            ],
+            [
+                "2-FMA",
+                "2fma,amphetamines,stimulants"
+            ],
+            [
+                "3-FA",
+                "3fa,amphetamines,stimulants"
+            ],
+            [
+                "3-FEA",
+                "3fea,amphetamines,stimulants"
+            ],
+            [
+                "3-FMA",
+                "3fma,amphetamines,stimulants"
+            ],
+            [
+                "3,4-dichloro-ethylamphetamine",
+                "34dichloroethylamphetamine,amphetamines,stimulants"
+            ],
+            [
+                "4-FA",
+                "4fa,amphetamines,stimulants"
+            ],
+            [
+                "4-FEA",
+                "4fea,amphetamines,stimulants"
+            ],
+            [
+                "4-FMA",
+                "4fma,amphetamines,stimulants"
+            ]
+        ]
+    ],
+    [
+        "Cathinones",
+        [
+            [
+                "2-MMC",
+                "2mmc,cathinones,stimulants"
+            ],
+            [
+                "3-CEC",
+                "3cec,cathinones,stimulants"
+            ],
+            [
+                "3-CMC",
+                "3cmc,cathinones,stimulants"
+            ],
+            [
+                "3-MMC",
+                "3mmc,cathinones,stimulants"
+            ],
+            [
+                "4-CEC",
+                "4cec,cathinones,stimulants"
+            ],
+            [
+                "4-CMC",
+                "4cmc,cathinones,stimulants"
+            ],
+            [
+                "4-EMC",
+                "4emc,cathinones,stimulants"
+            ],
+            [
+                "4-MEC",
+                "4mec,cathinones,stimulants"
+            ],
+            [
+                "4-MMC/Mephedrone",
+                "mephedrone,4mmc,cathinones,stimulants"
+            ],
+            [
+                "bk-MBDB/Butylone",
+                "butylone,cathinones,stimulants"
+            ],
+            [
+                "bk-MDEA/Ethylone",
+                "ethylone,cathinones,stimulants"
+            ],
+            [
+                "bk-MDMA/Methylone",
+                "methylone,cathinones,stimulants"
+            ],
+            [
+                "Buphedrone",
+                "buphedrone,cathinones,stimulants"
+            ],
+            [
+                "Dimethylone",
+                "dimethylone,cathinones,stimulants"
+            ],
+            [
+                "Dibutylone",
+                "dibutylone,cathinones,stimulants"
+            ],
+            [
+                "Ethcathinone",
+                "ethcathinone,cathinones,stimulants"
+            ],
+            [
+                "Hexedrone",
+                "hexedrone,cathinones,stimulants"
+            ],
+            [
+                "Hexen/N-Ethyl-Hexedrone",
+                "hexen,nethylhexedrone,cathinones,stimulants"
+            ],
+            [
+                "Methcathinone",
+                "methcathinone,cathinones,stimulants"
+            ],
+            [
+                "Mexedrone",
+                "mexedrone,cathinones,stimulants"
+            ],
+            [
+                "N-ethyl-nor-hexedrone (Hexen)",
+                "nethylnorhexedrone,hexen,cathinones,stimulants"
+            ],
+            [
+                "N-ethyl-nor-pentedrone (NEP)",
+                "nethylnorpentedrone,cathinones,stimulants"
+            ],
+            [
+                "Pentylone",
+                "pentylone,cathinones,stimulants"
+            ],
+            [
+                "Pentedrone",
+                "pentedrone,cathinones,stimulants"
+            ],
+            [
+                "4-Methyl-Pentedrone",
+                "4methylpentedrone,cathinones,stimulants"
+            ]
+        ]
+    ],
+    [
+        "Empathogens",
+        [
+            [
+                "IAP",
+                "iap,empathogens"
+            ],
+            [
+                "PMEA",
+                "pmea,empathogens"
+            ],
+            [
+                "PMA",
+                "pma,empathogens"
+            ],
+            [
+                "MBDB",
+                "mbdb,empathogens"
+            ],
+            [
+                "MDAI",
+                "mdai,empathogens"
+            ],
+            [
+                "MDA",
+                "mda,empathogens"
+            ],
+            [
+                "5-methyl-MDA",
+                "5methylmda,empathogens"
+            ],
+            [
+                "MDEA",
+                "mdea,empathogens"
+            ],
+            [
+                "Ecstasy (pill)",
+                "ecstasy,mdma,empathogens"
+            ],
+            [
+                "MDMA (pure/'Molly')",
+                "mdma,empathogens"
+            ],
+            [
+                "MDME",
+                "mdme,empathogens"
+            ],
+            [
+                "MMDA",
+                "mmda,empathogens"
+            ],
+            [
+                "PMA",
+                "pma,empathogens"
+            ],
+            [
+                "PMMA",
+                "pmma,empathogens"
+            ],
+            [
+                "5-APB",
+                "5apb,empathogens"
+            ],
+            [
+                "6-APB",
+                "6apb,empathogens"
+            ],
+            [
+                "5-APDB",
+                "5apdb,empathogens"
+            ],
+            [
+                "6-APDB",
+                "6apdb,empathogens"
+            ],
+            [
+                "5-EAPB",
+                "5eapb,empathogens"
+            ],
+            [
+                "5-MAPB",
+                "5mapb,empathogens"
+            ]
+        ]
+    ],
+    [
+        "Piperazines",
+        [
+            [
+                "BZP",
+                "bzp,piperazines,stimulants"
+            ],
+            [
+                "mCPP",
+                "mcpp,piperazines,stimulants"
+            ],
+            [
+                "MDBP",
+                "mdbp,piperazines,stimulants"
+            ],
+            [
+                "MeOPP",
+                "meopp,piperazines,stimulants"
+            ],
+            [
+                "TFMPP",
+                "tfmpp,piperazines,stimulants"
+            ],
+            [
+                "pFPP",
+                "pfpp,piperazines,stimulants"
+            ],
+            [
+                "DMPP",
+                "dmpp,piperazines,stimulants"
+            ]
+        ]
+    ],
+    [
+        "Pyrovalerones",
+        [
+            [
+                "3-PP (3-phenylpyrrolidine)",
+                "3pp,pyrovalerones,stimulants"
+            ],
+            [
+                "4F-PHP",
+                "4fphp,pyrovalerones,stimulants"
+            ],
+            [
+                "4F-PVP",
+                "4fpvp,pyrovalerones,stimulants"
+            ],
+            [
+                "a-PBP",
+                "apbp,pyrovalerones,stimulants"
+            ],
+            [
+                "a-PHP",
+                "aphp,pyrovalerones,stimulants"
+            ],
+            [
+                "a-PHpP (PV8)",
+                "aphpp,pyrovalerones,stimulants"
+            ],
+            [
+                "a-PVP",
+                "apvp,pyrovalerones,stimulants"
+            ],
+            [
+                "EDPV (3,4-Ethylenedioxypyrovalerone)",
+                "edpv,pyrovalerones,stimulants"
+            ],
+            [
+                "MDPHP",
+                "mdphp,pyrovalerones,stimulants"
+            ],
+            [
+                "MDPV",
+                "mdpv,pyrovalerones,stimulants"
+            ]
+        ]
+    ],
+    [
+        "Sexual Stimulants/Enhancers",
+        [
+            [
+                "Avanafil (Stendra)",
+                "avanafil,sexenhancers"
+            ],
+            [
+                "OTC Herbal Sex Pills",
+                "herbalsexpills,sexenhancers"
+            ],
+            [
+                "Sildenafil (Viagra)",
+                "sildenafil,sexenhancers"
+            ],
+            [
+                "Tadalafil (Cialis)",
+                "tadalafil,sexenhancers"
+            ],
+            [
+                "Vardenafil (Levitra, Staxyn)",
+                "vardenafil,sexenhancers"
+            ]
+        ]
+    ],
+    [
+        "Other Stimulants",
+        [
+            [
+                "3-FPM",
+                "3fpm,stimulants"
+            ],
+            [
+                "3,4-CTMP",
+                "34ctmp,stimulants"
+            ],
+            [
+                "4-methylaminorex (4-mar)",
+                "4methylaminorex,4mar,stimulants"
+            ],
+            [
+                "4F-Methylphenidate/4F-MPH",
+                "4fmethylphenidate,4fmph,stimulants"
+            ],
+            [
+                "4F-Ethylphenidate",
+                "4fethylphenidate,stimulants"
+            ],
+            [
+                "Adrafinil",
+                "adrafinil,stimulants"
+            ],
+            [
+                "Caffeine",
+                "caffeine,stimulants"
+            ],
+            [
+                "Cocaine",
+                "cocaine,stimulants"
+            ],
+            [
+                "Concerta",
+                "concerta,methylphenidate,stimulants"
+            ],
+            [
+                "Desoxypipradrol (2-DPMP)",
+                "desoxypipradrol,stimulants"
+            ],
+            [
+                "Dexmethylphenidate/Focalin",
+                "dexmethylphenidate,stimulants"
+            ],
+            [
+                "Dichloropane/RTI-111",
+                "dichloropane,rti111,stimulants"
+            ],
+            [
+                "Ephedrine",
+                "ephedrine,stimulants"
+            ],
+            [
+                "Epinephrine",
+                "epinephrine,stimulants"
+            ],
+            [
+                "Ethylphenidate",
+                "ethylphenidate,stimulants"
+            ],
+            [
+                "Methylphenidate (not branded)",
+                "methylphenidate,stimulants"
+            ],
+            [
+                "Isopropylphenidate",
+                "isopropylphenidate,stimulants"
+            ],
+            [
+                "Modafinil",
+                "modafinil,stimulants"
+            ],
+            [
+                "Nicotine",
+                "nicotine,stimulants"
+            ],
+            [
+                "PDM-35",
+                "pdm35,stimulants"
+            ],
+            [
+                "Pitolisant (Wakix)",
+                "pitolisant,stimulants"
+            ],
+            [
+                "Phenethylamine (PEA)",
+                "pea,phenethylamines"
+            ],
+            [
+                "Phenmetrazine",
+                "phenmetrazine,stimulants"
+            ],
+            [
+                "Phenylephrine",
+                "phenylephrine,stimulants"
+            ],
+            [
+                "Propylhexedrine",
+                "propylhexedrine,stimulants"
+            ],
+            [
+                "Pseudoephedrine",
+                "pseudophedrine,stimulants"
+            ],
+            [
+                "Ritalin",
+                "ritalin,methylphenidate,stimulants"
+            ],
+            [
+                "Theacrine",
+                "theacrine,stimulants"
+            ],
+            [
+                "Troparil",
+                "troparil,stimulants"
+            ]
+        ]
+    ],
+    [
+        "Alcohols",
+        [
+            [
+                "Acetone",
+                "acetone,alcohols,gabaergics"
+            ],
+            [
+                "Ethanol",
+                "ethanol,alcohols,gabaergics"
+            ],
+            [
+                "Emylcamate",
+                "emylcamate,alcohols,gabaergics"
+            ],
+            [
+                "Isopropanol",
+                "isopropanol,alcohols,gabaergics"
+            ],
+            [
+                "Methanol",
+                "methanol,alcohols,gabaergics"
+            ],
+            [
+                "Propanol",
+                "propanol,alcohols,gabaergics"
+            ],
+            [
+                "1-ethyl-1-cyclopentanol",
+                "1ethyl1cyclopentanol,alcohols,gabaergics"
+            ],
+            [
+                "2-butanol",
+                "2butanol,2m2b,alcohols,gabaergics"
+            ],
+            [
+                "2-methyl-2-butanol (2m2b)",
+                "2methyl2butanol,2m2b,alcohols,gabaergics"
+            ],
+            [
+                "3-methyl-3-pentanol (3m3p)",
+                "3methyl3pentanol,3m3p,alcohols,gabaergics"
+            ]
+        ]
+    ],
+    [
+        "Barbiturates",
+        [
+            [
+                "Amobarbital",
+                "amobarbital,barbiturates,gabaergics"
+            ],
+            [
+                "Butalbital",
+                "butalbital,barbiturates,gabaergics"
+            ],
+            [
+                "Pentobarbital",
+                "pentobarbital,barbiturates,gabaergics"
+            ],
+            [
+                "Phenobarbital",
+                "phenobarbital,barbiturates,gabaergics"
+            ],
+            [
+                "Secobarbital",
+                "secobarbital,barbiturates,gabaergics"
+            ]
+        ]
+    ],
+    [
+        "Benzodiazepines (by chemical name)",
+        [
+            [
+                "Adinazolam",
+                "adinazolam,benzos,gabaergics"
+            ],
+            [
+                "Alprazolam",
+                "alprazolam,benzos,gabaergics"
+            ],
+            [
+                "Bentazepam",
+                "bentazepam,benzos,gabaergics"
+            ],
+            [
+                "Bromazepam",
+                "bromazepam,benzos,gabaergics"
+            ],
+            [
+                "Bromazolam",
+                "bromazolam,benzos,gabaergics"
+            ],
+            [
+                "Brotizolam",
+                "brotizolam,benzos,gabaergics"
+            ],
+            [
+                "Camazepam",
+                "camazepam,benzos,gabaergics"
+            ],
+            [
+                "Chlordiazepoxide",
+                "chlordiazepoxide,benzos,gabaergics"
+            ],
+            [
+                "Cinazepam",
+                "cinazepam,benzos,gabaergics"
+            ],
+            [
+                "Cinolazepam",
+                "cinolazepam,benzos,gabaergics"
+            ],
+            [
+                "Clobazam",
+                "clobazam,benzos,gabaergics"
+            ],
+            [
+                "Clonazepam",
+                "clonazepam,benzos,gabaergics"
+            ],
+            [
+                "Clonazolam",
+                "clonazolam,benzos,gabaergics"
+            ],
+            [
+                "Clorazepate",
+                "clorazepate,benzos,gabaergics"
+            ],
+            [
+                "Clotiazepam",
+                "clotiazepam,benzos,gabaergics"
+            ],
+            [
+                "Cloxazolam",
+                "cloxazolam,benzos,gabaergics"
+            ],
+            [
+                "Delorazepam",
+                "delorazepam,benzos,gabaergics"
+            ],
+            [
+                "Deschloroetizolam",
+                "deschloroetizolam,benzos,gabaergics"
+            ],
+            [
+                "Diazepam",
+                "diazepam,benzos,gabaergics"
+            ],
+            [
+                "Diclazepam",
+                "diclazepam,benzos,gabaergics"
+            ],
+            [
+                "Estazolam",
+                "estazolam,benzos,gabaergics"
+            ],
+            [
+                "Ethyl carfluzepate",
+                "ethylcarfluzepate,benzos,gabaergics"
+            ],
+            [
+                "Etizolam",
+                "etizolam,benzos,gabaergics"
+            ],
+            [
+                "Ethyl loflazepate",
+                "ethylloflazepate,benzos,gabaergics"
+            ],
+            [
+                "Flualprazolam",
+                "flualprazolam,benzos,gabaergics"
+            ],
+            [
+                "Flubromazepam",
+                "flubromazepam,benzos,gabaergics"
+            ],
+            [
+                "Flubromazolam",
+                "flubromazolam,benzos,gabaergics"
+            ],
+            [
+                "Fluclotizolam",
+                "fluclotizolam,benzos,gabaergics"
+            ],
+            [
+                "Flunitrazepam",
+                "flunitrazepam,benzos,gabaergics"
+            ],
+            [
+                "Flunitrazolam",
+                "flunitrazolam,benzos,gabaergics"
+            ],
+            [
+                "Flurazepam",
+                "flurazepam,benzos,gabaergics"
+            ],
+            [
+                "Flutazolam",
+                "flutazolam,benzos,gabaergics"
+            ],
+            [
+                "Flutoprazepam",
+                "flutoprazepam,benzos,gabaergics"
+            ],
+            [
+                "Halazepam",
+                "halazepam,benzos,gabaergics"
+            ],
+            [
+                "Ketazolam",
+                "ketazolam,benzos,gabaergics"
+            ],
+            [
+                "Loprazolam",
+                "loprazolam,benzos,gabaergics"
+            ],
+            [
+                "Lorazepam",
+                "lorazepam,benzos,gabaergics"
+            ],
+            [
+                "Lormetazepam",
+                "lormetazepam,benzos,gabaergics"
+            ],
+            [
+                "Meclonazepam",
+                "meclonazepam,benzos,gabaergics"
+            ],
+            [
+                "Medazepam",
+                "medazepam,benzos,gabaergics"
+            ],
+            [
+                "Metizolam",
+                "metizolam,benzos,gabaergics"
+            ],
+            [
+                "Mexazolam",
+                "mexazolam,benzos,gabaergics"
+            ],
+            [
+                "Midazolam",
+                "midazolam,benzos,gabaergics"
+            ],
+            [
+                "Nifoxipam",
+                "nifoxipam,benzos,gabaergics"
+            ],
+            [
+                "Nimetazepam",
+                "nimetazepam,benzos,gabaergics"
+            ],
+            [
+                "Nitemazepam",
+                "nitemazepam,benzos,gabaergics"
+            ],
+            [
+                "Nitrazepam",
+                "nitrazepam,benzos,gabaergics"
+            ],
+            [
+                "Nitrazolam",
+                "nitrazolam,benzos,gabaergics"
+            ],
+            [
+                "Nordiazepam",
+                "nordiazepam,benzos,gabaergics"
+            ],
+            [
+                "Norflurazepam",
+                "norflurazepam,benzos,gabaergics"
+            ],
+            [
+                "Oxazepam",
+                "oxazepam,benzos,gabaergics"
+            ],
+            [
+                "Phenazepam",
+                "phenazepam,benzos,gabaergics"
+            ],
+            [
+                "3-HO-phenazepam",
+                "3hophenazepam,benzos,gabaergics"
+            ],
+            [
+                "Pinazepam",
+                "pinazepam,benzos,gabaergics"
+            ],
+            [
+                "Prazepam",
+                "prazepam,benzos,gabaergics"
+            ],
+            [
+                "Premazepam",
+                "premazepam,benzos,gabaergics"
+            ],
+            [
+                "Pyrazolam",
+                "pyrazolam,benzos,gabaergics"
+            ],
+            [
+                "Quazepam",
+                "quazepam,benzos,gabaergics"
+            ],
+            [
+                "Rilmazafone",
+                "rilmazafone,benzos,gabaergics"
+            ],
+            [
+                "Temazepam",
+                "temazepam,benzos,gabaergics"
+            ],
+            [
+                "Thienalprazolam",
+                "thienalprazolam,benzos,gabaergics"
+            ],
+            [
+                "Tetrazepam",
+                "tetrazepam,benzos,gabaergics"
+            ],
+            [
+                "Triazolam",
+                "triazolam,benzos,gabaergics"
+            ]
+        ]
+    ],
+    [
+        "Benzodiazepines (by brand name)",
+        [
+            [
+                "Albego",
+                "albego,camazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Alepam",
+                "alepam,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Alodorm",
+                "alodorm,nitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Alprox",
+                "alprox,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ansilan",
+                "ansilan,medazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Antenex",
+                "antenex,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Anxon",
+                "anxon,ketazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Apaurin",
+                "apaurin,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Apozepam",
+                "apozepam,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Apzepam",
+                "apzepam,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ativan",
+                "ativan,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Bromam",
+                "bromam,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Centrax",
+                "centrax,prazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Clozan",
+                "clozan,clotiazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Coreminal",
+                "coreminal,flutazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dadumir",
+                "dadumir,delorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dalmadorm",
+                "dalmadorm,flurazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dalmane",
+                "dalmane,flurazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Depas",
+                "depas,etizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Deracyn",
+                "deracyn,adinazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Diazepan",
+                "diazepan,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Domar",
+                "domar,pinazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Doral",
+                "doral,quazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dormex",
+                "dormex,brotizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dormicum",
+                "dormicum,midazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dormonid",
+                "dormonid,midazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dormonoct",
+                "dormonoct,loprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Dumolid",
+                "dumolid,nitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Elenium",
+                "elenium,chlordiazepoxide,pharms,benzos,gabaergics"
+            ],
+            [
+                "Erimin",
+                "erimin,nimetazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Etilaam",
+                "etilaam,etizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Etizest",
+                "etizest,etizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Euhypnos",
+                "euhypnos,temazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Flunipam",
+                "flunipam,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Fluscand",
+                "fluscand,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Fluzepam",
+                "fluzepam,flurazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Frisium",
+                "frisium,clobazam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Frontin",
+                "frontin,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Gerodorm",
+                "gerodorm,cinolazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Halcion",
+                "halcion,triazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Helex",
+                "helex,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Hexalid",
+                "hexalid,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Hipnosedon",
+                "hipnosedon,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Hypnodorm",
+                "hypnodorm,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Hypnovel",
+                "hypnovel,midazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Iktorivil",
+                "iktorivil,clonazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Klonopin",
+                "klonopin,clonazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ksalol",
+                "ksalol,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lectopam",
+                "lectopam,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lendormin",
+                "lendormin,brotizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lexatin",
+                "lexatin,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lexaurin",
+                "lexaurin,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lexotan",
+                "lexotan,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lexotanil",
+                "lexotanil,bromazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Librium",
+                "librium,chlordiazepoxide,pharms,benzos,gabaergics"
+            ],
+            [
+                "Limpidon",
+                "limpidon,camazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lorabenz",
+                "lorabenz,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Loramet",
+                "loramet,lormetazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lorenin",
+                "lorenin,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lorsilan",
+                "lorsilan,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Lysanxia",
+                "lysanxia,prazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Madar",
+                "madar,nordiazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Medopam",
+                "medopam,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Meilax",
+                "meilax,ethyl loflazepate,pharms,benzos,gabaergics"
+            ],
+            [
+                "Melex",
+                "melex,mexazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Mezapam",
+                "mezapam,medazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Misar",
+                "misar,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Mogadon",
+                "mogadon,nitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Murelax",
+                "murelax,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Myolastan",
+                "myolastan,tetrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Neurol",
+                "neurol,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Nitrazadon",
+                "nitrazadon,nitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Nobrium",
+                "nobrium,medazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Noctamid",
+                "noctamid,lormetazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Noctilan",
+                "noctilan,brotizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Noripam",
+                "noripam,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Normabel",
+                "normabel,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Normison",
+                "normison,temazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Nuctalon",
+                "nuctalon,estazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Olcadil",
+                "olcadil,cloxazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Onax",
+                "onax,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Onfi",
+                "onfi,clobazam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Opamox",
+                "opamox,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Orfidal",
+                "orfidal,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Oxabenz",
+                "oxabenz,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Oxapax",
+                "oxapax,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Oxascand",
+                "oxascand,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ox-Pam",
+                "ox-pam,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Pacisyn",
+                "pacisyn,nitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Pasaden",
+                "pasaden,etizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Pax",
+                "pax,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Paxam",
+                "paxam,clonazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Paxipam",
+                "paxipam,halazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Paxor",
+                "paxor,camazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Pronoctan",
+                "pronoctan,lormetazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "ProSom",
+                "prosom,estazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Purata",
+                "purata,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Raporan",
+                "raporan,medazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Restas",
+                "restas,flutoprazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Restoril",
+                "restoril,temazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Restyl",
+                "restyl,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rhythmy",
+                "rhythmy,rilmazafone,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rilamir",
+                "rilamir,triazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Risolid",
+                "risolid,chlordiazepoxide,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rivatril",
+                "rivatril,clonazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rivotril",
+                "rivotril,clonazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rize",
+                "rize,clotiazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rohydorm",
+                "rohydorm,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rohypnol",
+                "rohypnol,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ronal",
+                "ronal,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Ronlax",
+                "ronlax,ethyl loflazepate,pharms,benzos,gabaergics"
+            ],
+            [
+                "Rudotel",
+                "rudotel,medazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Sepazon",
+                "sepazon,cloxazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Serax",
+                "serax,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Serenid",
+                "serenid,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Serepax",
+                "serepax,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Seresta",
+                "seresta,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Sintonal",
+                "sintonal,brotizolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Sobril",
+                "sobril,oxazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Solanax",
+                "solanax,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Stedon",
+                "stedon,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Stesolid",
+                "stesolid,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Stilny",
+                "stilny,nordiazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Tafil",
+                "tafil,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Tavor",
+                "tavor,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Temaze",
+                "temaze,temazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Temesta",
+                "temesta,lorazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Tenox",
+                "tenox,temazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Thiadipona",
+                "thiadipona,bentazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Trankimazin",
+                "trankimazin,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Tranxene",
+                "tranxene,clorazepate,pharms,benzos,gabaergics"
+            ],
+            [
+                "Tranxilium",
+                "tranxilium,clorazepate,pharms,benzos,gabaergics"
+            ],
+            [
+                "Urbanol",
+                "urbanol,clobazam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Valaxona",
+                "valaxona,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Valium",
+                "valium,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Veratran",
+                "veratran,clotiazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Versed",
+                "versed,midazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Victan",
+                "victan,ethyl loflazepate,pharms,benzos,gabaergics"
+            ],
+            [
+                "Vival",
+                "vival,diazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Vulbegal",
+                "vulbegal,flunitrazepam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Xanax",
+                "xanax,alprazolam,pharms,benzos,gabaergics"
+            ],
+            [
+                "Xanor",
+                "xanor,alprazolam,pharms,benzos,gabaergics"
+            ]
+        ]
+    ],
+    [
+        "Gabapentinoids and GABA-B Depressants",
+        [
+            [
+                "GHB",
+                "ghb,gabaergics"
+            ],
+            [
+                "GBL",
+                "gbl,gabaergics"
+            ],
+            [
+                "GHV",
+                "ghv,gabaergics"
+            ],
+            [
+                "GABOB",
+                "gabob,gabaergics"
+            ],
+            [
+                "1,4-butanediol/14b",
+                "14butanediol,gabaergics"
+            ],
+            [
+                "Baclofen",
+                "baclofen,gabapentinoids"
+            ],
+            [
+                "Gabapentin",
+                "gabapentin,gabapentinoids"
+            ],
+            [
+                "Phenibut",
+                "phenibut,gabapentinoids,gabaergics"
+            ],
+            [
+                "Fluoro-phenibut",
+                "fluorophenibut,gabapentinoids,gabaergics"
+            ],
+            [
+                "Pregabalin/Lyrica",
+                "pregabalin,gabapentinoids"
+            ]
+        ]
+    ],
+    [
+        "Opiates (by chemical name/type)",
+        [
+            [
+                "2-methyl-ap-237",
+                "2methylap237,opiates"
+            ],
+            [
+                "Acetylfentanyl",
+                "acetylfentanyl,opiates,fentanyls"
+            ],
+            [
+                "Benzoylmorphine",
+                "benzoylmorphine,opiates"
+            ],
+            [
+                "Buprenorphine (e.g. Suboxone)",
+                "buprenorphine,opiates"
+            ],
+            [
+                "Butyrfentanyl",
+                "butyrfentanyl,opiates,fentanyls"
+            ],
+            [
+                "Carfentanyl",
+                "carfentanyl,opiates,fentanyls"
+            ],
+            [
+                "Codeine",
+                "codeine,opiates"
+            ],
+            [
+                "Dihydrocodeine",
+                "dihydrocodeine,opiates"
+            ],
+            [
+                "Fentanyl",
+                "fentanyl,opiates,fentanyls"
+            ],
+            [
+                "Heroin",
+                "heroin,opiates"
+            ],
+            [
+                "Hydrocodone",
+                "hydrocodone,opiates"
+            ],
+            [
+                "Hydromorphone",
+                "hydromorphone,opiates"
+            ],
+            [
+                "Isotonitazene",
+                "isotonitazene,opiates"
+            ],
+            [
+                "Kratom",
+                "kratom,opiates"
+            ],
+            [
+                "Loperamide",
+                "loperamide,opiates"
+            ],
+            [
+                "Meperidine",
+                "meperidine,opiates"
+            ],
+            [
+                "Methadone",
+                "methadone,opiates"
+            ],
+            [
+                "Morphine",
+                "morphine,opiates"
+            ],
+            [
+                "Naltrexone",
+                "naltrexone,opiates"
+            ],
+            [
+                "O-desmethyltramadol/O-DSMT",
+                "odesmethyltramadol,opiates,odsmt"
+            ],
+            [
+                "Opium",
+                "opium,opiates"
+            ],
+            [
+                "Oxycodone",
+                "oxycodone,opiates"
+            ],
+            [
+                "Oxymorphone",
+                "oxymorphone,opiates"
+            ],
+            [
+                "Poppy Pod Tea",
+                "poppypodtea,poppytea,opiates"
+            ],
+            [
+                "Poppy Seed Tea",
+                "poppyseedtea,poppytea,opiates"
+            ],
+            [
+                "Propoxyphene",
+                "propoxyphene,opiates"
+            ],
+            [
+                "Tapentadol",
+                "tapentadol,opiates"
+            ],
+            [
+                "Tianeptine",
+                "tianeptine,antidepressants,opiates"
+            ],
+            [
+                "Tramadol",
+                "tramadol,opiates"
+            ],
+            [
+                "U-47700/U-4",
+                "u47700,opiates"
+            ],
+            [
+                "U-48800",
+                "u48800,opiates"
+            ]
+        ]
+    ],
+    [
+        "Opiates (by brand name)",
+        [
+            [
+                "Abstral",
+                "abstral,fentanyl,opiates,pharms"
+            ],
+            [
+                "Actiq",
+                "actiq,fentanyl,opiates,pharms"
+            ],
+            [
+                "Arymo ER",
+                "arymo er,morphine,opiates,pharms"
+            ],
+            [
+                "ConZip",
+                "conzip,tramadol,opiates,pharms"
+            ],
+            [
+                "Demerol",
+                "demerol,meperidine,opiates,pharms"
+            ],
+            [
+                "Dilaudid",
+                "dilaudid,hydromorphone,opiates,pharms"
+            ],
+            [
+                "Dolophine",
+                "dolophine,methadone,opiates,pharms"
+            ],
+            [
+                "Duragesic",
+                "duragesic,fentanyl,opiates,pharms"
+            ],
+            [
+                "Exalgo",
+                "exalgo,hydromorphone,opiates,pharms"
+            ],
+            [
+                "Fentora",
+                "fentora,fentanyl,opiates,pharms"
+            ],
+            [
+                "Kadian",
+                "kadian,morphine,opiates,pharms"
+            ],
+            [
+                "Immodium",
+                "immodium,loperamide,opiates,pharms"
+            ],
+            [
+                "Lazanda",
+                "lazanda,fentanyl,opiates,pharms"
+            ],
+            [
+                "Lortab",
+                "lortab,hydrocodone,opiates,pharms"
+            ],
+            [
+                "Methadose",
+                "methadose,methadone,opiates,pharms"
+            ],
+            [
+                "MS Contin",
+                "mscontin,morphine,opiates,pharms"
+            ],
+            [
+                "Norco",
+                "norco,hydrocodone,opiates,pharms"
+            ],
+            [
+                "Opana",
+                "opana,oxymorphone,opiates,pharms"
+            ],
+            [
+                "OxyContin",
+                "oxycontin,oxycodone,opiates,pharms"
+            ],
+            [
+                "Percocet",
+                "percocet,oxycodone,opiates,pharms"
+            ],
+            [
+                "Roxicodone",
+                "roxicodone,oxycodone,opiates,pharms"
+            ],
+            [
+                "Ryzolt",
+                "ryzolt,tramadol,opiates,pharms"
+            ],
+            [
+                "Suboxone",
+                "suboxone,buprenorphine,opiates,pharms"
+            ],
+            [
+                "Subsys",
+                "subsys,fentanyl,opiates,pharms"
+            ],
+            [
+                "Subutex",
+                "subutex,buprenorphine,opiates,pharms"
+            ],
+            [
+                "Tylenol 1",
+                "tylenol1,codeine,opiates,pharms"
+            ],
+            [
+                "Tylenol 2",
+                "tylenol2,codeine,opiates,pharms"
+            ],
+            [
+                "Tylenol 3",
+                "tylenol3,codeine,opiates,pharms"
+            ],
+            [
+                "Tylenol 4",
+                "tylenol4,codeine,opiates,pharms"
+            ],
+            [
+                "Ultram",
+                "ultram,tramadol,opiates,pharms"
+            ],
+            [
+                "Vicodin",
+                "vicodin,hydrocodone,opiates,pharms"
+            ]
+        ]
+    ],
+    [
+        "Other Depressants",
+        [
+            [
+                "Absinthe",
+                "absinthe,alcohol,alcohols"
+            ],
+            [
+                "Carisoprodol/Soma",
+                "carisoprodol,soma"
+            ],
+            [
+                "Chlormethiazole",
+                "chlormethiazole,gabaergics"
+            ],
+            [
+                "Quaaludes/methaqualone",
+                "methaqualone,quaalude,gabaergics"
+            ],
+            [
+                "Mebroqualone",
+                "mebroqualone,gabaergics"
+            ],
+            [
+                "Methocarbamol (Robaxin)",
+                "methocarbamol,gabaergics"
+            ],
+            [
+                "Methylmethaqualone",
+                "methylmethaqualone,gabaergics"
+            ],
+            [
+                "Etiqualone",
+                "etiqualone,gabaergics"
+            ],
+            [
+                "Propanediol",
+                "propanediol,gabaergics"
+            ],
+            [
+                "Propofol",
+                "propofol,gabaergics"
+            ],
+            [
+                "Zaleplon (Sonata/etc)",
+                "zaleplon,gabaergics"
+            ],
+            [
+                "Zolpidem (Ambien/etc)",
+                "zolpidem,gabaergics"
+            ],
+            [
+                "Zopiclone (Lunesta/etc)",
+                "zoliclone,gabaergics"
+            ]
+        ]
+    ],
+    [
+        "Cannabinoids",
+        [
+            [
+                "Marijuana/Cannabis",
+                "marijuana,cannabis"
+            ],
+            [
+                "Hash/Hashish",
+                "hashish,cannabis"
+            ],
+            [
+                "Marinol",
+                "marinol,cannabinoids,pharms"
+            ],
+            [
+                "THC",
+                "thc,cannabinoids"
+            ],
+            [
+                "Delta-8-THC",
+                "delta8thc,cannabinoids"
+            ],
+            [
+                "CBD",
+                "cbd,cannabinoids"
+            ],
+            [
+                "Unspecified Cannabinoid",
+                "cannabinoids"
+            ],
+            [
+                "4-HTMPIPO",
+                "4htmpipo,cannabinoids"
+            ],
+            [
+                "5C-MN-24 (5-C-NNEI)",
+                "5cmn24,cannabinoids"
+            ],
+            [
+                "5F-AB-PINACA",
+                "5fabpinaca,cannabinoids"
+            ],
+            [
+                "5F-ADB (5F-MDMB-PINACA)",
+                "5fadb,cannabinoids"
+            ],
+            [
+                "5F-AEB",
+                "5faeb,cannabinoids"
+            ],
+            [
+                "5F-AMB",
+                "5famb,cannabinoids"
+            ],
+            [
+                "5F-APINACA",
+                "5fapinaca,cannabinoids"
+            ],
+            [
+                "5F-JWH-122 (MAM-2201, 4-Methyl-AM-2201)",
+                "5fjwh122,cannabinoids"
+            ],
+            [
+                "5F-JWH-210 (EAM-2201, 4-Ethyl-AM-2201)",
+                "5fjwh210,cannabinoids"
+            ],
+            [
+                "5F-MBDB-2201",
+                "5fmbdb2201,cannabinoids"
+            ],
+            [
+                "5F-MN-18",
+                "5fmn18,cannabinoids"
+            ],
+            [
+                "5F-MN-24 (5F-NNEI)",
+                "5fmn24,cannabinoids"
+            ],
+            [
+                "5F-PCN",
+                "5fpcn,cannabinoids"
+            ],
+            [
+                "5F-QUPIC (5F-PB-22)",
+                "5fqupic,cannabinoids"
+            ],
+            [
+                "5F-SDB-005",
+                "5fsdb005,cannabinoids"
+            ],
+            [
+                "5F-SDB-006",
+                "5fsdb006,cannabinoids"
+            ],
+            [
+                "5F-UR-144 (XLR-11)",
+                "5fur144,cannabinoids"
+            ],
+            [
+                "A-796,260",
+                "a796,260,cannabinoids"
+            ],
+            [
+                "A-834,735",
+                "a834,735,cannabinoids"
+            ],
+            [
+                "A-836,339",
+                "a836,339,cannabinoids"
+            ],
+            [
+                "AB-001",
+                "ab001,cannabinoids"
+            ],
+            [
+                "AB-002",
+                "ab002,cannabinoids"
+            ],
+            [
+                "AB-005",
+                "ab005,cannabinoids"
+            ],
+            [
+                "AB-CHFUPYCA",
+                "abchfupyca,cannabinoids"
+            ],
+            [
+                "AB-CHMINACA (MA-CHMINACA)",
+                "abchminaca,cannabinoids"
+            ],
+            [
+                "AB-FUBINACA",
+                "abfubinaca,cannabinoids"
+            ],
+            [
+                "AB-PINACA",
+                "abpinaca,cannabinoids"
+            ],
+            [
+                "ADB-CHMINACA (MAB-CHMINACA)",
+                "adbchminaca,cannabinoids"
+            ],
+            [
+                "ADB-FUBINACA",
+                "adbfubinaca,cannabinoids"
+            ],
+            [
+                "ADBICA (ADB-PICA)",
+                "adbica,cannabinoids"
+            ],
+            [
+                "ADB-PINACA",
+                "adbpinaca,cannabinoids"
+            ],
+            [
+                "AM-1220",
+                "am1220,cannabinoids"
+            ],
+            [
+                "AM-1221",
+                "am1221,cannabinoids"
+            ],
+            [
+                "AM-1241",
+                "am1241,cannabinoids"
+            ],
+            [
+                "AM-1248",
+                "am1248,cannabinoids"
+            ],
+            [
+                "AM-2201 (5F-JWH-018)",
+                "am2201,cannabinoids"
+            ],
+            [
+                "AM-2232",
+                "am2232,cannabinoids"
+            ],
+            [
+                "AM-2233",
+                "am2233,cannabinoids"
+            ],
+            [
+                "AM-630 (6-Iodopravadoline)",
+                "am630,cannabinoids"
+            ],
+            [
+                "AM-679",
+                "am679,cannabinoids"
+            ],
+            [
+                "AM-694",
+                "am694,cannabinoids"
+            ],
+            [
+                "AMB",
+                "amb,cannabinoids"
+            ],
+            [
+                "APICA (SDB-001, 2NE1)",
+                "apica,cannabinoids"
+            ],
+            [
+                "APINACA (AKB48)",
+                "apinaca,cannabinoids"
+            ],
+            [
+                "APP-FUBINACA",
+                "appfubinaca,cannabinoids"
+            ],
+            [
+                "AZ-037",
+                "az037,cannabinoids"
+            ],
+            [
+                "BIM-018",
+                "bim018,cannabinoids"
+            ],
+            [
+                "CB-13",
+                "cb13,cannabinoids"
+            ],
+            [
+                "CP-47,497",
+                "cp47497,cannabinoids"
+            ],
+            [
+                "CP-55,940",
+                "cp55940,cannabinoids"
+            ],
+            [
+                "CUMYL-PEGACLONE",
+                "cumylpegaclone,pegaclone,cannabinoids"
+            ],
+            [
+                "EG-018",
+                "eg018,cannabinoids"
+            ],
+            [
+                "FAB-144",
+                "fab144,cannabinoids"
+            ],
+            [
+                "FDU-PB-22",
+                "fdupb22,cannabinoids"
+            ],
+            [
+                "FU-AEB",
+                "fuaeb,cannabinoids"
+            ],
+            [
+                "FUB-144 (FUB-UR-144)",
+                "fub144,cannabinoids"
+            ],
+            [
+                "FUB-AMB (AMB-FUBINACA)",
+                "fubamb,cannabinoids"
+            ],
+            [
+                "FUB-APINACA",
+                "fubapinaca,cannabinoids"
+            ],
+            [
+                "FUBIMINA (BIM-2201)",
+                "fubimina,cannabinoids"
+            ],
+            [
+                "FUB-PB-22",
+                "fubpb22,cannabinoids"
+            ],
+            [
+                "HU-210",
+                "hu210,cannabinoids"
+            ],
+            [
+                "JTE7-31",
+                "jte731,cannabinoids"
+            ],
+            [
+                "JTE-907",
+                "jte907,cannabinoids"
+            ],
+            [
+                "JWH-007",
+                "jwh007,cannabinoids"
+            ],
+            [
+                "JWH-018 (AM-678)",
+                "jwh018,cannabinoids"
+            ],
+            [
+                "JWH-019",
+                "jwh019,cannabinoids"
+            ],
+            [
+                "JWH-073",
+                "jwh073,cannabinoids"
+            ],
+            [
+                "JWH-081",
+                "jwh081,cannabinoids"
+            ],
+            [
+                "JWH-098",
+                "jwh098,cannabinoids"
+            ],
+            [
+                "JWH-122 (4-Ethyl-JWH-018)",
+                "jwh122,cannabinoids"
+            ],
+            [
+                "JWH-167",
+                "jwh167,cannabinoids"
+            ],
+            [
+                "JWH-182",
+                "jwh182,cannabinoids"
+            ],
+            [
+                "JWH-200 (WIN-55,225)",
+                "jwh200,cannabinoids"
+            ],
+            [
+                "JWH-203",
+                "jwh203,cannabinoids"
+            ],
+            [
+                "JWH-210 (4-Methyl-JWH-018)",
+                "jwh210,cannabinoids"
+            ],
+            [
+                "JWH-249",
+                "jwh249,cannabinoids"
+            ],
+            [
+                "JWH-250",
+                "jwh250,cannabinoids"
+            ],
+            [
+                "JWH-251",
+                "jwh251,cannabinoids"
+            ],
+            [
+                "JWH-302",
+                "jwh302,cannabinoids"
+            ],
+            [
+                "LY-2183240",
+                "ly2183240,cannabinoids"
+            ],
+            [
+                "MDA-19",
+                "mda19,cannabinoids"
+            ],
+            [
+                "MDMB-CHMICA ",
+                "mdmbchmica,cannabinoids"
+            ],
+            [
+                "MDMB-CHMINACA",
+                "mdmbchminaca,cannabinoids"
+            ],
+            [
+                "MDMB-FUBINACA",
+                "mdmbfubinaca,cannabinoids"
+            ],
+            [
+                "MEPIRAPIM",
+                "mepirapim,cannabinoids"
+            ],
+            [
+                "MMB-2201 (I-AMB, 5F-AMB-PICA)",
+                "mmb2201,cannabinoids"
+            ],
+            [
+                "MN-18",
+                "mn18,cannabinoids"
+            ],
+            [
+                "MN-24 (NNE1, NNEI)",
+                "mn24,cannabinoids"
+            ],
+            [
+                "MN-25",
+                "mn25,cannabinoids"
+            ],
+            [
+                "Nabilone",
+                "nabilone,cannabinoids"
+            ],
+            [
+                "NESS-0327",
+                "ness0327,cannabinoids"
+            ],
+            [
+                "NESS-040C5",
+                "ness040c5,cannabinoids"
+            ],
+            [
+                "NM-2201",
+                "nm2201,cannabinoids"
+            ],
+            [
+                "Org-28611",
+                "org28611,cannabinoids"
+            ],
+            [
+                "Pravadoline (WIN-48,098)",
+                "pravadoline,cannabinoids"
+            ],
+            [
+                "PX-1 (5F-APP-PICA)",
+                "px1,cannabinoids"
+            ],
+            [
+                "PX-2 (5F-APP-PINACA)",
+                "px2,cannabinoids"
+            ],
+            [
+                "PX-3 (APP-CHMINACA)",
+                "px3,cannabinoids"
+            ],
+            [
+                "QUCHIC (BB-22)",
+                "quchic,cannabinoids"
+            ],
+            [
+                "QUPIC (PB-22)",
+                "qupic,cannabinoids"
+            ],
+            [
+                "RCS-4",
+                "rcs4,cannabinoids"
+            ],
+            [
+                "RCS-8",
+                "rcs8,cannabinoids"
+            ],
+            [
+                "SDB-005",
+                "sdb005,cannabinoids"
+            ],
+            [
+                "SDB-006",
+                "sdb006,cannabinoids"
+            ],
+            [
+                "STS-135 (5F-APICA)",
+                "sts135,cannabinoids"
+            ],
+            [
+                "THJ-018",
+                "thj018,cannabinoids"
+            ],
+            [
+                "THJ-2201",
+                "thj2201,cannabinoids"
+            ],
+            [
+                "UR-144",
+                "ur144,cannabinoids"
+            ]
+        ]
+    ],
+    [
+        "MAOIs",
+        [
+            [
+                "Harmaline",
+                "harmaline,maois"
+            ],
+            [
+                "Harmine",
+                "harmine,maois"
+            ],
+            [
+                "Hordenine",
+                "hordenine,maois"
+            ],
+            [
+                "Isocarboxazid (Marplan)",
+                "isocarboxazid,maois,pharms"
+            ],
+            [
+                "Moclobemide (Aurorix, Manerix)",
+                "moclobemide,maois,pharms"
+            ],
+            [
+                "Phenelzine (Nardil)",
+                "phenelzine,maois,pharms"
+            ],
+            [
+                "Rasagiline (Azilect)",
+                "rasagiline,maois,pharms"
+            ],
+            [
+                "Selegiline (Eldepryl, Zelapar)",
+                "selegiline,maois,pharms"
+            ],
+            [
+                "Syrian Rue (Peganum harmala)",
+                "syrianruw,peganumharmala,maois"
+            ],
+            [
+                "Tetrahydroharmine",
+                "tetrahydroharmine,maois"
+            ],
+            [
+                "Tranylcypromine (Parnate)",
+                "tranylcypromine,maois,pharms"
+            ]
+        ]
+    ],
+    [
+        "Inhalants",
+        [
+            [
+                "Acetone",
+                "acetone,inhalants"
+            ],
+            [
+                "Aerosols",
+                "aerosols,inhalants"
+            ],
+            [
+                "Amyl Nitrate",
+                "amylnitrate,inhalants"
+            ],
+            [
+                "Butane",
+                "butane,inhalants"
+            ],
+            [
+                "Chloroform",
+                "chloroform,inhalants"
+            ],
+            [
+                "Difluoroethane (Computer Duster)",
+                "difluoroethane,duster,inhalants"
+            ],
+            [
+                "Ether",
+                "ether,inhalants"
+            ],
+            [
+                "Freon",
+                "freon,inhalants"
+            ],
+            [
+                "Gasoline",
+                "gasoline,inhalants"
+            ],
+            [
+                "Toluene",
+                "toluene,inhalants"
+            ],
+            [
+                "Xenon",
+                "xenon,inhalants"
+            ]
+        ]
+    ],
+    [
+        "Antidepressants (by chemical name)",
+        [
+            [
+                "Agomelatine (Valdoxan)",
+                "agomelatine,antidepressants,pharms"
+            ],
+            [
+                "Amineptine (Survector, Maneon)",
+                "amineptine,antidepressants,pharms"
+            ],
+            [
+                "Amisulpride (Solian)",
+                "amisulpride,antidepressants,pharms"
+            ],
+            [
+                "Amitriptyline (Elavil, Endep)",
+                "amitriptyline,antidepressants,pharms"
+            ],
+            [
+                "Amitriptylinoxide (Amioxid, Ambivalon, Equilibrin)",
+                "amitriptylinoxide,antidepressants,pharms"
+            ],
+            [
+                "Amoxapine (Asendin)",
+                "amoxapine,antidepressants,pharms"
+            ],
+            [
+                "Bifemelane (Alnert, Celeport)",
+                "bifemelane,antidepressants,pharms"
+            ],
+            [
+                "Bupropion (Wellbutrin)",
+                "bupropion,antidepressants,pharms"
+            ],
+            [
+                "Citalopram (Celexa, Cipramil)",
+                "citalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Clomipramine (Anafranil)",
+                "clomipramine,antidepressants,pharms"
+            ],
+            [
+                "Desipramine (Norpramin, Pertofrane)",
+                "desipramine,antidepressants,pharms"
+            ],
+            [
+                "Desvenlafaxine (Pristiq)",
+                "desvenlafaxine,antidepressants,pharms"
+            ],
+            [
+                "Dibenzepin (Noveril, Victoril)",
+                "dibenzepin,antidepressants,pharms"
+            ],
+            [
+                "Dimetacrine (Istonil)",
+                "dimetacrine,antidepressants,pharms"
+            ],
+            [
+                "Dosulepin (Prothiaden)",
+                "dosulepin,antidepressants,pharms"
+            ],
+            [
+                "Doxepin (Adapin, Sinequan)",
+                "doxepin,antidepressants,pharms"
+            ],
+            [
+                "Duloxetine (Cymbalta)",
+                "duloxetine,antidepressants,pharms"
+            ],
+            [
+                "Escitalopram (Lexapro, Cipralex)",
+                "escitalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Fluoxetine (Prozac)",
+                "fluoxetine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Fluvoxamine (Luvox, Faverin)",
+                "fluvoxamine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Imipramine (Tofranil)",
+                "imipramine,antidepressants,pharms"
+            ],
+            [
+                "Ketamine (Ketalar)",
+                "ketamine,antidepressants,pharms"
+            ],
+            [
+                "Levomilnacipran (Fetzima)",
+                "levomilnacipran,antidepressants,pharms"
+            ],
+            [
+                "Lofepramine (Lomont, Gamanil)",
+                "lofepramine,antidepressants,pharms"
+            ],
+            [
+                "Lurasidone (Latuda)",
+                "lurasidone,antidepressants,pharms"
+            ],
+            [
+                "Maprotiline (Ludiomil)",
+                "maprotiline,antidepressants,pharms"
+            ],
+            [
+                "Melitracen (Dixeran, Melixeran, Trausabun)",
+                "melitracen,antidepressants,pharms"
+            ],
+            [
+                "Mianserin (Bolvidon, Norval, Tolvon)",
+                "mianserin,antidepressants,pharms"
+            ],
+            [
+                "Milnacipran (Ixel, Savella)",
+                "milnacipran,antidepressants,pharms"
+            ],
+            [
+                "Mirtazapine (Remeron)",
+                "mirtazapine,antidepressants,pharms"
+            ],
+            [
+                "Nefazodone (Dutonin, Nefadar, Serzone)",
+                "nefazodone,antidepressants,pharms"
+            ],
+            [
+                "Nitroxazepine (Sintamil)",
+                "nitroxazepine,antidepressants,pharms"
+            ],
+            [
+                "Nomifensine (Merital, Alival)",
+                "nomifensine,antidepressants,pharms"
+            ],
+            [
+                "Nortriptyline (Pamelor, Aventyl)",
+                "nortriptyline,antidepressants,pharms"
+            ],
+            [
+                "Noxiptiline (Agedal, Elronon, Nogedal)",
+                "noxiptiline,antidepressants,pharms"
+            ],
+            [
+                "Opipramol (Insidon)",
+                "opipramol,antidepressants,pharms"
+            ],
+            [
+                "Paroxetine (Paxil, Seroxat)",
+                "paroxetine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Pipofezine (Azafen/Azaphen)",
+                "pipofezine,antidepressants,pharms"
+            ],
+            [
+                "Protriptyline (Vivactil)",
+                "protriptyline,antidepressants,pharms"
+            ],
+            [
+                "Quetiapine (Seroquel)",
+                "quetiapine,antidepressants,pharms"
+            ],
+            [
+                "Reboxetine (Edronax)",
+                "reboxetine,antidepressants,pharms"
+            ],
+            [
+                "Sertraline (Zoloft, Lustral)",
+                "sertraline,antidepressants,ssris,pharms"
+            ],
+            [
+                "Setiptiline (Tecipul)",
+                "setiptiline,antidepressants,pharms"
+            ],
+            [
+                "Tandospirone (Sediel)",
+                "tandospirone,antidepressants,pharms"
+            ],
+            [
+                "Teniloxazine (Lucelan, Metatone)",
+                "teniloxazine,antidepressants,pharms"
+            ],
+            [
+                "Tianeptine (Stablon, Coaxil)",
+                "tianeptine,opiates,antidepressants,pharms"
+            ],
+            [
+                "Trazodone (Desyrel)",
+                "trazodone,antidepressants,pharms"
+            ],
+            [
+                "Trimipramine (Surmontil)",
+                "trimipramine,antidepressants,pharms"
+            ],
+            [
+                "Venlafaxine (Effexor)",
+                "venlafaxine,antidepressants,pharms"
+            ],
+            [
+                "Vilazodone (Viibryd)",
+                "vilazodone,antidepressants,pharms"
+            ],
+            [
+                "Viloxazine (Vivalan)",
+                "viloxazine,antidepressants,pharms"
+            ],
+            [
+                "Vortioxetine (Trintellix)",
+                "vortioxetine,antidepressants,pharms"
+            ]
+        ]
+    ],
+    [
+        "Antidepressants (by brand name)",
+        [
+            [
+                "Adapin (Doxepin)",
+                "adapin,doxepin,antidepressants,pharms"
+            ],
+            [
+                "Agedal (Noxiptiline)",
+                "agedal,noxiptiline,antidepressants,pharms"
+            ],
+            [
+                "Alival (Nomifensine)",
+                "alival,nomifensine,antidepressants,pharms"
+            ],
+            [
+                "Alnert (Bifemelane)",
+                "alnert,bifemelane,antidepressants,pharms"
+            ],
+            [
+                "Ambivalon (Amitriptylinoxide)",
+                "ambivalon,amitriptylinoxide,antidepressants,pharms"
+            ],
+            [
+                "Amioxid (Amitriptylinoxide)",
+                "amioxid,amitriptylinoxide,antidepressants,pharms"
+            ],
+            [
+                "Anafranil (Clomipramine)",
+                "anafranil,clomipramine,antidepressants,pharms"
+            ],
+            [
+                "Asendin (Amoxapine)",
+                "asendin,amoxapine,antidepressants,pharms"
+            ],
+            [
+                "Aventyl (Nortriptyline)",
+                "aventyl,nortriptyline,antidepressants,pharms"
+            ],
+            [
+                "Azafen (Pipofezine)",
+                "azafen,pipofezine,antidepressants,pharms"
+            ],
+            [
+                "Bolvidon (Mianserin)",
+                "bolvidon,mianserin,antidepressants,pharms"
+            ],
+            [
+                "Celeport (Bifemelane)",
+                "celeport,bifemelane,antidepressants,pharms"
+            ],
+            [
+                "Celexa (Citalopram)",
+                "celexa,citalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Cipralex (Escitalopram)",
+                "cipralex,escitalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Cipramil (Citalopram)",
+                "cipramil,citalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Coaxil (Tianeptine)",
+                "coaxil,tianeptine,antidepressants,pharms"
+            ],
+            [
+                "Cymbalta (Duloxetine)",
+                "cymbalta,duloxetine,antidepressants,pharms"
+            ],
+            [
+                "Desyrel (Trazodone)",
+                "desyrel,trazodone,antidepressants,pharms"
+            ],
+            [
+                "Dixeran (Melitracen)",
+                "dixeran,melitracen,antidepressants,pharms"
+            ],
+            [
+                "Dutonin (Nefazodone)",
+                "dutonin,nefazodone,antidepressants,pharms"
+            ],
+            [
+                "Edronax (Reboxetine)",
+                "edronax,reboxetine,antidepressants,pharms"
+            ],
+            [
+                "Effexor (Venlafaxine)",
+                "effexor,venlafaxine,antidepressants,pharms"
+            ],
+            [
+                "Elavil (Amitriptyline)",
+                "elavil,amitriptyline,antidepressants,pharms"
+            ],
+            [
+                "Elronon (Noxiptiline)",
+                "elronon,noxiptiline,antidepressants,pharms"
+            ],
+            [
+                "Endep (Amitriptyline)",
+                "endep,amitriptyline,antidepressants,pharms"
+            ],
+            [
+                "Equilibrin (Amitriptylinoxide)",
+                "equilibrin,amitriptylinoxide,antidepressants,pharms"
+            ],
+            [
+                "Faverin (Fluvoxamine)",
+                "faverin,fluvoxamine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Fetzima (Levomilnacipran)",
+                "fetzima,levomilnacipran,antidepressants,pharms"
+            ],
+            [
+                "Gamanil (Lofepramine)",
+                "gamanil,lofepramine,antidepressants,pharms"
+            ],
+            [
+                "Insidon (Opipramol)",
+                "insidon,opipramol,antidepressants,pharms"
+            ],
+            [
+                "Istonil (Dimetacrine)",
+                "istonil,dimetacrine,antidepressants,pharms"
+            ],
+            [
+                "Ixel (Milnacipran)",
+                "ixel,milnacipran,antidepressants,pharms"
+            ],
+            [
+                "Ketalar (Ketamine)",
+                "ketalar,ketamine,antidepressants,pharms"
+            ],
+            [
+                "Latuda (Lurasidone)",
+                "latuda,lurasidone,antidepressants,pharms"
+            ],
+            [
+                "Lexapro (Escitalopram)",
+                "lexapro,escitalopram,antidepressants,ssris,pharms"
+            ],
+            [
+                "Lomont (Lofepramine)",
+                "lomont,lofepramine,antidepressants,pharms"
+            ],
+            [
+                "Lucelan (Teniloxazine)",
+                "lucelan,teniloxazine,antidepressants,pharms"
+            ],
+            [
+                "Ludiomil (Maprotiline)",
+                "ludiomil,maprotiline,antidepressants,pharms"
+            ],
+            [
+                "Lustral (Sertraline)",
+                "lustral,sertraline,antidepressants,ssris,pharms"
+            ],
+            [
+                "Luvox (Fluvoxamine)",
+                "luvox,fluvoxamine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Maneon (Amineptine)",
+                "maneon,amineptine,antidepressants,pharms"
+            ],
+            [
+                "Melixeran (Melitracen)",
+                "melixeran,melitracen,antidepressants,pharms"
+            ],
+            [
+                "Merital (Nomifensine)",
+                "merital,nomifensine,antidepressants,pharms"
+            ],
+            [
+                "Metatone (Teniloxazine)",
+                "metatone,teniloxazine,antidepressants,pharms"
+            ],
+            [
+                "Nefadar (Nefazodone)",
+                "nefadar,nefazodone,antidepressants,pharms"
+            ],
+            [
+                "Nogedal (Noxiptiline)",
+                "nogedal,noxiptiline,antidepressants,pharms"
+            ],
+            [
+                "Norpramin (Desipramine)",
+                "norpramin,desipramine,antidepressants,pharms"
+            ],
+            [
+                "Norval (Mianserin)",
+                "norval,mianserin,antidepressants,pharms"
+            ],
+            [
+                "Noveril (Dibenzepin)",
+                "noveril,dibenzepin,antidepressants,pharms"
+            ],
+            [
+                "Pamelor (Nortriptyline)",
+                "pamelor,nortriptyline,antidepressants,pharms"
+            ],
+            [
+                "Paxil (Paroxetine)",
+                "paxil,paroxetine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Pertofrane (Desipramine)",
+                "pertofrane,desipramine,antidepressants,pharms"
+            ],
+            [
+                "Pristiq (Desvenlafaxine)",
+                "pristiq,desvenlafaxine,antidepressants,pharms"
+            ],
+            [
+                "Prothiaden (Dosulepin)",
+                "prothiaden,dosulepin,antidepressants,pharms"
+            ],
+            [
+                "Prozac (Fluoxetine)",
+                "prozac,fluoxetine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Remeron (Mirtazapine)",
+                "remeron,mirtazapine,antidepressants,pharms"
+            ],
+            [
+                "Savella (Milnacipran)",
+                "savella,milnacipran,antidepressants,pharms"
+            ],
+            [
+                "Sediel (Tandospirone)",
+                "sediel,tandospirone,antidepressants,pharms"
+            ],
+            [
+                "Seroquel (Quetiapine)",
+                "seroquel,quetiapine,antidepressants,pharms"
+            ],
+            [
+                "Seroxat (Paroxetine)",
+                "seroxat,paroxetine,antidepressants,ssris,pharms"
+            ],
+            [
+                "Serzone (Nefazodone)",
+                "serzone,nefazodone,antidepressants,pharms"
+            ],
+            [
+                "Sinequan (Doxepin)",
+                "sinequan,doxepin,antidepressants,pharms"
+            ],
+            [
+                "Sintamil (Nitroxazepine)",
+                "sintamil,nitroxazepine,antidepressants,pharms"
+            ],
+            [
+                "Solian (Amisulpride)",
+                "solian,amisulpride,antidepressants,pharms"
+            ],
+            [
+                "Stablon (Tianeptine)",
+                "stablon,tianeptine,antidepressants,pharms"
+            ],
+            [
+                "Surmontil (Trimipramine)",
+                "surmontil,trimipramine,antidepressants,pharms"
+            ],
+            [
+                "Survector (Amineptine)",
+                "survector,amineptine,antidepressants,pharms"
+            ],
+            [
+                "Tecipul (Setiptiline)",
+                "tecipul,setiptiline,antidepressants,pharms"
+            ],
+            [
+                "Tofranil (Imipramine)",
+                "tofranil,imipramine,antidepressants,pharms"
+            ],
+            [
+                "Tolvon (Mianserin)",
+                "tolvon,mianserin,antidepressants,pharms"
+            ],
+            [
+                "Trausabun (Melitracen)",
+                "trausabun,melitracen,antidepressants,pharms"
+            ],
+            [
+                "Trintellix (Vortioxetine)",
+                "trintellix,vortioxetine,antidepressants,pharms"
+            ],
+            [
+                "Valdoxan (Agomelatine)",
+                "valdoxan,agomelatine,antidepressants,pharms"
+            ],
+            [
+                "Victoril (Dibenzepin)",
+                "victoril,dibenzepin,antidepressants,pharms"
+            ],
+            [
+                "Viibryd (Vilazodone)",
+                "viibryd,vilazodone,antidepressants,pharms"
+            ],
+            [
+                "Vivactil (Protriptyline)",
+                "vivactil,protriptyline,antidepressants,pharms"
+            ],
+            [
+                "Vivalan (Viloxazine)",
+                "vivalan,viloxazine,antidepressants,pharms"
+            ],
+            [
+                "Wellbutrin (Bupropion)",
+                "wellbutrin,bupropion,antidepressants,pharms"
+            ],
+            [
+                "Zoloft (Sertraline)",
+                "zoloft,sertraline,antidepressants,ssris,pharms"
+            ]
+        ]
+    ],
+    [
+        "Antipsychotics (by chemical name)",
+        [
+            [
+                "Acepromazine (Atravet, Acezine)",
+                "acepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Acetophenazine (Tindal)",
+                "acetophenazine,antipsychotics,pharms"
+            ],
+            [
+                "Benperidol (Frenactyl)",
+                "benperidol,antipsychotics,pharms"
+            ],
+            [
+                "Bromperidol (Bromidol, Bromodol)",
+                "bromperidol,antipsychotics,pharms"
+            ],
+            [
+                "Butaperazine (Repoise, Tyrylen)",
+                "butaperazine,antipsychotics,pharms"
+            ],
+            [
+                "Carfenazine",
+                "carfenazine,antipsychotics,pharms"
+            ],
+            [
+                "Chlorproethazine",
+                "chlorproethazine,antipsychotics,pharms"
+            ],
+            [
+                "Chlorpromazine (Largactil, Thorazine)",
+                "chlorpromazine,antipsychotics,pharms"
+            ],
+            [
+                "Chlorprothixene (Cloxan, Taractan, Truxal)",
+                "chlorprothixene,antipsychotics,pharms"
+            ],
+            [
+                "Clopenthixol (Sordinol)",
+                "clopenthixol,antipsychotics,pharms"
+            ],
+            [
+                "Cyamemazine (Tercian)",
+                "cyamemazine,antipsychotics,pharms"
+            ],
+            [
+                "Dixyrazine (Esucos)",
+                "dixyrazine,antipsychotics,pharms"
+            ],
+            [
+                "Droperidol (Droleptan, Dridol, Inapsine, Xomolix, Innovar)",
+                "droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Fluanisone",
+                "fluanisone,antipsychotics,pharms"
+            ],
+            [
+                "Flupentixol (Depixol, Fluanxol)",
+                "flupentixol,antipsychotics,pharms"
+            ],
+            [
+                "Fluphenazine (Prolixin, Modecate)",
+                "fluphenazine,antipsychotics,pharms"
+            ],
+            [
+                "Fluspirilene (Redeptin, Imap)",
+                "fluspirilene,antipsychotics,pharms"
+            ],
+            [
+                "Haloperidol (Haldol)",
+                "haloperidol,antipsychotics,pharms"
+            ],
+            [
+                "Levomepromazine (Nosinan, Nozinan, Levoprome)",
+                "levomepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Lenperone (Elanone-V)",
+                "lenperone,antipsychotics,pharms"
+            ],
+            [
+                "Loxapine (Loxapac, Loxitane)",
+                "loxapine,antipsychotics,pharms"
+            ],
+            [
+                "Mesoridazine (Serentil)",
+                "mesoridazine,antipsychotics,pharms"
+            ],
+            [
+                "Metitepine",
+                "metitepine,antipsychotics,pharms"
+            ],
+            [
+                "Molindone (Moban)",
+                "molindone,antipsychotics,pharms"
+            ],
+            [
+                "Moperone (Luvatren)",
+                "moperone,antipsychotics,pharms"
+            ],
+            [
+                "Oxypertine (Equipertine, Forit, Integrin, Lanturil, Lotawin, Opertil)",
+                "oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Oxyprotepine (Moditen)",
+                "oxyprotepine,antipsychotics,pharms"
+            ],
+            [
+                "Penfluridol (Semap, Micefal, Longoperidol)",
+                "penfluridol,antipsychotics,pharms"
+            ],
+            [
+                "Perazine (Taxilan)",
+                "perazine,antipsychotics,pharms"
+            ],
+            [
+                "Periciazine (Neuleptil, Neulactil)",
+                "periciazine,antipsychotics,pharms"
+            ],
+            [
+                "Perphenazine (Trilafon)",
+                "perphenazine,antipsychotics,pharms"
+            ],
+            [
+                "Pimozide (Orap)",
+                "pimozide,antipsychotics,pharms"
+            ],
+            [
+                "Pipamperone (Dipiperon, Dipiperal, Piperonil, Piperonyl, Propitan)",
+                "pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Piperacetazine (Quide)",
+                "piperacetazine,antipsychotics,pharms"
+            ],
+            [
+                "Pipotiazine (Piportil)",
+                "pipotiazine,antipsychotics,pharms"
+            ],
+            [
+                "Prochlorperazine (Compazine, Stemzine, Buccastem, Stemetil, Phenotil)",
+                "prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Promazine (Sparine)",
+                "promazine,antipsychotics,pharms"
+            ],
+            [
+                "Prothipendyl",
+                "prothipendyl,antipsychotics,pharms"
+            ],
+            [
+                "Spiperone (Spiroperidol, Spiropitan)",
+                "spiperone,antipsychotics,pharms"
+            ],
+            [
+                "Sulforidazine (Imagotan, Psychoson, Inofal)",
+                "sulforidazine,antipsychotics,pharms"
+            ],
+            [
+                "Thiopropazate (Artalan, Dartal, Dartalan, Dartan)",
+                "thiopropazate,antipsychotics,pharms"
+            ],
+            [
+                "Thioproperazine (Majeptil)",
+                "thioproperazine,antipsychotics,pharms"
+            ],
+            [
+                "Thioridazine (Mellaril, Melleril)",
+                "thioridazine,antipsychotics,pharms"
+            ],
+            [
+                "Thiothixene (Navane)",
+                "thiothixene,antipsychotics,pharms"
+            ],
+            [
+                "Timiperone",
+                "timiperone,antipsychotics,pharms"
+            ],
+            [
+                "Trifluoperazine (Stelazine)",
+                "trifluoperazine,antipsychotics,pharms"
+            ],
+            [
+                "Trifluperidol",
+                "trifluperidol,antipsychotics,pharms"
+            ],
+            [
+                "Triflupromazine (Vesprin)",
+                "triflupromazine,antipsychotics,pharms"
+            ],
+            [
+                "Zuclopenthixol (Clopixol)",
+                "zuclopenthixol,antipsychotics,pharms"
+            ],
+            [
+                "Amoxapine (Asendin, Asendis, Defanyl, Demolox)",
+                "amoxapine,antipsychotics,pharms"
+            ],
+            [
+                "Amisulpride (Amazeo, Amipride, Amival, Solian, Soltus, Sulpitac, Sulprix)",
+                "amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Aripiprazole (Abilify)",
+                "aripiprazole,antipsychotics,pharms"
+            ],
+            [
+                "Asenapine (Saphris)",
+                "asenapine,antipsychotics,pharms"
+            ],
+            [
+                "Blonanserin (Lonasen)",
+                "blonanserin,antipsychotics,pharms"
+            ],
+            [
+                "Brexpiprazole (Rexulti)",
+                "brexpiprazole,antipsychotics,pharms"
+            ],
+            [
+                "Cariprazine (Vraylar)",
+                "cariprazine,antipsychotics,pharms"
+            ],
+            [
+                "Carpipramine (Prazinil, Defekton)",
+                "carpipramine,antipsychotics,pharms"
+            ],
+            [
+                "Clocapramine (Clofekton, Padrasen)",
+                "clocapramine,antipsychotics,pharms"
+            ],
+            [
+                "Clorotepine (Clotepin, Clopiben)",
+                "clorotepine,antipsychotics,pharms"
+            ],
+            [
+                "Clotiapine (Entumine)",
+                "clotiapine,antipsychotics,pharms"
+            ],
+            [
+                "Clozapine (Clozaril)",
+                "clozapine,antipsychotics,pharms"
+            ],
+            [
+                "Iloperidone (Fanapt)",
+                "iloperidone,antipsychotics,pharms"
+            ],
+            [
+                "Levosulpiride",
+                "levosulpiride,antipsychotics,pharms"
+            ],
+            [
+                "Lurasidone (Latuda)",
+                "lurasidone,antipsychotics,pharms"
+            ],
+            [
+                "Melperone (Bunil, Buronil, Eunerpan)",
+                "melperone,antipsychotics,pharms"
+            ],
+            [
+                "Mosapramine (Cremin)",
+                "mosapramine,antipsychotics,pharms"
+            ],
+            [
+                "Nemonapride (Emilace)",
+                "nemonapride,antipsychotics,pharms"
+            ],
+            [
+                "Olanzapine (Zyprexa, Ozace, Lanzek, Zypadhera)",
+                "olanzapine,antipsychotics,pharms"
+            ],
+            [
+                "Paliperidone (Invega)",
+                "paliperidone,antipsychotics,pharms"
+            ],
+            [
+                "Perospirone (Lullan)",
+                "perospirone,antipsychotics,pharms"
+            ],
+            [
+                "Quetiapine (Seroquel)",
+                "quetiapine,antipsychotics,pharms"
+            ],
+            [
+                "Remoxipride (Roxiam)",
+                "remoxipride,antipsychotics,pharms"
+            ],
+            [
+                "Reserpine (Raudixin, Serpalan, Serpasil)",
+                "reserpine,antipsychotics,pharms"
+            ],
+            [
+                "Risperidone (Risperdal, Zepidone)",
+                "risperidone,antipsychotics,pharms"
+            ],
+            [
+                "Sertindole (Serdolect)",
+                "sertindole,antipsychotics,pharms"
+            ],
+            [
+                "Sulpiride (Sulpirid, Eglonyl)",
+                "sulpiride,antipsychotics,pharms"
+            ],
+            [
+                "Sultopride (Barnetil, Barnotil, Topral)",
+                "sultopride,antipsychotics,pharms"
+            ],
+            [
+                "Tiapride (Equilium, Tiapridal)",
+                "tiapride,antipsychotics,pharms"
+            ],
+            [
+                "Veralipride (Agreal, Agradil)",
+                "veralipride,antipsychotics,pharms"
+            ],
+            [
+                "Ziprasidone (Geodon, Zeldox)",
+                "ziprasidone,antipsychotics,pharms"
+            ],
+            [
+                "Zotepine (Nipolept)",
+                "zotepine,antipsychotics,pharms"
+            ]
+        ]
+    ],
+    [
+        "Antipsychotics (by brand name)",
+        [
+            [
+                "Abilify (Aripiprazole)",
+                "abilify,aripiprazole,antipsychotics,pharms"
+            ],
+            [
+                "Acezine (Acepromazine)",
+                "acezine,acepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Agradil (Veralipride)",
+                "agradil,veralipride,antipsychotics,pharms"
+            ],
+            [
+                "Agreal (Veralipride)",
+                "agreal,veralipride,antipsychotics,pharms"
+            ],
+            [
+                "Amazeo (Amisulpride)",
+                "amazeo,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Amipride (Amisulpride)",
+                "amipride,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Amival (Amisulpride)",
+                "amival,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Artalan (Thiopropazate)",
+                "artalan,thiopropazate,antipsychotics,pharms"
+            ],
+            [
+                "Asendin (Amoxapine)",
+                "asendin,amoxapine,antipsychotics,pharms"
+            ],
+            [
+                "Asendis (Amoxapine)",
+                "asendis,amoxapine,antipsychotics,pharms"
+            ],
+            [
+                "Atravet (Acepromazine)",
+                "atravet,acepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Barnetil (Sultopride)",
+                "barnetil,sultopride,antipsychotics,pharms"
+            ],
+            [
+                "Barnotil (Sultopride)",
+                "barnotil,sultopride,antipsychotics,pharms"
+            ],
+            [
+                "Bromidol (Bromperidol)",
+                "bromidol,bromperidol,antipsychotics,pharms"
+            ],
+            [
+                "Buccastem (Prochlorperazine)",
+                "buccastem,prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Bunil (Melperone)",
+                "bunil,melperone,antipsychotics,pharms"
+            ],
+            [
+                "Buronil (Melperone)",
+                "buronil,melperone,antipsychotics,pharms"
+            ],
+            [
+                "Clofekton (Clocapramine)",
+                "clofekton,clocapramine,antipsychotics,pharms"
+            ],
+            [
+                "Clopiben (Clorotepine)",
+                "clopiben,clorotepine,antipsychotics,pharms"
+            ],
+            [
+                "Clopixol (Zuclopenthixol)",
+                "clopixol,zuclopenthixol,antipsychotics,pharms"
+            ],
+            [
+                "Clotepin (Clorotepine)",
+                "clotepin,clorotepine,antipsychotics,pharms"
+            ],
+            [
+                "Cloxan (Chlorprothixene)",
+                "cloxan,chlorprothixene,antipsychotics,pharms"
+            ],
+            [
+                "Clozaril (Clozapine)",
+                "clozaril,clozapine,antipsychotics,pharms"
+            ],
+            [
+                "Compazine (Prochlorperazine)",
+                "compazine,prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Cremin (Mosapramine)",
+                "cremin,mosapramine,antipsychotics,pharms"
+            ],
+            [
+                "Dartal (Thiopropazate)",
+                "dartal,thiopropazate,antipsychotics,pharms"
+            ],
+            [
+                "Dartalan (Thiopropazate)",
+                "dartalan,thiopropazate,antipsychotics,pharms"
+            ],
+            [
+                "Dartan (Thiopropazate)",
+                "dartan,thiopropazate,antipsychotics,pharms"
+            ],
+            [
+                "Defanyl (Amoxapine)",
+                "defanyl,amoxapine,antipsychotics,pharms"
+            ],
+            [
+                "Defekton (Carpipramine)",
+                "defekton,carpipramine,antipsychotics,pharms"
+            ],
+            [
+                "Demolox (Amoxapine)",
+                "demolox,amoxapine,antipsychotics,pharms"
+            ],
+            [
+                "Depixol (Flupentixol)",
+                "depixol,flupentixol,antipsychotics,pharms"
+            ],
+            [
+                "Dipiperal (Pipamperone)",
+                "dipiperal,pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Dipiperon (Pipamperone)",
+                "dipiperon,pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Drido (Droperidol)",
+                "drido,droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Droleptan (Droperidol)",
+                "droleptan,droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Eglonyl (Sulpiride)",
+                "eglonyl,sulpiride,antipsychotics,pharms"
+            ],
+            [
+                "Elanone-V (Lenperone)",
+                "elanonev,lenperone,antipsychotics,pharms"
+            ],
+            [
+                "Emilace (Nemonapride)",
+                "emilace,nemonapride,antipsychotics,pharms"
+            ],
+            [
+                "Entumine (Clotiapine)",
+                "entumine,clotiapine,antipsychotics,pharms"
+            ],
+            [
+                "Equilium (Tiapride)",
+                "equilium,tiapride,antipsychotics,pharms"
+            ],
+            [
+                "Equipertine (Oxypertine)",
+                "equipertine,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Esucos (Dixyrazine)",
+                "esucos,dixyrazine,antipsychotics,pharms"
+            ],
+            [
+                "Eunerpan (Melperone)",
+                "eunerpan,melperone,antipsychotics,pharms"
+            ],
+            [
+                "Fanapt (Iloperidone)",
+                "fanapt,iloperidone,antipsychotics,pharms"
+            ],
+            [
+                "Fluanxol (Flupentixol)",
+                "fluanxol,flupentixol,antipsychotics,pharms"
+            ],
+            [
+                "Forit (Oxypertine)",
+                "forit,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Frenactyl (Benperidol)",
+                "frenactyl,benperidol,antipsychotics,pharms"
+            ],
+            [
+                "Geodon (Ziprasidone)",
+                "geodon,ziprasidone,antipsychotics,pharms"
+            ],
+            [
+                "Haldol (Haloperidol)",
+                "haldol,haloperidol,antipsychotics,pharms"
+            ],
+            [
+                "Imagotan (Sulforidazine)",
+                "imagotan,sulforidazine,antipsychotics,pharms"
+            ],
+            [
+                "Imap (Fluspirilene)",
+                "imap,fluspirilene,antipsychotics,pharms"
+            ],
+            [
+                "Inapsine (Droperidol)",
+                "inapsine,droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Innovar (Droperidol)",
+                "innovar,droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Inofal (Sulforidazine)",
+                "inofal,sulforidazine,antipsychotics,pharms"
+            ],
+            [
+                "Integrin (Oxypertine)",
+                "integrin,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Invega (Paliperidone)",
+                "invega,paliperidone,antipsychotics,pharms"
+            ],
+            [
+                "Lanturil (Oxypertine)",
+                "lanturil,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Lanzek (Olanzapine)",
+                "lanzek,olanzapine,antipsychotics,pharms"
+            ],
+            [
+                "Largactil (Chlorpromazine)",
+                "largactil,chlorpromazine,antipsychotics,pharms"
+            ],
+            [
+                "Latuda (Lurasidone)",
+                "latuda,lurasidone,antipsychotics,pharms"
+            ],
+            [
+                "Levoprome (Levomepromazine)",
+                "levoprome,levomepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Lonasen (Blonanserin)",
+                "lonasen,blonanserin,antipsychotics,pharms"
+            ],
+            [
+                "Longoperidol (Penfluridol)",
+                "longoperidol,penfluridol,antipsychotics,pharms"
+            ],
+            [
+                "Lotawin (Oxypertine)",
+                "lotawin,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Loxapac (Loxapine)",
+                "loxapac,loxapine,antipsychotics,pharms"
+            ],
+            [
+                "Loxitane (Loxapine)",
+                "loxitane,loxapine,antipsychotics,pharms"
+            ],
+            [
+                "Lullan (Perospirone)",
+                "lullan,perospirone,antipsychotics,pharms"
+            ],
+            [
+                "Luvatren (Moperone)",
+                "luvatren,moperone,antipsychotics,pharms"
+            ],
+            [
+                "Majeptil (Thioproperazine)",
+                "majeptil,thioproperazine,antipsychotics,pharms"
+            ],
+            [
+                "Mellaril (Thioridazine)",
+                "mellaril,thioridazine,antipsychotics,pharms"
+            ],
+            [
+                "Melleril (Thioridazine)",
+                "melleril,thioridazine,antipsychotics,pharms"
+            ],
+            [
+                "Micefal (Penfluridol)",
+                "micefal,penfluridol,antipsychotics,pharms"
+            ],
+            [
+                "Moban (Molindone)",
+                "moban,molindone,antipsychotics,pharms"
+            ],
+            [
+                "Modecate (Fluphenazine)",
+                "modecate,fluphenazine,antipsychotics,pharms"
+            ],
+            [
+                "Moditen (Oxyprotepine)",
+                "moditen,oxyprotepine,antipsychotics,pharms"
+            ],
+            [
+                "Navane (Thiothixene)",
+                "navane,thiothixene,antipsychotics,pharms"
+            ],
+            [
+                "Neulactil (Periciazine)",
+                "neulactil,periciazine,antipsychotics,pharms"
+            ],
+            [
+                "Neuleptil (Periciazine)",
+                "neuleptil,periciazine,antipsychotics,pharms"
+            ],
+            [
+                "Nipolept (Zotepine)",
+                "nipolept,zotepine,antipsychotics,pharms"
+            ],
+            [
+                "Nosinan (Levomepromazine)",
+                "nosinan,levomepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Nozinan (Levomepromazine)",
+                "nozinan,levomepromazine,antipsychotics,pharms"
+            ],
+            [
+                "Opertil (Oxypertine)",
+                "opertil,oxypertine,antipsychotics,pharms"
+            ],
+            [
+                "Orap (Pimozide)",
+                "orap,pimozide,antipsychotics,pharms"
+            ],
+            [
+                "Ozace (Olanzapine)",
+                "ozace,olanzapine,antipsychotics,pharms"
+            ],
+            [
+                "Padrasen (Clocapramine)",
+                "padrasen,clocapramine,antipsychotics,pharms"
+            ],
+            [
+                "Phenotil (Prochlorperazine)",
+                "phenotil,prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Piperonil (Pipamperone)",
+                "piperonil,pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Piperonyl (Pipamperone)",
+                "piperonyl,pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Piportil (Pipotiazine)",
+                "piportil,pipotiazine,antipsychotics,pharms"
+            ],
+            [
+                "Prazinil (Carpipramine)",
+                "prazinil,carpipramine,antipsychotics,pharms"
+            ],
+            [
+                "Prolixin (Fluphenazine)",
+                "prolixin,fluphenazine,antipsychotics,pharms"
+            ],
+            [
+                "Propitan (Pipamperone)",
+                "propitan,pipamperone,antipsychotics,pharms"
+            ],
+            [
+                "Psychoson (Sulforidazine)",
+                "psychoson,sulforidazine,antipsychotics,pharms"
+            ],
+            [
+                "Quide (Piperacetazine)",
+                "quide,piperacetazine,antipsychotics,pharms"
+            ],
+            [
+                "Raudixin (Reserpine)",
+                "raudixin,reserpine,antipsychotics,pharms"
+            ],
+            [
+                "Redeptin (Fluspirilene)",
+                "redeptin,fluspirilene,antipsychotics,pharms"
+            ],
+            [
+                "Repoise (Butaperazine)",
+                "repoise,butaperazine,antipsychotics,pharms"
+            ],
+            [
+                "Rexulti (Brexpiprazole)",
+                "rexulti,brexpiprazole,antipsychotics,pharms"
+            ],
+            [
+                "Risperdal (Risperidone)",
+                "risperdal,risperidone,antipsychotics,pharms"
+            ],
+            [
+                "Roxiam (Remoxipride)",
+                "roxiam,remoxipride,antipsychotics,pharms"
+            ],
+            [
+                "Saphris (Asenapine)",
+                "saphris,asenapine,antipsychotics,pharms"
+            ],
+            [
+                "Semap (Penfluridol)",
+                "semap,penfluridol,antipsychotics,pharms"
+            ],
+            [
+                "Serdolect (Sertindole)",
+                "serdolect,sertindole,antipsychotics,pharms"
+            ],
+            [
+                "Serentil (Mesoridazine)",
+                "serentil,mesoridazine,antipsychotics,pharms"
+            ],
+            [
+                "Seroquel (Quetiapine)",
+                "seroquel,quetiapine,antipsychotics,pharms"
+            ],
+            [
+                "Serpalan (Reserpine)",
+                "serpalan,reserpine,antipsychotics,pharms"
+            ],
+            [
+                "Serpasil (Reserpine)",
+                "serpasil,reserpine,antipsychotics,pharms"
+            ],
+            [
+                "Solian (Amisulpride)",
+                "solian,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Soltus (Amisulpride)",
+                "soltus,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Sordinol (Clopenthixol)",
+                "sordinol,clopenthixol,antipsychotics,pharms"
+            ],
+            [
+                "Sparine (Promazine)",
+                "sparine,promazine,antipsychotics,pharms"
+            ],
+            [
+                "Spiroperidol (Spiperone)",
+                "spiroperidol,spiperone,antipsychotics,pharms"
+            ],
+            [
+                "Spiropitan (Spiperone)",
+                "spiropitan,spiperone,antipsychotics,pharms"
+            ],
+            [
+                "Stelazine (Trifluoperazine)",
+                "stelazine,trifluoperazine,antipsychotics,pharms"
+            ],
+            [
+                "Stemetil (Prochlorperazine)",
+                "stemetil,prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Stemzine (Prochlorperazine)",
+                "stemzine,prochlorperazine,antipsychotics,pharms"
+            ],
+            [
+                "Sulpirid (Sulpiride)",
+                "sulpirid,sulpiride,antipsychotics,pharms"
+            ],
+            [
+                "Sulpitac (Amisulpride)",
+                "sulpitac,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Sulprix (Amisulpride)",
+                "sulprix,amisulpride,antipsychotics,pharms"
+            ],
+            [
+                "Taractan (Chlorprothixene)",
+                "taractan,chlorprothixene,antipsychotics,pharms"
+            ],
+            [
+                "Taxilan (Perazine)",
+                "taxilan,perazine,antipsychotics,pharms"
+            ],
+            [
+                "Tercian (Cyamemazine)",
+                "tercian,cyamemazine,antipsychotics,pharms"
+            ],
+            [
+                "Thorazine (Chlorpromazine)",
+                "thorazine,chlorpromazine,antipsychotics,pharms"
+            ],
+            [
+                "Tiapridal (Tiapride)",
+                "tiapridal,tiapride,antipsychotics,pharms"
+            ],
+            [
+                "Tindal (Acetophenazine)",
+                "tindal,acetophenazine,antipsychotics,pharms"
+            ],
+            [
+                "Topral (Sultopride)",
+                "topral,sultopride,antipsychotics,pharms"
+            ],
+            [
+                "Trilafon (Perphenazine)",
+                "trilafon,perphenazine,antipsychotics,pharms"
+            ],
+            [
+                "Truxal (Chlorprothixene)",
+                "truxal,chlorprothixene,antipsychotics,pharms"
+            ],
+            [
+                "Tyrylen (Butaperazine)",
+                "tyrylen,butaperazine,antipsychotics,pharms"
+            ],
+            [
+                "Vesprin (Triflupromazine)",
+                "vesprin,triflupromazine,antipsychotics,pharms"
+            ],
+            [
+                "Vraylar (Cariprazine)",
+                "vraylar,cariprazine,antipsychotics,pharms"
+            ],
+            [
+                "Xomolix (Droperidol)",
+                "xomolix,droperidol,antipsychotics,pharms"
+            ],
+            [
+                "Zeldox (Ziprasidone)",
+                "zeldox,ziprasidone,antipsychotics,pharms"
+            ],
+            [
+                "Zepidone (Risperidone)",
+                "zepidone,risperidone,antipsychotics,pharms"
+            ],
+            [
+                "Zypadhera (Olanzapine)",
+                "zypadhera,olanzapine,antipsychotics,pharms"
+            ],
+            [
+                "Zyprexa (Olanzapine)",
+                "zyprexa,olanzapine,antipsychotics,pharms"
+            ]
+        ]
+    ],
+    [
+        "Other Mood Stabilizers",
+        [
+            [
+                "Buspar (buspirone)",
+                "buspar,buspirone"
+            ],
+            [
+                "Depakote (divalproex sodium)",
+                "depakote,divalproex,buspirone"
+            ],
+            [
+                "Lithium",
+                "lithium"
+            ],
+            [
+                "Lamictal (lamotrigine)",
+                "lamictal,lamotrigine"
+            ]
+        ]
+    ],
+    [
+        "Anticholinergics/Deliriants",
+        [
+            [
+                "Atropine",
+                "atropine,deliriants"
+            ],
+            [
+                "Belladonna",
+                "belladonna,deliriants"
+            ],
+            [
+                "Benzydamine",
+                "benzydamine,deliriants"
+            ],
+            [
+                "Brugmansia",
+                "brugmansia,deliriants"
+            ],
+            [
+                "Chlorpheniramine maleate/CPM",
+                "chlorpheniramine,deliriants"
+            ],
+            [
+                "Coricidin",
+                "coricidin,chlorpheniramine,dxm,deliriants"
+            ],
+            [
+                "Datura",
+                "datura,deliriants"
+            ],
+            [
+                "Dimenhydrinate (Dramamine)",
+                "dimenhydrinate,deliriants"
+            ],
+            [
+                "Diphenhydramine (Benadryl)",
+                "diphenhydramine,deliriants"
+            ],
+            [
+                "Ditropan (Oxybutinyne)",
+                "ditropan,deliriants"
+            ],
+            [
+                "Doxylamine",
+                "doxylamine,deliriants"
+            ],
+            [
+                "Hydroxyzine",
+                "hydroxyzine,deliriants"
+            ],
+            [
+                "Hyoscyamine",
+                "hyoscyamine,deliriants"
+            ],
+            [
+                "Mandrake",
+                "mandrake,deliriants"
+            ],
+            [
+                "Moxastine",
+                "moxastine,deliriants"
+            ],
+            [
+                "Nightshade",
+                "nightshade,deliriants"
+            ],
+            [
+                "Promethazine",
+                "promethazine,deliriants"
+            ],
+            [
+                "Scopolamine",
+                "scopolamine,deliriants"
+            ],
+            [
+                "Trihexyphenidyl/Artane",
+                "trihexyphenidyl,deliriants"
+            ]
+        ]
+    ],
+    [
+        "Ethnobotanicals (by scientific name)",
+        [
+            [
+                "Achillea millefolium (Yarrow)",
+                "achilleamillefolium,ethnobotanicals"
+            ],
+            [
+                "Acmella oleracea (Toothache Plant / Paracress)",
+                "acmellaoleracea,ethnobotanicals"
+            ],
+            [
+                "Acorus calamus (Sweet Flag)",
+                "acoruscalamus,ethnobotanicals"
+            ],
+            [
+                "Albizia julibrissin (Happiness Tree / Silk Tree)",
+                "albiziajulibrissin,ethnobotanicals"
+            ],
+            [
+                "Aloe vera (Aloe)",
+                "aloevera,ethnobotanicals"
+            ],
+            [
+                "Althaea officinalis (Marshmallow)",
+                "althaeaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Amanita muscaria (Fly Agaric)",
+                "amanitamuscaria,amanitas,gabaergics"
+            ],
+            [
+                "Anadenanthera colubrine (Cebil )",
+                "anadenantheracolubrine,ethnobotanicals"
+            ],
+            [
+                "Anadenanthera peregrina (Yopo)",
+                "anadenantheraperegrina,ethnobotanicals"
+            ],
+            [
+                "Angelica archangelica (Angelica)",
+                "angelicaarchangelica,ethnobotanicals"
+            ],
+            [
+                "Anthemis nobilis (Roman Chamomile / Perennial Chamomile)",
+                "anthemisnobilis,ethnobotanicals"
+            ],
+            [
+                "Arctostaphylos uva-ursi (Bearberry / Kinnikinnick)",
+                "arctostaphylosuvaursi,ethnobotanicals"
+            ],
+            [
+                "Areca catechu (Betel Nut)",
+                "arecacatechu,ethnobotanicals"
+            ],
+            [
+                "Argemone mexicana (Prickly Poppy / Chicalote)",
+                "argemonemexicana,ethnobotanicals"
+            ],
+            [
+                "Argyreia nervosa (Baby Woodrose)",
+                "argyreianervosa,ethnobotanicals,lsa,lysergamides,hbwr"
+            ],
+            [
+                "Artemisia absinthium (Wormwood)",
+                "artemisiaabsinthium,ethnobotanicals"
+            ],
+            [
+                "Artemisia vulgaris (Mugwort)",
+                "artemisiavulgaris,ethnobotanicals"
+            ],
+            [
+                "Aspalathus linearis (Rooibos)",
+                "aspalathuslinearis,ethnobotanicals"
+            ],
+            [
+                "Azadirachta indica (Neem)",
+                "azadirachtaindica,ethnobotanicals"
+            ],
+            [
+                "Bixa orellana (Achiote / Lipstick Tree)",
+                "bixaorellana,ethnobotanicals"
+            ],
+            [
+                "Borago officinalis (Borage / Starflower)",
+                "boragoofficinalis,ethnobotanicals"
+            ],
+            [
+                "Calea zacatechichi (Calea / Thlepelakano)",
+                "caleazacatechichi,ethnobotanicals"
+            ],
+            [
+                "Camellia sinensis (Tea / Green Tea Plant)",
+                "camelliasinensis,ethnobotanicals"
+            ],
+            [
+                "Canarium commune (Elemi)",
+                "canariumcommune,ethnobotanicals"
+            ],
+            [
+                "Canavalia maritima (Baybean)",
+                "canavaliamaritima,ethnobotanicals"
+            ],
+            [
+                "Capsicum spp. (Chilli Peppers)",
+                "capsicumspp,ethnobotanicals"
+            ],
+            [
+                "Carapichea ipecacuanha (Ipecac / Ipecacuanha/I-pe-kaa-guéne)",
+                "carapicheaipecacuanha,ethnobotanicals"
+            ],
+            [
+                "Castilla elastica (Olicuáhuitl)",
+                "castillaelastica,ethnobotanicals"
+            ],
+            [
+                "Catha edulis (Khat)",
+                "cathaedulis,ethnobotanicals"
+            ],
+            [
+                "Cinchona officinalis (Quinine Bark)",
+                "cinchonaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Cinnamomum camphora (Camphor Laurel)",
+                "cinnamomumcamphora,ethnobotanicals"
+            ],
+            [
+                "Cinnamomum zeylanicum (Cinnamon)",
+                "cinnamomumzeylanicum,ethnobotanicals"
+            ],
+            [
+                "Coffea arabica (Coffee)",
+                "coffeaarabica,ethnobotanicals"
+            ],
+            [
+                "Cola acuminata (Cola Nut)",
+                "colaacuminata,ethnobotanicals"
+            ],
+            [
+                "Commiphora myrrha (Myrrh)",
+                "commiphoramyrrha,ethnobotanicals"
+            ],
+            [
+                "Convolvulus arvensis (Bindweed)",
+                "convolvulusarvensis,ethnobotanicals"
+            ],
+            [
+                "Corydalis yanhusuo (Yan-Hu-Suo / Fumewort)",
+                "corydalisyanhusuo,ethnobotanicals"
+            ],
+            [
+                "Crocus sativus (Saffron)",
+                "crocussativus,ethnobotanicals"
+            ],
+            [
+                "Croton lechleri (Sangre de Drago / Liquid Bandage)",
+                "crotonlechleri,ethnobotanicals"
+            ],
+            [
+                "Cyclopia species (Honeybush)",
+                "cyclopiaspecies,ethnobotanicals"
+            ],
+            [
+                "Cymbopogon nardus (Citronella)",
+                "cymbopogonnardus,ethnobotanicals"
+            ],
+            [
+                "Cypripedium species (Lady's Slipper Orchid)",
+                "cypripediumspecies,ethnobotanicals"
+            ],
+            [
+                "Daturicarpa elliptica (Spikefruit Datura-like-Iboga)",
+                "daturicarpaelliptica,ethnobotanicals"
+            ],
+            [
+                "Dionaea muscipula (Venus Flytrap)",
+                "dionaeamuscipula,ethnobotanicals"
+            ],
+            [
+                "Diplopterys cabrerana (Chaliponga / Oco-Yagè)",
+                "diplopteryscabrerana,ethnobotanicals"
+            ],
+            [
+                "Duboisia hopwoodii (Pituri)",
+                "duboisiahopwoodii,ethnobotanicals"
+            ],
+            [
+                "Eleutherococcus senticosus (Eleuthero Root / Shigoka)",
+                "eleutherococcussenticosus,ethnobotanicals"
+            ],
+            [
+                "Ephedra sinica (Ma Huang )",
+                "ephedrasinica,ethnobotanicals"
+            ],
+            [
+                "Eryngium yuccifolium (Button Snake-Root / Rattlesnake's Master)",
+                "eryngiumyuccifolium,ethnobotanicals"
+            ],
+            [
+                "Erythrina mulungu (Mulungu)",
+                "erythrinamulungu,ethnobotanicals"
+            ],
+            [
+                "Erythroxylum coca (Coca Leaf)",
+                "erythroxylumcoca,ethnobotanicals"
+            ],
+            [
+                "Eschscholzia californica (California Poppy)",
+                "eschscholziacalifornica,ethnobotanicals"
+            ],
+            [
+                "Ficus religiosa (Bodhi, Bo-Tree / Sacred Fig)",
+                "ficusreligiosa,ethnobotanicals"
+            ],
+            [
+                "Foeniculum vulgare (Fennel)",
+                "foeniculumvulgare,ethnobotanicals"
+            ],
+            [
+                "Ganoderma lucidum (Reishi Mushroom)",
+                "ganodermalucidum,ethnobotanicals"
+            ],
+            [
+                "Gaultheria procumbens (Wintergreen)",
+                "gaultheriaprocumbens,ethnobotanicals"
+            ],
+            [
+                "Gingko biloba (Gingko)",
+                "gingkobiloba,ethnobotanicals"
+            ],
+            [
+                "Glaucium flavum (Yellow Horned Poppy)",
+                "glauciumflavum,ethnobotanicals"
+            ],
+            [
+                "Glycyrrhiza glabra (Liquorice)",
+                "glycyrrhizaglabra,ethnobotanicals"
+            ],
+            [
+                "Gnaphalium obtusifolium (Rabbit Tobacco)",
+                "gnaphaliumobtusifolium,ethnobotanicals"
+            ],
+            [
+                "Heimia salicifolia (Sinicuichi or Sun Opener)",
+                "heimiasalicifolia,ethnobotanicals"
+            ],
+            [
+                "Helichrysum foetidum (Stinking Strawflower)",
+                "helichrysumfoetidum,ethnobotanicals"
+            ],
+            [
+                "Heliopsis longipes (Gold Root)",
+                "heliopsislongipes,ethnobotanicals"
+            ],
+            [
+                "Hevea brasiliensis (Jebe Tree or Rubber Tree)",
+                "heveabrasiliensis,ethnobotanicals"
+            ],
+            [
+                "Humulus japonicus ( Japanese Hop)",
+                "humulusjaponicus,ethnobotanicals"
+            ],
+            [
+                "Humulus lupulus (Common Hop)",
+                "humuluslupulus,ethnobotanicals"
+            ],
+            [
+                "Hypericum perforatum (St. John’s Wort)",
+                "hypericumperforatum,ethnobotanicals"
+            ],
+            [
+                "Hyssopus officinalis (Hyssop)",
+                "hyssopusofficinalis,ethnobotanicals"
+            ],
+            [
+                "Ilex guayusa (Guayusa)",
+                "ilexguayusa,ethnobotanicals"
+            ],
+            [
+                "Ilex paraguariensis (Yerba Mate)",
+                "ilexparaguariensis,ethnobotanicals"
+            ],
+            [
+                "Ilex vomitoria (Yaupon)",
+                "ilexvomitoria,ethnobotanicals"
+            ],
+            [
+                "Indigofera tinctoria (Indigo)",
+                "indigoferatinctoria,ethnobotanicals"
+            ],
+            [
+                "Ipomoea tricolor (Morning Glory)",
+                "ipomoeatricolor,ethnobotanicals,lsa,lysergamides,morninggloryseeds"
+            ],
+            [
+                "Ipomoea violacea (Tlitliltzin)",
+                "ipomoeaviolacea,ethnobotanicals,lsa,lysergamides"
+            ],
+            [
+                "Isatis tinctoria (Woad)",
+                "isatistinctoria,ethnobotanicals"
+            ],
+            [
+                "Justicia pectoralis (Tilo / Mashi-Hiri)",
+                "justiciapectoralis,ethnobotanicals"
+            ],
+            [
+                "Kaempferia galanga (Galanga)",
+                "kaempferiagalanga,ethnobotanicals"
+            ],
+            [
+                "Lactuca virosa (Opium Lettuce / Bitter/Wild Lettuce)",
+                "lactucavirosa,ethnobotanicals"
+            ],
+            [
+                "Lagochilus inebrians (Inebriating Mint)",
+                "lagochilusinebrians,ethnobotanicals"
+            ],
+            [
+                "Ledum palustre (Labrador Tea)",
+                "ledumpalustre,ethnobotanicals"
+            ],
+            [
+                "Leonotis leonurus (Wild Dagga)",
+                "leonotisleonurus,ethnobotanicals"
+            ],
+            [
+                "Leonurus cardiaca (Motherwort)",
+                "leonuruscardiaca,ethnobotanicals"
+            ],
+            [
+                "Leonurus sibiricus (Honeyweed)",
+                "leonurussibiricus,ethnobotanicals"
+            ],
+            [
+                "Lepidium meyenii (Maca)",
+                "lepidiummeyenii,ethnobotanicals"
+            ],
+            [
+                "Ligusticum porteri (Osha)",
+                "ligusticumporteri,ethnobotanicals"
+            ],
+            [
+                "Lobelia inflata (Indian Tobacco)",
+                "lobeliainflata,ethnobotanicals"
+            ],
+            [
+                "Lophophora williamsii (Peyote / Peyotl)",
+                "lophophorawilliamsii,peyote,mescaline,phenethylamines,ethnobotanicals"
+            ],
+            [
+                "Magnolia virginiana (Sweet Magnolia)",
+                "magnoliavirginiana,ethnobotanicals"
+            ],
+            [
+                "Macropiper Excelsum",
+                "macropiperexcelsum,ethnobotanicals"
+            ],
+            [
+                "Manilkara chicle (Chicle or Tziktli)",
+                "manilkarachicle,ethnobotanicals"
+            ],
+            [
+                "Matricaria chamomilla (Persian Chamomile / Annual Chamomile)",
+                "matricariachamomilla,ethnobotanicals"
+            ],
+            [
+                "Melissa officinalis (Lemon Balm)",
+                "melissaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Mentha piperita (Peppermint)",
+                "menthapiperita,ethnobotanicals"
+            ],
+            [
+                "Mimosa hostilis (Jurema )",
+                "mimosahostilis,ethnobotanicals"
+            ],
+            [
+                "Mirabilis multiflora (Desert Four O'clock / Tsededeeh)",
+                "mirabilismultiflora,ethnobotanicals"
+            ],
+            [
+                "Monotropa uniflora (Indian Pipe / Ghost Pipe)",
+                "monotropauniflora,ethnobotanicals"
+            ],
+            [
+                "Myristica fragrans (Nutmeg)",
+                "myristicafragrans,nutmeg,ethnobotanicals"
+            ],
+            [
+                "Nelumbo nucifera (Indian Sacred Lotus / Oriental Lotus)",
+                "nelumbonucifera,ethnobotanicals"
+            ],
+            [
+                "Nepeta cataria (Catnip)",
+                "nepetacataria,ethnobotanicals"
+            ],
+            [
+                "Nicotiana rustica (Mapacho)",
+                "nicotianarustica,nicotine,tobacco,ethnobotanicals"
+            ],
+            [
+                "Nicotiana tabacum (Tobacco)",
+                "nicotianatabacum,nicotine,tobacco,ethnobotanicals"
+            ],
+            [
+                "Nigella sativa (Black-Seed)",
+                "nigellasativa,ethnobotanicals"
+            ],
+            [
+                "Nymphaea caerulea (Blue Lotus)",
+                "nymphaeacaerulea,bluelotusethnobotanicals"
+            ],
+            [
+                "Panax ginseng (Ginseng)",
+                "panaxginseng,ethnobotanicals"
+            ],
+            [
+                "Papaver somniferum (Opium Poppy)",
+                "papaversomniferum,ethnobotanicals"
+            ],
+            [
+                "Passiflora incarnata (Passionflower)",
+                "passifloraincarnata,ethnobotanicals"
+            ],
+            [
+                "Paullinia cupana (Guaraná)",
+                "paulliniacupana,ethnobotanicals"
+            ],
+            [
+                "Pausinystalia yohimbe (Yohimbe)",
+                "pausinystaliayohimbe,ethnobotanicals"
+            ],
+            [
+                "Pedicularis spp. (Indian Warrior)",
+                "pedicularisspp,ethnobotanicals"
+            ],
+            [
+                "Peganum harmala (Syrian Rue)",
+                "peganumharmala,ethnobotanicals"
+            ],
+            [
+                "Phyla dulcis (Aztec Honey Herb)",
+                "phyladulcis,ethnobotanicals"
+            ],
+            [
+                "Piper methysticum (Kava-Kava)",
+                "pipermethysticum,kava,ethnobotanicals"
+            ],
+            [
+                "Polygala tenuifolia (Yuan Zhi / Milkwort)",
+                "polygalatenuifolia,ethnobotanicals"
+            ],
+            [
+                "Polygonum multiflorum (He Shou Wu)",
+                "polygonummultiflorum,ethnobotanicals"
+            ],
+            [
+                "Psychotria colorata (Tapiika'a)",
+                "psychotriacolorata,ethnobotanicals"
+            ],
+            [
+                "Psychotria viridis (Chacruna)",
+                "psychotriaviridis,ethnobotanicals"
+            ],
+            [
+                "Quararibea funebris (Cacahuaxochitl / Flor de Cacao)",
+                "quararibeafunebris,ethnobotanicals"
+            ],
+            [
+                "Radula Marginata",
+                "radulamarginata,ethnobotanicals"
+            ],
+            [
+                "Rauwolfia serpentina (Indian Snake-Root / Sarpagandha)",
+                "rauwolfiaserpentina,ethnobotanicals"
+            ],
+            [
+                "Rhodiola rosea (Rose-Root)",
+                "rhodiolarosea,ethnobotanicals"
+            ],
+            [
+                "Rhus glabra (Red Sumac / Maw-ko-la)",
+                "rhusglabra,ethnobotanicals"
+            ],
+            [
+                "Rivea corymbosa (Ololiúqui)",
+                "riveacorymbosa,ethnobotanicals,lsa,lysergamides"
+            ],
+            [
+                "Roemeria refracta (Ephedra Poppy)",
+                "roemeriarefracta,ethnobotanicals"
+            ],
+            [
+                "Salix alba (White Willow)",
+                "salixalba,ethnobotanicals"
+            ],
+            [
+                "Salvia miltiorrhiza (Dan Shen)",
+                "salviamiltiorrhiza,ethnobotanicals"
+            ],
+            [
+                "Sassafras albidum (Sassafras)",
+                "sassafrasalbidum,ethnobotanicals"
+            ],
+            [
+                "Sceletium tortuosum (Kanna)",
+                "sceletiumtortuosum,ethnobotanicals"
+            ],
+            [
+                "Scutellaria species (Skullcap)",
+                "scutellariaspecies,ethnobotanicals"
+            ],
+            [
+                "Sida cordifolia (Bala)",
+                "sidacordifolia,ethnobotanicals"
+            ],
+            [
+                "Sida rhombifolia (Wireweed)",
+                "sidarhombifolia,ethnobotanicals"
+            ],
+            [
+                "Silene capensis (Ubulawu)",
+                "silenecapensis,ethnobotanicals"
+            ],
+            [
+                "Silybum marianum (Milk Thistle)",
+                "silybummarianum,ethnobotanicals"
+            ],
+            [
+                "Stevia rebaudiana (Sweetleaf)",
+                "steviarebaudiana,ethnobotanicals"
+            ],
+            [
+                "Synsepalum dulcificum (Miracle Berry)",
+                "synsepalumdulcificum,ethnobotanicals"
+            ],
+            [
+                "Tabernaemontana spp. (Milkwood)",
+                "tabernaemontanaspp,ethnobotanicals"
+            ],
+            [
+                "Tabernanthe iboga (Iboga)",
+                "tabernantheiboga,ibogaine,ethnobotanicals"
+            ],
+            [
+                "Tagetes lucida (Mexican Tarragon)",
+                "tageteslucida,ethnobotanicals"
+            ],
+            [
+                "Theobroma cacao (Cacao or Chocolate)",
+                "theobromacacao,ethnobotanicals"
+            ],
+            [
+                "Tilia cordata (Little-leaf Linden)",
+                "tiliacordata,ethnobotanicals"
+            ],
+            [
+                "Tribulus terrestris (Gokshura / Tackweed)",
+                "tribulusterrestris,ethnobotanicals"
+            ],
+            [
+                "Trichocereus pachanoi (San Pedro)",
+                "trichocereuspachanoi,mescaline,phenethylamines,ethnobotanicals"
+            ],
+            [
+                "Trichocereus peruvianus (Peruvian Torch)",
+                "trichocereusperuvianus,mescaline,phenethylamines,ethnobotanicals"
+            ],
+            [
+                "Turnera diffusa (Damiana)",
+                "turneradiffusa,ethnobotanicals"
+            ],
+            [
+                "Tynanthus panurensis (Clavo-Huasca)",
+                "tynanthuspanurensis,ethnobotanicals"
+            ],
+            [
+                "Uncaria tomentosa (Uña de Gato / Cat's Claw)",
+                "uncariatomentosa,ethnobotanicals"
+            ],
+            [
+                "Urtica dioica (Stinging Nettle)",
+                "urticadioica,ethnobotanicals"
+            ],
+            [
+                "Valeriana officinalis (Valerian Root)",
+                "valerianaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Verbascum species (Mullein)",
+                "verbascumspecies,ethnobotanicals"
+            ],
+            [
+                "Verbena officinalis (Vervain)",
+                "verbenaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Virola calophylla (Epena)",
+                "virolacalophylla,ethnobotanicals"
+            ],
+            [
+                "Vitex Agnus",
+                "vitexagnus,ethnobotanicals"
+            ],
+            [
+                "Voacanga africana (O-Bonawa / Kongkong)",
+                "voacangaafricana,ethnobotanicals"
+            ],
+            [
+                "Withania somnifera (Ashwagandha)",
+                "withaniasomnifera,ethnobotanicals"
+            ],
+            [
+                "Zanthoxylum clava-herculis (Southern Prickly Ash / Pepperwood)",
+                "zanthoxylumclavaherculis,ethnobotanicals"
+            ],
+            [
+                "Zingiber officinale (Ginger)",
+                "zingiberofficinale,ethnobotanicals"
+            ],
+            [
+                "Ziziphus zizyphus (Jujube / Chinese Red Date)",
+                "ziziphuszizyphus,ethnobotanicals"
+            ],
+            [
+                "Zornia latifolia (Maconha Brava)",
+                "zornialatifolia,ethnobotanicals"
+            ]
+        ]
+    ],
+    [
+        "Ethnobotanicals (by common name)",
+        [
+            [
+                "Achiote / Lipstick Tree (Bixa orellana)",
+                "bixaorellana,ethnobotanicals"
+            ],
+            [
+                "Aloe (Aloe vera)",
+                "aloevera,ethnobotanicals"
+            ],
+            [
+                "Angelica (Angelica archangelica)",
+                "angelicaarchangelica,ethnobotanicals"
+            ],
+            [
+                "Ashwagandha (Withania somnifera)",
+                "withaniasomnifera,ethnobotanicals"
+            ],
+            [
+                "Aztec Honey Herb (Phyla dulcis)",
+                "phyladulcis,ethnobotanicals"
+            ],
+            [
+                "Baby Woodrose (Argyreia nervosa)",
+                "argyreianervosa,ethnobotanicals,lsa,lysergamides,hbwr"
+            ],
+            [
+                "Bala (Sida cordifolia)",
+                "sidacordifolia,ethnobotanicals"
+            ],
+            [
+                "Baybean (Canavalia maritima)",
+                "canavaliamaritima,ethnobotanicals"
+            ],
+            [
+                "Bay Leaves",
+                "bayleaves,ethnobotanicals"
+            ],
+            [
+                "Bearberry / Kinnikinnick (Arctostaphylos uva-ursi)",
+                "arctostaphylosuvaursi,ethnobotanicals"
+            ],
+            [
+                "Betel Nut (Areca catechu)",
+                "arecacatechu,ethnobotanicals"
+            ],
+            [
+                "Bindweed (Convolvulus arvensis)",
+                "convolvulusarvensis,ethnobotanicals"
+            ],
+            [
+                "Black-Seed (Nigella sativa)",
+                "nigellasativa,ethnobotanicals"
+            ],
+            [
+                "Blue Lotus (Nymphaea caerulea)",
+                "nymphaeacaerulea,bluelotus,ethnobotanicals"
+            ],
+            [
+                "Bodhi, Bo-Tree / Sacred Fig (Ficus religiosa)",
+                "ficusreligiosa,ethnobotanicals"
+            ],
+            [
+                "Borage / Starflower (Borago officinalis)",
+                "boragoofficinalis,ethnobotanicals"
+            ],
+            [
+                "Button Snake-Root / Rattlesnake's Master (Eryngium yuccifolium)",
+                "eryngiumyuccifolium,ethnobotanicals"
+            ],
+            [
+                "Cacahuaxochitl / Flor de Cacao (Quararibea funebris)",
+                "quararibeafunebris,ethnobotanicals"
+            ],
+            [
+                "Cacao or Chocolate (Theobroma cacao)",
+                "theobromacacao,ethnobotanicals"
+            ],
+            [
+                "Calea / Thlepelakano (Calea zacatechichi)",
+                "caleazacatechichi,ethnobotanicals"
+            ],
+            [
+                "California Poppy (Eschscholzia californica)",
+                "eschscholziacalifornica,ethnobotanicals"
+            ],
+            [
+                "Camphor Laurel (Cinnamomum camphora)",
+                "cinnamomumcamphora,ethnobotanicals"
+            ],
+            [
+                "Catnip (Nepeta cataria)",
+                "nepetacataria,ethnobotanicals"
+            ],
+            [
+                "Cebil  (Anadenanthera colubrine)",
+                "anadenantheracolubrine,ethnobotanicals"
+            ],
+            [
+                "Chacruna (Psychotria viridis)",
+                "psychotriaviridis,ethnobotanicals"
+            ],
+            [
+                "Chaliponga / Oco-Yagè (Diplopterys cabrerana)",
+                "diplopteryscabrerana,ethnobotanicals"
+            ],
+            [
+                "Chicle or Tziktli (Manilkara chicle)",
+                "manilkarachicle,ethnobotanicals"
+            ],
+            [
+                "Chilli Peppers (Capsicum spp.)",
+                "capsicumspp,ethnobotanicals"
+            ],
+            [
+                "Cinnamon (Cinnamomum zeylanicum)",
+                "cinnamomumzeylanicum,ethnobotanicals"
+            ],
+            [
+                "Citronella (Cymbopogon nardus)",
+                "cymbopogonnardus,ethnobotanicals"
+            ],
+            [
+                "Clavo-Huasca (Tynanthus panurensis)",
+                "tynanthuspanurensis,ethnobotanicals"
+            ],
+            [
+                "Coca Leaf (Erythroxylum coca)",
+                "erythroxylumcoca,ethnobotanicals"
+            ],
+            [
+                "Coffee (Coffea arabica)",
+                "coffeaarabica,ethnobotanicals"
+            ],
+            [
+                "Cola Nut (Cola acuminata)",
+                "colaacuminata,ethnobotanicals"
+            ],
+            [
+                "Common Hop (Humulus lupulus)",
+                "humuluslupulus,ethnobotanicals"
+            ],
+            [
+                "Damiana (Turnera diffusa)",
+                "turneradiffusa,ethnobotanicals"
+            ],
+            [
+                "Dan Shen (Salvia miltiorrhiza)",
+                "salviamiltiorrhiza,ethnobotanicals"
+            ],
+            [
+                "Desert Four O'clock / Tsededeeh (Mirabilis multiflora)",
+                "mirabilismultiflora,ethnobotanicals"
+            ],
+            [
+                "Elemi (Canarium commune)",
+                "canariumcommune,ethnobotanicals"
+            ],
+            [
+                "Eleuthero Root / Shigoka (Eleutherococcus senticosus)",
+                "eleutherococcussenticosus,ethnobotanicals"
+            ],
+            [
+                "Epena (Virola calophylla)",
+                "virolacalophylla,ethnobotanicals"
+            ],
+            [
+                "Ephedra Poppy (Roemeria refracta)",
+                "roemeriarefracta,ethnobotanicals"
+            ],
+            [
+                "Fennel (Foeniculum vulgare)",
+                "foeniculumvulgare,ethnobotanicals"
+            ],
+            [
+                "Fly Agaric  (Amanita muscaria)",
+                "amanitamuscaria,gabaergics"
+            ],
+            [
+                "Galanga (Kaempferia galanga)",
+                "kaempferiagalanga,ethnobotanicals"
+            ],
+            [
+                "Ginger (Zingiber officinale)",
+                "zingiberofficinale,ethnobotanicals"
+            ],
+            [
+                "Gingko (Gingko biloba)",
+                "gingkobiloba,ethnobotanicals"
+            ],
+            [
+                "Ginseng (Panax ginseng)",
+                "panaxginseng,ethnobotanicals"
+            ],
+            [
+                "Gokshura / Tackweed (Tribulus terrestris)",
+                "tribulusterrestris,ethnobotanicals"
+            ],
+            [
+                "Gold Root (Heliopsis longipes)",
+                "heliopsislongipes,ethnobotanicals"
+            ],
+            [
+                "Guaraná (Paullinia cupana)",
+                "paulliniacupana,ethnobotanicals"
+            ],
+            [
+                "Guayusa (Ilex guayusa)",
+                "ilexguayusa,ethnobotanicals"
+            ],
+            [
+                "Happiness Tree / Silk Tree (Albizia julibrissin)",
+                "albiziajulibrissin,ethnobotanicals"
+            ],
+            [
+                "He Shou Wu (Polygonum multiflorum)",
+                "polygonummultiflorum,ethnobotanicals"
+            ],
+            [
+                "Honeybush (Cyclopia species)",
+                "cyclopiaspecies,ethnobotanicals"
+            ],
+            [
+                "Honeyweed (Leonurus sibiricus)",
+                "leonurussibiricus,ethnobotanicals"
+            ],
+            [
+                "Hyssop (Hyssopus officinalis)",
+                "hyssopusofficinalis,ethnobotanicals"
+            ],
+            [
+                "Iboga (Tabernanthe iboga)",
+                "tabernantheiboga,ibogaine,ethnobotanicals"
+            ],
+            [
+                "Indian Pipe / Ghost Pipe (Monotropa uniflora)",
+                "monotropauniflora,ethnobotanicals"
+            ],
+            [
+                "Indian Sacred Lotus / Oriental Lotus (Nelumbo nucifera)",
+                "nelumbonucifera,ethnobotanicals"
+            ],
+            [
+                "Indian Snake-Root / Sarpagandha (Rauwolfia serpentina)",
+                "rauwolfiaserpentina,ethnobotanicals"
+            ],
+            [
+                "Indian Tobacco (Lobelia inflata)",
+                "lobeliainflata,ethnobotanicals"
+            ],
+            [
+                "Indian Warrior (Pedicularis spp.)",
+                "pedicularisspp,ethnobotanicals"
+            ],
+            [
+                "Indigo (Indigofera tinctoria)",
+                "indigoferatinctoria,ethnobotanicals"
+            ],
+            [
+                "Inebriating Mint (Lagochilus inebrians)",
+                "lagochilusinebrians,ethnobotanicals"
+            ],
+            [
+                "Ipecac / Ipecacuanha/I-pe-kaa-guéne (Carapichea ipecacuanha)",
+                "carapicheaipecacuanha,ethnobotanicals"
+            ],
+            [
+                "Japanese Hop (Humulus japonicus)",
+                "humulusjaponicus,ethnobotanicals"
+            ],
+            [
+                "Jebe Tree or Rubber Tree (Hevea brasiliensis)",
+                "heveabrasiliensis,ethnobotanicals"
+            ],
+            [
+                "Jujube / Chinese Red Date (Ziziphus zizyphus)",
+                "ziziphuszizyphus,ethnobotanicals"
+            ],
+            [
+                "Jurema  (Mimosa hostilis)",
+                "mimosahostilis,ethnobotanicals"
+            ],
+            [
+                "Kanna (Sceletium tortuosum)",
+                "sceletiumtortuosum,ethnobotanicals"
+            ],
+            [
+                "Kava-Kava (Piper methysticum)",
+                "pipermethysticum,kava,ethnobotanicals"
+            ],
+            [
+                "Khat (Catha edulis)",
+                "cathaedulis,ethnobotanicals"
+            ],
+            [
+                "Labrador Tea (Ledum palustre)",
+                "ledumpalustre,ethnobotanicals"
+            ],
+            [
+                "Lady's Slipper Orchid (Cypripedium species)",
+                "cypripediumspecies,ethnobotanicals"
+            ],
+            [
+                "Lemon Balm (Melissa officinalis)",
+                "melissaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Liquorice (Glycyrrhiza glabra)",
+                "glycyrrhizaglabra,ethnobotanicals"
+            ],
+            [
+                "Little-leaf Linden (Tilia cordata)",
+                "tiliacordata,ethnobotanicals"
+            ],
+            [
+                "Ma Huang  (Ephedra sinica)",
+                "ephedrasinica,ethnobotanicals"
+            ],
+            [
+                "Maca (Lepidium meyenii)",
+                "lepidiummeyenii,ethnobotanicals"
+            ],
+            [
+                "Maconha Brava (Zornia latifolia)",
+                "zornialatifolia,ethnobotanicals"
+            ],
+            [
+                "Mapacho (Nicotiana rustica)",
+                "nicotianarustica,nicotine,tobacco,ethnobotanicals"
+            ],
+            [
+                "Marshmallow (Althaea officinalis)",
+                "althaeaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Mexican Tarragon (Tagetes lucida)",
+                "tageteslucida,ethnobotanicals"
+            ],
+            [
+                "Milk Thistle (Silybum marianum)",
+                "silybummarianum,ethnobotanicals"
+            ],
+            [
+                "Milkwood (Tabernaemontana spp.)",
+                "tabernaemontanaspp,ethnobotanicals"
+            ],
+            [
+                "Miracle Berry (Synsepalum dulcificum)",
+                "synsepalumdulcificum,ethnobotanicals"
+            ],
+            [
+                "Morning Glory (Ipomoea tricolor)",
+                "ipomoeatricolor,ethnobotanicals,lsa,lysergamides,morninggloryseeds"
+            ],
+            [
+                "Motherwort (Leonurus cardiaca)",
+                "leonuruscardiaca,ethnobotanicals"
+            ],
+            [
+                "Mugwort (Artemisia vulgaris)",
+                "artemisiavulgaris,ethnobotanicals"
+            ],
+            [
+                "Mullein (Verbascum species)",
+                "verbascumspecies,ethnobotanicals"
+            ],
+            [
+                "Mulungu (Erythrina mulungu)",
+                "erythrinamulungu,ethnobotanicals"
+            ],
+            [
+                "Myrrh (Commiphora myrrha)",
+                "commiphoramyrrha,ethnobotanicals"
+            ],
+            [
+                "Neem (Azadirachta indica)",
+                "azadirachtaindica,ethnobotanicals"
+            ],
+            [
+                "Nutmeg (Myristica fragrans)",
+                "myristicafragrans,nutmeg,ethnobotanicals"
+            ],
+            [
+                "O-Bonawa / Kongkong (Voacanga africana)",
+                "voacangaafricana,ethnobotanicals"
+            ],
+            [
+                "Olicuáhuitl (Castilla elastica)",
+                "castillaelastica,ethnobotanicals"
+            ],
+            [
+                "Ololiúqui (Rivea corymbosa)",
+                "riveacorymbosa,ethnobotanicals,lsa,lysergamides"
+            ],
+            [
+                "Opium Lettuce / Bitter/Wild Lettuce (Lactuca virosa)",
+                "lactucavirosa,ethnobotanicals"
+            ],
+            [
+                "Opium Poppy (Papaver somniferum)",
+                "papaversomniferum,ethnobotanicals"
+            ],
+            [
+                "Osha (Ligusticum porteri)",
+                "ligusticumporteri,ethnobotanicals"
+            ],
+            [
+                "Passionflower (Passiflora incarnata)",
+                "passifloraincarnata,ethnobotanicals"
+            ],
+            [
+                "Peppermint (Mentha piperita)",
+                "menthapiperita,ethnobotanicals"
+            ],
+            [
+                "Persian Chamomile / Annual Chamomile (Matricaria chamomilla)",
+                "matricariachamomilla,ethnobotanicals"
+            ],
+            [
+                "Peruvian Torch (Trichocereus peruvianus)",
+                "peruviantorch,trichocereusperuvianus,mescaline,phenethylamines"
+            ],
+            [
+                "Peyote / Peyotl (Lophophora williamsii)",
+                "lophophorawilliamsii,peyote,mescaline,phenethylamines"
+            ],
+            [
+                "Pituri (Duboisia hopwoodii)",
+                "duboisiahopwoodii,ethnobotanicals"
+            ],
+            [
+                "Prickly Poppy / Chicalote (Argemone mexicana)",
+                "argemonemexicana,ethnobotanicals"
+            ],
+            [
+                "Quinine Bark (Cinchona officinalis)",
+                "cinchonaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Rabbit Tobacco (Gnaphalium obtusifolium)",
+                "gnaphaliumobtusifolium,ethnobotanicals"
+            ],
+            [
+                "Red Sumac / Maw-ko-la (Rhus glabra)",
+                "rhusglabra,ethnobotanicals"
+            ],
+            [
+                "Reishi Mushroom (Ganoderma lucidum)",
+                "ganodermalucidum,ethnobotanicals"
+            ],
+            [
+                "Roman Chamomile / Perennial Chamomile (Anthemis nobilis)",
+                "anthemisnobilis,ethnobotanicals"
+            ],
+            [
+                "Rooibos (Aspalathus linearis)",
+                "aspalathuslinearis,ethnobotanicals"
+            ],
+            [
+                "Rose-Root (Rhodiola rosea)",
+                "rhodiolarosea,ethnobotanicals"
+            ],
+            [
+                "Saffron (Crocus sativus)",
+                "crocussativus,ethnobotanicals"
+            ],
+            [
+                "San Pedro (Trichocereus pachanoi)",
+                "sanpedro,trichocereuspachanoi,mescaline,phenethylamines"
+            ],
+            [
+                "Sangre de Drago / Liquid Bandage (Croton lechleri)",
+                "crotonlechleri,ethnobotanicals"
+            ],
+            [
+                "Sassafras (Sassafras albidum)",
+                "sassafrasalbidum,ethnobotanicals"
+            ],
+            [
+                "Sinicuichi or Sun Opener (Heimia salicifolia)",
+                "heimiasalicifolia,ethnobotanicals"
+            ],
+            [
+                "Skullcap (Scutellaria species)",
+                "scutellariaspecies,ethnobotanicals"
+            ],
+            [
+                "Southern Prickly Ash / Pepperwood (Zanthoxylum clava-herculis)",
+                "zanthoxylumclavaherculis,ethnobotanicals"
+            ],
+            [
+                "Spikefruit Datura-like-Iboga (Daturicarpa elliptica)",
+                "daturicarpaelliptica,ethnobotanicals"
+            ],
+            [
+                "St. John’s Wort (Hypericum perforatum)",
+                "hypericumperforatum,ethnobotanicals"
+            ],
+            [
+                "Stinging Nettle (Urtica dioica)",
+                "urticadioica,ethnobotanicals"
+            ],
+            [
+                "Stinking Strawflower (Helichrysum foetidum)",
+                "helichrysumfoetidum,ethnobotanicals"
+            ],
+            [
+                "Sweet Flag (Acorus calamus)",
+                "acoruscalamus,ethnobotanicals"
+            ],
+            [
+                "Sweet Magnolia (Magnolia virginiana)",
+                "magnoliavirginiana,ethnobotanicals"
+            ],
+            [
+                "Sweetleaf (Stevia rebaudiana)",
+                "steviarebaudiana,ethnobotanicals"
+            ],
+            [
+                "Syrian Rue (Peganum harmala)",
+                "peganumharmala,ethnobotanicals"
+            ],
+            [
+                "Tapiika'a (Psychotria colorata)",
+                "psychotriacolorata,ethnobotanicals"
+            ],
+            [
+                "Tea / Green Tea Plant (Camellia sinensis)",
+                "camelliasinensis,ethnobotanicals"
+            ],
+            [
+                "Thyme",
+                "thyme,ethnobotanicals"
+            ],
+            [
+                "Tilo / Mashi-Hiri (Justicia pectoralis)",
+                "justiciapectoralis,ethnobotanicals"
+            ],
+            [
+                "Tlitliltzin (Ipomoea violacea)",
+                "ipomoeaviolacea,ethnobotanicals,lsa,lysergamides"
+            ],
+            [
+                "Tobacco (Nicotiana tabacum)",
+                "nicotianatabacum,nicotine,tobacco,ethnobotanicals"
+            ],
+            [
+                "Toothache Plant / Paracress (Acmella oleracea)",
+                "acmellaoleracea,ethnobotanicals"
+            ],
+            [
+                "Ubulawu (Silene capensis)",
+                "silenecapensis,ethnobotanicals"
+            ],
+            [
+                "Uña de Gato / Cat's Claw (Uncaria tomentosa)",
+                "uncariatomentosa,ethnobotanicals"
+            ],
+            [
+                "Valerian Root (Valeriana officinalis)",
+                "valerianaofficinalis,ethnobotanicals"
+            ],
+            [
+                "Venus Flytrap (Dionaea muscipula)",
+                "dionaeamuscipula,ethnobotanicals"
+            ],
+            [
+                "Vervain (Verbena officinalis)",
+                "verbenaofficinalis,ethnobotanicals"
+            ],
+            [
+                "White Willow (Salix alba)",
+                "salixalba,ethnobotanicals"
+            ],
+            [
+                "Wild Dagga (Leonotis leonurus)",
+                "leonotisleonurus,ethnobotanicals"
+            ],
+            [
+                "Wintergreen (Gaultheria procumbens)",
+                "gaultheriaprocumbens,ethnobotanicals"
+            ],
+            [
+                "Wireweed (Sida rhombifolia)",
+                "sidarhombifolia,ethnobotanicals"
+            ],
+            [
+                "Woad (Isatis tinctoria)",
+                "isatistinctoria,ethnobotanicals"
+            ],
+            [
+                "Wormwood (Artemisia absinthium)",
+                "artemisiaabsinthium,ethnobotanicals"
+            ],
+            [
+                "Yan-Hu-Suo / Fumewort (Corydalis yanhusuo)",
+                "corydalisyanhusuo,ethnobotanicals"
+            ],
+            [
+                "Yarrow (Achillea millefolium)",
+                "achilleamillefolium,ethnobotanicals"
+            ],
+            [
+                "Yaupon (Ilex vomitoria)",
+                "ilexvomitoria,ethnobotanicals"
+            ],
+            [
+                "Yellow Horned Poppy (Glaucium flavum)",
+                "glauciumflavum,ethnobotanicals"
+            ],
+            [
+                "Yerba Mate (Ilex paraguariensis)",
+                "ilexparaguariensis,ethnobotanicals"
+            ],
+            [
+                "Yohimbe (Pausinystalia yohimbe)",
+                "pausinystaliayohimbe,ethnobotanicals"
+            ],
+            [
+                "Yopo (Anadenanthera peregrina)",
+                "anadenantheraperegrina,ethnobotanicals"
+            ],
+            [
+                "Yuan Zhi / Milkwort (Polygala tenuifolia)",
+                "polygalatenuifolia,ethnobotanicals"
+            ]
+        ]
+    ],
+    [
+        "Nootropics",
+        [
+            [
+                "5-HTP",
+                "5htp,nootropics"
+            ],
+            [
+                "Acetyl-L-carnitine",
+                "acetyllcarnitine,nootropics"
+            ],
+            [
+                "Adrafinil",
+                "adrafinil,stimulants,nootropics"
+            ],
+            [
+                "Agmatine",
+                "agmatine,nootropics"
+            ],
+            [
+                "Alpha-GPC",
+                "alphagpc,nootropics"
+            ],
+            [
+                "Aniracetam",
+                "aniracetam,nootropics"
+            ],
+            [
+                "Armodafinil",
+                "armodafinil,stimulants,nootropics"
+            ],
+            [
+                "Bromantane",
+                "bromantane,nootropics"
+            ],
+            [
+                "Centrophenoxine",
+                "centrophenoxine,nootropics"
+            ],
+            [
+                "Choline bitartrate",
+                "cholinebitartrate,nootropics"
+            ],
+            [
+                "Citicoline",
+                "citicoline,nootropics"
+            ],
+            [
+                "Coluracetam",
+                "coluracetam,nootropics"
+            ],
+            [
+                "Cotinine",
+                "cotinine,nootropics"
+            ],
+            [
+                "Creatine",
+                "creatine,nootropics"
+            ],
+            [
+                "DL-Phenylalanine",
+                "dlphenylalanine,nootropics"
+            ],
+            [
+                "DMAE",
+                "dmae,nootropics"
+            ],
+            [
+                "Fasoracetam",
+                "fasoracetam,nootropics"
+            ],
+            [
+                "Hydergine",
+                "hydergine,lysergamides,nootropics"
+            ],
+            [
+                "L-Theanine",
+                "ltheanine,nootropics"
+            ],
+            [
+                "L-Tryptophan",
+                "ltryptophan,nootropics"
+            ],
+            [
+                "Modafinil",
+                "modafinil,stimulants,nootropics"
+            ],
+            [
+                "N-Acetylcysteine",
+                "nacetylcysteine,nootropics"
+            ],
+            [
+                "Nefiracetam",
+                "nefiracetam,nootropics"
+            ],
+            [
+                "Nicotine",
+                "nicotine,nootropics"
+            ],
+            [
+                "N-Methylbisfluoromodafinil",
+                "nmethylbisfluoromodafinil,stimulants,nootropics"
+            ],
+            [
+                "Noopept",
+                "noopept,nootropics"
+            ],
+            [
+                "Oxiracetam",
+                "oxiracetam,nootropics"
+            ],
+            [
+                "Phenylpiracetam",
+                "phenylpiracetam,nootropics"
+            ],
+            [
+                "Piracetam",
+                "piracetam,nootropics"
+            ],
+            [
+                "PPAP",
+                "ppap,nootropics"
+            ],
+            [
+                "Pramiracetam",
+                "pramiracetam,nootropics"
+            ],
+            [
+                "Prolintane",
+                "prolintane,nootropics"
+            ],
+            [
+                "Sunifiram",
+                "sunifiram,nootropics"
+            ],
+            [
+                "Tianeptine",
+                "tianeptine,nootropics"
+            ],
+            [
+                "Tyrosine",
+                "tyrosine,nootropics"
+            ],
+            [
+                "Unifiram",
+                "unifiram,nootropics"
+            ]
+        ]
+    ],
+    [
+        "Misc Supplements/Modulators",
+        [
+            [
+                "Cimetidine (Tagamet)",
+                "cimetidine,tagamet"
+            ],
+            [
+                "Grapefruit Juice (GFJ)",
+                "grapefruitjuice"
+            ],
+            [
+                "Phenylethylamine (PEA)",
+                "pea"
+            ],
+            [
+                "Piperine",
+                "piperine"
+            ],
+            [
+                "Quinine",
+                "quinine"
+            ],
+            [
+                "Terbinafine",
+                "terbinafine"
+            ]
+        ]
+    ],
+    [
+        "NSAIDs",
+        [
+            [
+                "Acetaminophen/Paracetamol",
+                "acetaminophen,nsaids"
+            ],
+            [
+                "Aspirin",
+                "aspirin,nsaids"
+            ],
+            [
+                "Ibuprofen",
+                "ibuprofen,nsaids"
+            ],
+            [
+                "Meloxicam",
+                "meloxicam,nsaids"
+            ]
+        ]
+    ],
+    [
+        "Other Drugs (Misc)",
+        [
+            [
+                "Amitryptyline",
+                "amitryptyline"
+            ],
+            [
+                "Clonidine",
+                "clonidine"
+            ],
+            [
+                "Elemicin",
+                "elemicin"
+            ],
+            [
+                "Glaucine",
+                "glaucine"
+            ],
+            [
+                "Guanfacine (Tenex)",
+                "guanfacine"
+            ],
+            [
+                "Kambo",
+                "kambo"
+            ],
+            [
+                "Melatonin",
+                "melatonin"
+            ],
+            [
+                "Ondansetron",
+                "ondansetron"
+            ]
+        ]
+    ]
+]
