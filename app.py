@@ -28,10 +28,19 @@ def parse_bluelight_search(html_content):
         "li", class_="block-row block-row--separated js-inlineModContainer"
     ):
         title_elem = item.find("h3", class_="contentRow-title")
-        title = title_elem.text.strip()
+        if title_elem is None:
+            title=""
+        else:
+            title = title_elem.text.strip("\n")
         link = title_elem.find("a")["href"]
 
-        author = item.find("a", class_="username").text.strip()
+        author = item.find("a", class_="username")
+        
+        if author is None:
+            author = "Unknown"
+        else:
+            author = author.text.strip()
+        
 
         date = item.find("time")["title"]
         date = re.sub(r" at .*", "", date)  # Remove time from date
@@ -54,8 +63,8 @@ def parse_bluelight_search(html_content):
 def create_markdown_list(results):
     markdown = ""
     for i, result in enumerate(results, 1):
-        markdown += f"{i}. [{result['title']}](https://www.bluelight.org{result['link']}) - {result['author']}, {result['date']}\n"
-        markdown += f"   Forum: {result['forum']}\n\n"
+        markdown += f"{i}. [{result['title']}](https://www.bluelight.org{result['link']}) - {result['author']}, {result['date']} "
+        markdown += f"({result['forum']})\n\n"
     return markdown
 
 
