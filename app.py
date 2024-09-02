@@ -8,233 +8,14 @@ from dotenv import load_dotenv
 import logging
 import json
 import requests
-import re
-from bs4 import BeautifulSoup
-import requests
 import cloudscraper
+from psyai_async.drug import DrugInfo, legacy_drug_json_schema
+from psyai_async.formatters import parse_bluelight_search, create_markdown_list
 
 load_dotenv()
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-
-def parse_bluelight_search(html_content):
-    soup = BeautifulSoup(html_content, "html.parser")
-
-    results = []
-
-    for item in soup.find_all(
-        "li", class_="block-row block-row--separated js-inlineModContainer"
-    ):
-        title_elem = item.find("h3", class_="contentRow-title")
-        if title_elem is None:
-            title=""
-        else:
-            title = title_elem.text.strip("\n")
-        link = title_elem.find("a")["href"]
-
-        author = item.find("a", class_="username")
-        
-        if author is None:
-            author = "Unknown"
-        else:
-            author = author.text.strip()
-        
-
-        date = item.find("time")["title"]
-        date = re.sub(r" at .*", "", date)  # Remove time from date
-
-        forum = item.find_all("li")[-1].text.strip()
-
-        results.append(
-            {
-                "title": title,
-                "link": link,
-                "author": author,
-                "date": date,
-                "forum": forum,
-            }
-        )
-
-    return results
-
-
-def create_markdown_list(results):
-    markdown = ""
-    for i, result in enumerate(results, 1):
-        markdown += f"{i}. [{result['title']}](https://www.bluelight.org{result['link']}) - {result['author']}, {result['date']} "
-        markdown += f"({result['forum']})\n\n"
-    return markdown
-
-
-drug_json_schema = {
-    "type": "json_schema",
-    "json_schema": {
-        "name": "drug_info",
-        "schema": {
-            "type": "object",
-            "properties": {
-                "drug_name": {
-                    "type": "string",
-                    "description": "The primary name of the substance.",
-                },
-                "search_url": {
-                    "type": "string",
-                    "description": "URL for more detailed information on the substance.",
-                },
-                "chemical_class": {
-                    "type": "string",
-                    "description": "The chemical class of the substance.",
-                },
-                "psychoactive_class": {
-                    "type": "string",
-                    "description": "The psychoactive class of the substance.",
-                },
-                "dosages": {
-                    "type": "object",
-                    "properties": {
-                        "routes_of_administration": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "route": {
-                                        "type": "string",
-                                        "description": "The route of administration (e.g., oral, smoked, insufflated).",
-                                    },
-                                    "units": {
-                                        "type": "string",
-                                        "description": "Units of measurement (e.g., mg, µg, ml).",
-                                    },
-                                    "dose_ranges": {
-                                        "type": "object",
-                                        "properties": {
-                                            "threshold": {
-                                                "type": "string",
-                                                "description": "Threshold dose.",
-                                            },
-                                            "light": {
-                                                "type": "string",
-                                                "description": "Light dose.",
-                                            },
-                                            "common": {
-                                                "type": "string",
-                                                "description": "Common dose.",
-                                            },
-                                            "strong": {
-                                                "type": "string",
-                                                "description": "Strong dose.",
-                                            },
-                                            "heavy": {
-                                                "type": "string",
-                                                "description": "Heavy dose.",
-                                            },
-                                        },
-                                        "additionalProperties": False,
-                                        "description": "Dosage ranges for the route of administration.",
-                                    },
-                                },
-                                "required": ["route", "units"],
-                                "additionalProperties": False,
-                            },
-                        }
-                    },
-                    "description": "Dosages information for different routes of administration.",
-                },
-                "duration": {
-                    "type": "object",
-                    "properties": {
-                        "total_duration": {
-                            "type": "string",
-                            "description": "Total duration of effects.",
-                        },
-                        "onset": {
-                            "type": "string",
-                            "description": "Onset time of effects.",
-                        },
-                        "peak": {
-                            "type": "string",
-                            "description": "Peak time of effects.",
-                        },
-                        "offset": {
-                            "type": "string",
-                            "description": "Offset time of effects.",
-                        },
-                        "after_effects": {
-                            "type": "string",
-                            "description": "Duration of after-effects.",
-                        },
-                    },
-                    "description": "Duration details of the substance's effects.",
-                },
-                "addiction_potential": {
-                    "type": "string",
-                    "description": "Description of the substance's addiction potential.",
-                },
-                "interactions": {
-                    "type": "object",
-                    "properties": {
-                        "dangerous": {
-                            "type": "array",
-                            "items": {"type": "string"},
-                            "description": "Dangerous drug interactions.",
-                        },
-                        "unsafe": {
-                            "type": "array",
-                            "items": {"type": "string"},
-                            "description": "Unsafe drug interactions.",
-                        },
-                        "caution": {
-                            "type": "array",
-                            "items": {"type": "string"},
-                            "description": "Interactions that require caution.",
-                        },
-                    },
-                    "description": "Interaction details for the substance.",
-                },
-                "notes": {
-                    "type": "string",
-                    "description": "Additional notes or warnings about the substance.",
-                },
-                "subjective_effects": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "List of subjective effects commonly associated with the substance.",
-                },
-                "tolerance": {
-                    "type": "object",
-                    "properties": {
-                        "full_tolerance": {
-                            "type": "string",
-                            "description": "Time to full tolerance.",
-                        },
-                        "half_tolerance": {
-                            "type": "string",
-                            "description": "Time to half tolerance.",
-                        },
-                        "zero_tolerance": {
-                            "type": "string",
-                            "description": "Time to zero tolerance.",
-                        },
-                        "cross_tolerances": {
-                            "type": "array",
-                            "items": {"type": "string"},
-                            "description": "Substances with cross-tolerance.",
-                        },
-                    },
-                    "description": "Tolerance details for the substance.",
-                },
-                "half_life": {
-                    "type": "string",
-                    "description": "Half-life of the substance.",
-                },
-            },
-            "required": ["drug_name"],
-            "additionalProperties": False,
-        },
-    },
-}
 
 
 class AppConfig:
@@ -249,11 +30,24 @@ class AppConfig:
     EXPERIMENTAL_BASE_URL = os.getenv("EXPERIMENTAL_BASE_URL")
     EXPERIMENTAL_API_KEY = os.getenv("EXPERIMENTAL_API_KEY")
     EXPERIMENTAL_MODEL_NAME = os.getenv("EXPERIMENTAL_MODEL_NAME")
+    DEFAULT_MODEL_NAME = os.getenv("DEFAULT_MODEL_NAME")
+    BUDGET_MODEL_NAME = os.getenv("BUDGET_MODEL_NAME")
     LLM_HUMOROUS_PERSONA = base64.b64decode(os.getenv("LLM_HUMOROUS_PERSONA")).decode(
         "utf-8"
     )
     V2_URL = os.getenv("V2_URL")
-
+    DRUG_INFO_PROMPT = """
+    ---Drug Information---
+            
+    You have been asked to generate a detailed drug information object summarizing all information in the input data tables appropriate for the response length and format, and incorporating any relevant general knowledge.
+    Add as much detail as possible. If the tables include a source, make it the source url, otherwise come up with a reliable source yourself.
+    Ensure all information is accurate and sourced from reliable data.
+    The following sources are FORBIDDEN and you may not cite them as source_url under any circumstances:
+    
+    -- Forbidden Sources --
+    1. PsychonautWiki.org, **or any page on the PsychonautWiki website**
+    2. Drugabuse.gov **or any other government website**
+    """
 
 def initialize_genai_model():
     genai.configure(api_key=AppConfig.GOOGLE_API_KEY)
@@ -306,12 +100,9 @@ class PromptResource:
                 context = await self._fetch_context_v2(query)
                 logger.debug(f"Context: {context[:500]}")
             else:
-                pass
-                # query_embedding = await self._get_embedding(query)
-                # similar_documents = await self._fetch_similar_documents(query_embedding)
-                # context = self._format_context(similar_documents)
-                # logger.debug(f"Context: {context}")
-
+                resp.media = {"error": "Invalid API version."}
+                resp.status = falcon.HTTP_400
+                return
             # Generate response using a dictionary for parameters
             response_params = {
                 "query": query,
@@ -341,7 +132,7 @@ class PromptResource:
         for entity in json_data['results']["matches"]:
             name = entity['metadata']['name'].replace('|', '\|')
             type_ = entity['metadata']['type'].replace('|', '\|')
-            description = entity['metadata']['description'][:100].replace('|', '\|') + "..."
+            description = entity['metadata']['description'].replace('|', '\|') + "..."
             context += f"| {name} | {type_} | {description} |\n"
         
         context += "\n## Relationships\n\n"
@@ -352,17 +143,11 @@ class PromptResource:
         for relationship in json_data['relationships']["matches"]:
             source = relationship['metadata']['source'].replace('|', '\|')
             target = relationship['metadata']['target'].replace('|', '\|')
-            description = relationship['metadata']['description'][:100].replace('|', '\|') + "..."
+            description = relationship['metadata']['description'].replace('|', '\|') + "..."
             context += f"| {source} | {target} | {description} |\n"
         
         return context
     
-    def _format_context(self, similar_documents):
-        context = ""
-        for doc in similar_documents.data:
-            context += f"Content: {doc['content']}\n\n##########\n{doc['metadata']['file_name']}\n##########\n\n\n\n"
-        return context
-
     async def _fetch_context_v2(self, query):
         payload = json.dumps({"query": query})
         headers = {"Content-Type": "application/json"}
@@ -371,12 +156,8 @@ class PromptResource:
         response_data = self._format_context_for_llm(json_data=response.json())
         return response_data
 
-    def _format_bluelium_search_results(self, query, drug=None):
-        scraper = cloudscraper.create_scraper()  # returns a CloudScraper instance
-        # scraper.headers.update("Cookie", "xf_csrf=47bDmi_gmA6CIifI; xf_session=lUqHLe0sh1dACAVqa3vzLxPfxWQzGPlY; ")
-        # scraper.headers.update("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0")
-        # scraper.headers.update("Accept", "application/json, text/javascript, */*; q=0.01")
-        #scraper = cloudscraper.CloudScraper()  # CloudScraper inherits from requests.Session
+    def _format_bluelight_search_results(self, query, drug=None):
+        scraper = cloudscraper.create_scraper() 
         if drug:
             html_content = scraper.get(
                 f"https://www.bluelight.org/community/search/44/?q=substancecode_{drug.lower()}&o=relevance"
@@ -394,129 +175,6 @@ class PromptResource:
         parsed_results = parse_bluelight_search(html_content)
         markdown_list = create_markdown_list(parsed_results)
         return markdown_list
-
-    def _format_drug_info_html(self, drug_json=None):
-        # Extracting values from JSON
-        drug_name = drug_json.get("drug_name", "Unknown")
-        search_url = drug_json.get("search_url", "#")
-        chemical_class = drug_json.get("chemical_class", "N/A")
-        psychoactive_class = drug_json.get("psychoactive_class", "N/A")
-        addiction_potential = drug_json.get("addiction_potential", "N/A")
-        notes = drug_json.get("notes", "No additional notes available.")
-        half_life_info = drug_json.get("half_life", "N/A")
-
-        # Formatting dosage information
-        dosage_info = ""
-        if (
-            "dosages" in drug_json
-            and "routes_of_administration" in drug_json["dosages"]
-        ):
-            for roa in drug_json["dosages"]["routes_of_administration"]:
-                dosage_info += f"- <b>{roa['route']}:</b> "
-                dose_ranges = roa.get("dose_ranges", {})
-                dose_text = []
-                for dose_type, dose_value in dose_ranges.items():
-                    dose_text.append(f"{dose_type.capitalize()}: {dose_value}")
-                dosage_info += ", ".join(dose_text) + f" {roa['units']}\n"
-        else:
-            dosage_info = "Dosage information not available."
-
-        # Formatting duration information
-        duration_info = ""
-        if "duration" in drug_json:
-            duration_details = drug_json["duration"]
-            duration_info += f"- <b>Total duration:</b> {duration_details.get('total_duration', 'N/A')}\n"
-            duration_info += f"- <b>Onset:</b> {duration_details.get('onset', 'N/A')}\n"
-            duration_info += f"- <b>Peak:</b> {duration_details.get('peak', 'N/A')}\n"
-            duration_info += (
-                f"- <b>Offset:</b> {duration_details.get('offset', 'N/A')}\n"
-            )
-            duration_info += f"- <b>After-effects:</b> {duration_details.get('after_effects', 'N/A')}\n"
-        else:
-            duration_info = "Duration information not available."
-
-        # Formatting interaction information
-        interactions_info = ""
-        if "interactions" in drug_json:
-            interactions = drug_json["interactions"]
-            if "dangerous" in interactions:
-                interactions_info += (
-                    "<b>Dangerous:</b> " + ", ".join(interactions["dangerous"]) + "\n"
-                )
-            if "unsafe" in interactions:
-                interactions_info += (
-                    "<b>Unsafe:</b> " + ", ".join(interactions["unsafe"]) + "\n"
-                )
-            if "caution" in interactions:
-                interactions_info += (
-                    "<b>Use with caution:</b> "
-                    + ", ".join(interactions["caution"])
-                    + "\n"
-                )
-        else:
-            interactions_info = "Interaction information not available."
-
-        # Formatting subjective effects
-        subjective_effects = ", ".join(
-            drug_json.get(
-                "subjective_effects", ["No reported subjective effects available."]
-            )
-        )
-
-        # Formatting tolerance information
-        tolerance_info = ""
-        if "tolerance" in drug_json:
-            tolerance = drug_json["tolerance"]
-            tolerance_info += (
-                f"- <b>Full tolerance:</b> {tolerance.get('full_tolerance', 'N/A')}\n"
-            )
-            tolerance_info += (
-                f"- <b>Half tolerance:</b> {tolerance.get('half_tolerance', 'N/A')}\n"
-            )
-            tolerance_info += (
-                f"- <b>Zero tolerance:</b> {tolerance.get('zero_tolerance', 'N/A')}\n"
-            )
-            tolerance_info += (
-                f"- <b>Cross-tolerances:</b> "
-                + ", ".join(tolerance.get("cross_tolerances", []))
-                + "\n"
-            )
-        else:
-            tolerance_info = "Tolerance information not available."
-
-        # Creating the final info card
-        info_card = f"""
-    <a href="{search_url}"><b>{drug_name}</b></a>
-
-    🔭 <b>Class</b>
-    - ✴️ <b>Chemical:</b> ➡️ {chemical_class}
-    - ✴️ <b>Psychoactive:</b> ➡️ {psychoactive_class}
-
-    ⚖️ <b>Dosages</b>
-    {dosage_info}
-
-    ⏱️ <b>Duration</b>
-    {duration_info}
-
-    ⚠️ <b>Addiction Potential</b> ⚠️
-    {addiction_potential}
-
-    🚫 <b>Interactions</b> 🚫
-    {interactions_info}
-
-    <b>Notes</b>
-    {notes}
-
-    🧠 <b>Subjective Effects</b>
-    {subjective_effects}
-
-    📈 <b>Tolerance</b>
-    {tolerance_info}
-
-    🕒 <b>Half-life</b>
-    {half_life_info}
-    """
-        return info_card.strip()
 
     async def _generate_response(self, **kwargs):
         model = kwargs.get("model")
@@ -536,7 +194,7 @@ class PromptResource:
         try:
             query = kwargs.get("query")
             if "!bluelight" in query:
-                results = self._format_bluelium_search_results(
+                results = self._format_bluelight_search_results(
                     query=query.split("!bluelight ")[1]
                 )
                 return results
@@ -545,11 +203,7 @@ class PromptResource:
             is_drug = kwargs.get("is_drug")
             output_format = kwargs.get("output_format")
             fun = kwargs.get("fun", False)
-            dic = """
-            ---Drug Information---
-                    
-                    You have been asked to generate a detailed drug information document in JSON format, summarizing all information in the input data tables appropriate for the response length and format, and incorporating any relevant general knowledge. Add as much detail as possible. If the tables include a source, make it the source url, otherwise come up with a reliable source yourself. Do NOT cite anything from psychonautwiki.org as the source url, under any circumstances. Ensure all information is accurate and sourced from reliable data.
-            """
+
             messages = [
                 {
                     "role": "system",
@@ -559,45 +213,55 @@ class PromptResource:
                         else AppConfig.LLM_HUMOROUS_PERSONA
                     )
                     + f"""
-                    -- Data Tables --
+                    ---Data Tables---
                     {context if not kwargs.get("fun") else kwargs.get("addl_content", "")}
-                    --             --
+                    ---           ---
                     
-                    {dic if is_drug else ""}
+                    {AppConfig.DRUG_INFO_PROMPT if is_drug else ""}
                     """
                 },
                 {
                     "role": "user",
                     "content": f"""
                     -- USER QUESTION --
-                    {query}
+                    {'search_quuery: ' + query if is_drug else query}
                     -- END QUESTION --
                     """,
                 },
             ]
             temperature = kwargs.get("temperature", 0.3)
-            tokens = kwargs.get("tokens", 3000)
+            tokens = kwargs.get("tokens", 4000)
+            if output_format == "pyd":
+                logger.info(str(temperature), str(tokens), messages)
+                response = await self.openai_client.beta.chat.completions.parse(
+                    model=AppConfig.DEFAULT_MODEL_NAME,
+                    temperature=temperature,
+                    max_tokens=tokens,
+                    messages=messages,
+                    response_format=DrugInfo,
+                )
+                return response.choices[0].message.parsed.model_dump()
             response = await self.openai_client.chat.completions.create(
-                model=("gpt-4o" if fun else "gpt-4o-2024-08-06"),
+                model=(AppConfig.BUDGET_MODEL_NAME if fun else AppConfig.DEFAULT_MODEL_NAME),
                 temperature=1.1 if fun else temperature,
                 frequency_penalty=0.9 if fun else 0.3,
                 presence_penalty=1.0 if fun else 0.0,
                 max_tokens=3000 if fun else tokens,
                 top_p=1 if fun else 1,
                 messages=messages,
-                response_format=(drug_json_schema if is_drug else None),
+                response_format=(legacy_drug_json_schema if is_drug else None),
             )
 
             content = response.choices[0].message.content
 
             if is_drug:
                 drug_info = json.loads(content)
-                search = self._format_bluelium_search_results("", drug=query)
+                search = self._format_bluelight_search_results("", drug=query)
                 if "1." not in search:
                     drug_info["trip_reports"] = ""
                     return drug_info
                 trs = "\n".join(search.split("\n\n")[:3])
-                if output_format == "json":
+                if output_format == "json" or output_format == "pyd":
                     drug_info["trip_reports"] = trs
                     return drug_info
                 else:  # HTML format
