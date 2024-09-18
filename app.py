@@ -181,6 +181,8 @@ class PromptResource:
 
         if model == "openai":
             return await self._generate_openai_response(**kwargs)
+        if model == "openai-next":
+            return await self._generate_next_openai_response(**kwargs)
         elif model == "experimental":
             return self._generate_experimental_response(**kwargs)
         elif model == "fun":
@@ -189,6 +191,32 @@ class PromptResource:
             return await self._generate_gemini_response(
                 kwargs["query"], kwargs["context"]
             )
+
+    async def _generate_next_openai_response(self, **kwargs):
+        messages = [
+            {
+                "role": "user",
+                "content": AppConfig.LLM_SYSTEM
+                + f"""
+                ---Data Tables---
+                {kwargs.get("context")}
+                ---           ---
+                """
+            },
+            {
+                "role": "user",
+                "content": f"""
+                -- USER QUESTION --
+                {kwargs.get("query")}
+                -- END QUESTION --
+                """,
+            },
+        ]
+        response = await self.openai_client.chat.completions.create(
+            model="o1-mini",
+            messages=messages,
+        )
+        return response.choices[0].message.content
 
     async def _generate_openai_response(self, **kwargs):
         try:
