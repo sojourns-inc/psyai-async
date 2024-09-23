@@ -43,7 +43,7 @@ class DrugInfo(BaseModel):
     )
     search_url: str = Field(
         ..., 
-        description="URL linking to a comprehensive repository of detailed information about the substance, synthesized from diverse sources including research articles, clinical studies, and user experiences."
+        description="URL linking to a comprehensive repository of detailed information about the substance, synthesized from diverse sources including research articles, clinical studies, and user experiences. Must NOT be PsychonautWiki.org URL."
     )
     chemical_class: str = Field(
         ..., 

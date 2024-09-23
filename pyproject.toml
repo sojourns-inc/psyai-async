@@ -19,6 +19,8 @@ google-generativeai = "^0.5.2"
 cloudscraper = "^1.2.71"
 beautifulsoup4 = "^4.12.3"
 pymongo = "^4.8.0"
+sentence-transformers = "^3.1.1"
+einops = "^0.8.0"
 
 
 [build-system]
