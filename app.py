@@ -11,6 +11,7 @@ import requests
 import cloudscraper
 from psyai_async.drug import DrugInfo, legacy_drug_json_schema
 from psyai_async.formatters import parse_bluelight_search, create_markdown_list
+from sentence_transformers import SentenceTransformer
 
 load_dotenv()
 
@@ -32,6 +33,8 @@ class AppConfig:
     EXPERIMENTAL_MODEL_NAME = os.getenv("EXPERIMENTAL_MODEL_NAME")
     DEFAULT_MODEL_NAME = os.getenv("DEFAULT_MODEL_NAME")
     BUDGET_MODEL_NAME = os.getenv("BUDGET_MODEL_NAME")
+    CLOUDFLARE_API_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN")
+    CLOUDFLARE_ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID")
     LLM_HUMOROUS_PERSONA = base64.b64decode(os.getenv("LLM_HUMOROUS_PERSONA")).decode(
         "utf-8"
     )
@@ -80,6 +83,14 @@ class PromptResource:
             api_key=AppConfig.EXPERIMENTAL_API_KEY,
         )
         self.gemini_model = initialize_genai_model()
+        self.model = SentenceTransformer("nomic-ai/nomic-embed-text-v1.5", trust_remote_code=True)
+        # Configuration variables
+        self.account_id = AppConfig.CLOUDFLARE_ACCOUNT_ID
+        self.api_token = AppConfig.CLOUDFLARE_API_TOKEN
+        self.headers = {
+            "Authorization": f"Bearer {self.api_token}",
+            "Content-Type": "application/json"
+        }
 
     async def on_post(self, req, resp):
         try:
@@ -98,7 +109,7 @@ class PromptResource:
             # Get embeddings and context
             if version == "v2":
                 context = await self._fetch_context_v2(query)
-                logger.debug(f"Context: {context[:500]}")
+                logger.debug(f"Context: {context}")
             else:
                 resp.media = {"error": "Invalid API version."}
                 resp.status = falcon.HTTP_400
@@ -129,9 +140,10 @@ class PromptResource:
         context += "|------|------|-------------|\n"
         
         # Format entities
-        for entity in json_data['results']["matches"]:
+        for entity in json_data['entities']["matches"]:
             name = entity['metadata']['name'].replace('|', '\|')
             type_ = entity['metadata']['type'].replace('|', '\|')
+            print(entity['metadata']['description'])
             description = entity['metadata']['description'].replace('|', '\|') + "..."
             context += f"| {name} | {type_} | {description} |\n"
         
@@ -149,12 +161,44 @@ class PromptResource:
         return context
     
     async def _fetch_context_v2(self, query):
-        payload = json.dumps({"query": query})
-        headers = {"Content-Type": "application/json"}
+        # Generate embedding for the query
+        query_embedding = self.model.encode(query).tolist()
 
-        response = requests.post(AppConfig.V2_URL, headers=headers, data=payload)
-        response_data = self._format_context_for_llm(json_data=response.json())
-        return response_data
+        # Prepare the query payload
+        payload = {
+            "vector": query_embedding,
+            "topK": 20,
+            "returnMetadata": "all"
+        }
+
+        # Define the URLs for the indices
+        entities_url = f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}/vectorize/v2/indexes/psy-entity-index/query"
+        relationships_url = f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}/vectorize/v2/indexes/psy-rel-index/query"
+
+        # Query the entities index
+        entities_response = requests.post(entities_url, headers=self.headers, data=json.dumps(payload))
+        if entities_response.status_code == 200:
+            entities_matches = entities_response.json()['result']
+        else:
+            print(f"Error querying entities index: {entities_response.text}")
+            entities_matches = []
+
+        # Query the relationships index
+        relationships_response = requests.post(relationships_url, headers=self.headers, data=json.dumps(payload))
+        if relationships_response.status_code == 200:
+            relationships_matches = relationships_response.json()['result']
+        else:
+            print(f"Error querying relationships index: {relationships_response.text}")
+            relationships_matches = []
+
+        # Format the results into the required JSON structure
+        response_data = {
+            "query": query,
+            "entities": entities_matches,
+            "relationships": relationships_matches
+        }
+
+        return self._format_context_for_llm(response_data)
 
     def _format_bluelight_search_results(self, query, drug=None):
         scraper = cloudscraper.create_scraper() 
@@ -196,7 +240,11 @@ class PromptResource:
         messages = [
             {
                 "role": "user",
-                "content": AppConfig.LLM_SYSTEM
+                "content":  (
+                        AppConfig.LLM_SYSTEM
+                        if not kwargs.get("fun")
+                        else AppConfig.LLM_HUMOROUS_PERSONA
+                    )
                 + f"""
                 ---Data Tables---
                 {kwargs.get("context")}
@@ -213,7 +261,7 @@ class PromptResource:
             },
         ]
         response = await self.openai_client.chat.completions.create(
-            model="o1-mini",
+            model="o1-preview",
             messages=messages,
         )
         return response.choices[0].message.content
