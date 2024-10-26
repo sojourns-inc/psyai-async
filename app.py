@@ -165,7 +165,7 @@ class ExternalResource:
         headers = {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "X-API-KEY": "01J8G6449D8Y83M8T0GTP0CEEH",
+            "X-API-KEY": "",
         }
         payload = {"url": qurl}
 
