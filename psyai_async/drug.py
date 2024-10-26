@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List
+from enum import Enum
 
 class DoseRanges(BaseModel):
     threshold: str = Field(..., description="Threshold dose.")
@@ -35,6 +36,30 @@ class Tolerance(BaseModel):
     half_tolerance: str = Field(..., description="Time to half tolerance.")
     zero_tolerance: str = Field(..., description="Time to zero tolerance.")
     cross_tolerances: List[str] = Field(default_factory=list, description="Substances with cross-tolerance.")
+
+class Citation(BaseModel):
+    name: str = Field(..., description="The name or title of the citation.")
+    reference: str = Field(..., description="The URL or other reference of the citation.")
+
+# Define the CategoryEnum with the provided categories
+class CategoryEnum(str, Enum):
+    psychedelic = 'psychedelic'
+    dissociative = 'dissociative'
+    stimulant = 'stimulant'
+    research_chemical = 'research-chemical'
+    empathogen = 'empathogen'
+    habit_forming = 'habit-forming'
+    opioid = 'opioid'
+    depressant = 'depressant'
+    hallucinogen = 'hallucinogen'
+    entactogen = 'entactogen'
+    deliriant = 'deliriant'
+    antidepressant = 'antidepressant'
+    sedative = 'sedative'
+    nootropic = 'nootropic'
+    barbiturate = 'barbiturate'
+    benzodiazepine = 'benzodiazepine'
+    supplement = 'supplement'
 
 class DrugInfo(BaseModel):
     drug_name: str = Field(
@@ -85,10 +110,20 @@ class DrugInfo(BaseModel):
         ..., 
         description="Half-life of the substance, reflecting the average time for the concentration of the substance to decrease by half in the body, as reported in pharmacokinetic studies."
     )
+    citations: List[Citation] = Field(
+        default_factory=list,
+        description="List of citations supporting the information provided, including names and references, aggregated from scientific literature, user reports, and other reputable sources."
+    )
+    # New categories field
+    categories: List[CategoryEnum] = Field(
+        default_factory=list,
+        description="List of categories the drug belongs to."
+    )
 
     class Config:
         title = "drug_info"
         extra = "forbid"
+
 
 
 legacy_drug_json_schema = {
