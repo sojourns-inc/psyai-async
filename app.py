@@ -13,7 +13,6 @@ from psyai_async.drug import DrugInfo, legacy_drug_json_schema
 from psyai_async.formatters import parse_bluelight_search, create_markdown_list
 from sentence_transformers import SentenceTransformer
 import motor.motor_asyncio
-from bson import json_util
 
 load_dotenv()
 
@@ -43,6 +42,7 @@ class AppConfig:
     V2_URL = os.getenv("V2_URL")
     COHERE_API_KEY = os.getenv("COHERE_API_KEY")
     TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+    ONE001FX_API_KEY = os.getenv("ONE001FX_API_KEY")
     DRUG_INFO_PROMPT = """
     ---Drug Information---
             
