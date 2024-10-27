@@ -1,3 +1,5 @@
+import asyncio
+import aiohttp
 import os
 import falcon
 from falcon import asgi
@@ -6,12 +8,11 @@ import base64
 import google.generativeai as genai
 from dotenv import load_dotenv
 import logging
-import json
-import requests
 import cloudscraper
 from psyai_async.drug import DrugInfo, legacy_drug_json_schema
 from psyai_async.formatters import parse_bluelight_search, create_markdown_list
 from sentence_transformers import SentenceTransformer
+import motor.motor_asyncio
 
 load_dotenv()
 
@@ -39,6 +40,9 @@ class AppConfig:
         "utf-8"
     )
     V2_URL = os.getenv("V2_URL")
+    COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+    ONE001FX_API_KEY = os.getenv("ONE001FX_API_KEY")
     DRUG_INFO_PROMPT = """
     ---Drug Information---
             
@@ -51,6 +55,7 @@ class AppConfig:
     1. PsychonautWiki.org, **or any page on the PsychonautWiki website**
     2. Drugabuse.gov **or any other government website**
     """
+
 
 def initialize_genai_model():
     genai.configure(api_key=AppConfig.GOOGLE_API_KEY)
@@ -75,6 +80,145 @@ def initialize_genai_model():
     )
 
 
+import json
+
+from openai import AsyncOpenAI
+from tavily import AsyncTavilyClient
+
+
+import json
+from openai import OpenAI
+
+
+class DataEnrichmentAgent:
+    def __init__(self):
+        self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
+        self.tavily_client = AsyncTavilyClient(api_key=AppConfig.TAVILY_API_KEY)
+
+    async def enrich_drug_data(self, input_data):
+        # Step 1: Perform web search using Tavily
+        search_urls = ["https://db.pyrazol.am/benzos.json"]
+        search_query = f"{input_data['drug_name']} drug information"
+        search_results = await self.tavily_client.get_search_context(
+            search_query,
+            topics=["general"],
+            search_depth="advanced",
+            max_results=20,
+            max_tokens=8000,
+            exclude_domains=["wikipedia.org", "psychonautwiki.org"],
+            include_domains=[
+                "bluelight.org",
+                "erowid.org",
+                "tripsit.me",
+                "drugchecking.community",
+                "isomerdesign.com",
+                "drugwise.org.uk",
+                "saferparty.ch",
+                "drugbank.com",
+                "drugusersbible.org",
+            ],
+        )
+        print(search_results)
+        # url_search_results = await self.tavily_client.extract(urls=search_urls)
+
+        # Step 2: Prepare messages for GPT-4o
+        messages = [
+            {
+                "role": "system",
+                "content": "You are a drug information expert. Enrich (meaning, ) the given drug data with information from the provided search results.",
+            },
+            {
+                "role": "user",
+                "content": f"Enrich this drug data:\n{json.dumps(input_data, indent=2)}\n\nSearch results:\n{search_results}",
+            },  ## \n\nURL search results:\n{url_search_results}"}
+        ]
+
+        # Step 3: Generate enriched data using GPT-4o
+        response = await self.openai_client.beta.chat.completions.parse(
+            model="gpt-4o-2024-08-06", messages=messages, response_format=DrugInfo
+        )
+
+        # Step 4: Parse the response a
+
+        return response.choices[0].message.parsed.model_dump()
+
+
+class ExternalResource:
+    def __init__(self):
+        self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
+        self.enrichment_agent = DataEnrichmentAgent()
+        self.mongo_client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017')
+        self.db = self.mongo_client['drugindex']
+        self.collection = self.db['global']
+
+    async def on_get(self, req, resp):
+        qurl = req.params.get("qurl")
+        format_ = req.params.get("format")
+        add_info = bool(req.params.get("add_info", 0))  # only used for json format
+        if not qurl or not format_:
+            resp.status = falcon.HTTP_400
+            resp.text = 'Missing "qurl" or "format" query parameter.'
+            return
+
+        # First API call to get content
+        api_url = "https://api.1001fx.com/data/getcontent"
+        headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-API-KEY": AppConfig.ONE001FX_API_KEY,
+        }
+        payload = {"url": qurl}
+
+        async with aiohttp.ClientSession() as session:
+            async with session.post(api_url, headers=headers, json=payload) as response:
+                if response.status != 200:
+                    resp.status = falcon.HTTP_502
+                    resp.text = "Failed to fetch content from the API."
+                    return
+                data = await response.json()
+
+        markdown_content = data.get("markdown")
+
+        if not markdown_content:
+            resp.status = falcon.HTTP_500
+            resp.text = 'API response does not contain "markdown" content.'
+            return
+
+        if format_ == "md":
+            resp.content_type = "text/markdown"
+            resp.text = markdown_content
+            resp.status = falcon.HTTP_200
+        elif format_ == "json":
+            response = await self.openai_client.beta.chat.completions.parse(
+                model=AppConfig.DEFAULT_MODEL_NAME,
+                temperature=0.0,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Please extract the key information about a substance from the markdown text, and create a drug information JSON.",
+                    },
+                    {"role": "user", "content": markdown_content},
+                ],
+                response_format=DrugInfo,
+            )
+
+            drug_info = response.choices[0].message.parsed.model_dump()
+            drug_info["search_url"] = qurl
+            if add_info and add_info == True:
+                drug_info = await self.enrichment_agent.enrich_drug_data(drug_info)
+                drug_info["search_url"] = qurl
+            
+            # Save to MongoDB
+            await self.collection.update_one(
+                {"drug_name": drug_info.get("drug_name")},
+                {"$set": drug_info},
+                upsert=True
+            )
+
+            resp.media = drug_info
+            resp.status = falcon.HTTP_200
+
+
 class PromptResource:
     def __init__(self):
         self.openai_client = AsyncOpenAI(api_key=AppConfig.OPENAI_API_KEY)
@@ -83,14 +227,18 @@ class PromptResource:
             api_key=AppConfig.EXPERIMENTAL_API_KEY,
         )
         self.gemini_model = initialize_genai_model()
-        self.model = SentenceTransformer("nomic-ai/nomic-embed-text-v1.5", trust_remote_code=True)
+        self.model = SentenceTransformer(
+            "nomic-ai/nomic-embed-text-v1.5", trust_remote_code=True
+        )
         # Configuration variables
         self.account_id = AppConfig.CLOUDFLARE_ACCOUNT_ID
         self.api_token = AppConfig.CLOUDFLARE_API_TOKEN
         self.headers = {
             "Authorization": f"Bearer {self.api_token}",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         }
+        self.data_enrichment_agent = DataEnrichmentAgent()
+        # self.cohere_client = cohere.Client(AppConfig.COHERE_API_KEY)
 
     async def on_post(self, req, resp):
         try:
@@ -108,7 +256,10 @@ class PromptResource:
 
             # Get embeddings and context
             if version == "v2":
-                context = await self._fetch_context_v2(query)
+                if not output_format == "fun":
+                    context = await self._fetch_context_v2(query)
+                else:
+                    context = addl_context
                 logger.debug(f"Context: {context}")
             else:
                 resp.media = {"error": "Invalid API version."}
@@ -130,6 +281,7 @@ class PromptResource:
             resp.media = {"assistant": response}
             resp.status = falcon.HTTP_200
         except Exception as e:
+            e.with_traceback()
             print(f"Error: {str(e)}")
             resp.media = {"error": "An internal server error occurred"}
             resp.status = falcon.HTTP_500
@@ -138,70 +290,70 @@ class PromptResource:
         context = "## Entities\n\n"
         context += "| Name | Type | Description |\n"
         context += "|------|------|-------------|\n"
-        
+
         # Format entities
-        for entity in json_data['entities']["matches"]:
-            name = entity['metadata']['name'].replace('|', '\|')
-            type_ = entity['metadata']['type'].replace('|', '\|')
-            print(entity['metadata']['description'])
-            description = entity['metadata']['description'].replace('|', '\|') + "..."
+        for entity in json_data["entities"]["matches"]:
+            name = entity["metadata"]["name"].replace("|", "\|")
+            type_ = entity["metadata"]["type"].replace("|", "\|")
+            description = entity["metadata"]["description"].replace("|", "\|") + "..."
             context += f"| {name} | {type_} | {description} |\n"
-        
+
         context += "\n## Relationships\n\n"
         context += "| Source | Target | Description |\n"
         context += "|--------|--------|-------------|\n"
-        
+
         # Format relationships
-        for relationship in json_data['relationships']["matches"]:
-            source = relationship['metadata']['source'].replace('|', '\|')
-            target = relationship['metadata']['target'].replace('|', '\|')
-            description = relationship['metadata']['description'].replace('|', '\|') + "..."
+        for relationship in json_data["relationships"]["matches"]:
+            source = relationship["metadata"]["source"].replace("|", "\|")
+            target = relationship["metadata"]["target"].replace("|", "\|")
+            description = (
+                relationship["metadata"]["description"].replace("|", "\|") + "..."
+            )
             context += f"| {source} | {target} | {description} |\n"
-        
+
         return context
-    
+
     async def _fetch_context_v2(self, query):
         # Generate embedding for the query
-        query_embedding = self.model.encode(query).tolist()
+        query_embedding = self.model.encode(f"search_query: {query}").tolist()
 
         # Prepare the query payload
-        payload = {
-            "vector": query_embedding,
-            "topK": 20,
-            "returnMetadata": "all"
-        }
+        payload = {"vector": query_embedding, "topK": 20, "returnMetadata": "all"}
 
         # Define the URLs for the indices
         entities_url = f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}/vectorize/v2/indexes/psy-entity-index/query"
         relationships_url = f"https://api.cloudflare.com/client/v4/accounts/{self.account_id}/vectorize/v2/indexes/psy-rel-index/query"
 
-        # Query the entities index
-        entities_response = requests.post(entities_url, headers=self.headers, data=json.dumps(payload))
-        if entities_response.status_code == 200:
-            entities_matches = entities_response.json()['result']
-        else:
-            print(f"Error querying entities index: {entities_response.text}")
-            entities_matches = []
-
-        # Query the relationships index
-        relationships_response = requests.post(relationships_url, headers=self.headers, data=json.dumps(payload))
-        if relationships_response.status_code == 200:
-            relationships_matches = relationships_response.json()['result']
-        else:
-            print(f"Error querying relationships index: {relationships_response.text}")
-            relationships_matches = []
+        async with aiohttp.ClientSession(headers=self.headers) as session:
+            # Create tasks for both requests
+            tasks = [
+                self._fetch_index(session, entities_url, payload),
+                self._fetch_index(session, relationships_url, payload),
+            ]
+            # Gather the results concurrently
+            entities_matches, relationships_matches = await asyncio.gather(*tasks)
 
         # Format the results into the required JSON structure
         response_data = {
             "query": query,
             "entities": entities_matches,
-            "relationships": relationships_matches
+            "relationships": relationships_matches,
         }
 
         return self._format_context_for_llm(response_data)
 
+    async def _fetch_index(self, session, url, payload):
+        async with session.post(url, json=payload) as response:
+            if response.status == 200:
+                data = await response.json()
+                return data.get("result", [])
+            else:
+                text = await response.text()
+                print(f"Error querying index: {text}")
+                return []
+
     def _format_bluelight_search_results(self, query, drug=None):
-        scraper = cloudscraper.create_scraper() 
+        scraper = cloudscraper.create_scraper()
         if drug:
             html_content = scraper.get(
                 f"https://www.bluelight.org/community/search/44/?q=substancecode_{drug.lower()}&o=relevance"
@@ -236,20 +388,38 @@ class PromptResource:
                 kwargs["query"], kwargs["context"]
             )
 
+    # async def _fetch_cohere_response(self, **kwargs):
+
+    #     response = self.cohere_client.chat(
+    #         model='command-r-plus-08-2024',
+    #         message="""You are an expert in drug harm reduction. You will be provided with a drug information sheet in JSON format, where some information might be missing, or lacking detail.Add all the missing information, based on various sources. YOU MUST AT LEAST INCLUDE DURATION and DOSES. Do not add, remove or rename any of the existing fields. Respond in valid JSON format only.""",
+    #         connectors=[{"id":"web-search"}],
+    #         chat_history=[
+    #             {"role": "System", "message": """You are an expert in drug harm reduction. You will be provided with a drug information sheet in JSON format, where some information might be missing, or lacking detail.Add all the missing information, based on various sources. YOU MUST AT LEAST INCLUDE DURATION and DOSES. Do not add, remove or rename any of the existing fields. Respond in valid JSON format only."""},
+    #             {"role": "User", "message": json.dumps(kwargs.get("drug_info"))}
+    #         ],
+    #         temperature=0.4,
+    #         # tools=tools,
+    #         prompt_truncation='AUTO',
+    #     )
+
+    #     return json.loads(response.text)
+
     async def _generate_next_openai_response(self, **kwargs):
+        print(kwargs)
         messages = [
             {
                 "role": "user",
-                "content":  (
-                        AppConfig.LLM_SYSTEM
-                        if not kwargs.get("fun")
-                        else AppConfig.LLM_HUMOROUS_PERSONA
-                    )
+                "content": (
+                    AppConfig.LLM_SYSTEM
+                    if not kwargs.get("output_format") == "fun"
+                    else AppConfig.LLM_HUMOROUS_PERSONA
+                )
                 + f"""
                 ---Data Tables---
                 {kwargs.get("context")}
                 ---           ---
-                """
+                """,
             },
             {
                 "role": "user",
@@ -294,7 +464,7 @@ class PromptResource:
                     ---           ---
                     
                     {AppConfig.DRUG_INFO_PROMPT if is_drug else ""}
-                    """
+                    """,
                 },
                 {
                     "role": "user",
@@ -308,7 +478,6 @@ class PromptResource:
             temperature = kwargs.get("temperature", 0.3)
             tokens = kwargs.get("tokens", 4000)
             if output_format == "pyd":
-                logger.info(str(temperature), str(tokens), messages)
                 response = await self.openai_client.beta.chat.completions.parse(
                     model=AppConfig.DEFAULT_MODEL_NAME,
                     temperature=temperature,
@@ -316,9 +485,15 @@ class PromptResource:
                     messages=messages,
                     response_format=DrugInfo,
                 )
-                return response.choices[0].message.parsed.model_dump()
+                drug_info = response.choices[0].message.parsed.model_dump()
+                drug_info = await self.data_enrichment_agent.enrich_drug_data(drug_info)
+                with open(f'./drugcache/{drug_info.get("drug_name")}.json', "w+") as f:
+                    f.write(json.dumps(drug_info, indent=4))
+                return drug_info
             response = await self.openai_client.chat.completions.create(
-                model=(AppConfig.BUDGET_MODEL_NAME if fun else AppConfig.DEFAULT_MODEL_NAME),
+                model=(
+                    AppConfig.BUDGET_MODEL_NAME if fun else AppConfig.DEFAULT_MODEL_NAME
+                ),
                 temperature=1.1 if fun else temperature,
                 frequency_penalty=0.9 if fun else 0.3,
                 presence_penalty=1.0 if fun else 0.0,
@@ -332,6 +507,7 @@ class PromptResource:
 
             if is_drug:
                 drug_info = json.loads(content)
+                drug_info = await self.data_enrichment_agent.enrich_drug_data(drug_info)
                 search = self._format_bluelight_search_results("", drug=query)
                 if "1." not in search:
                     drug_info["trip_reports"] = ""
@@ -403,3 +579,4 @@ class PromptResource:
 
 app = asgi.App()
 app.add_route("/q", PromptResource())
+app.add_route("/xt", ExternalResource())
